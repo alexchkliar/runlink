@@ -1,13 +1,11 @@
 class RunsController < ApplicationController
   def new
     @trail = Trail.find(params[:trail_id])
-    @users = User.all.map { |user| [user.name, user.id] } # exclude current user
+    @users = User.all.map { |user| [user.name, user.id] }
     @run = Run.new
-    # @run_participant = RunParticipant.new
-    @run.run_participants.build
-    @run.run_participants.build
-    @run.run_participants.build
-    #need a form. submit to create method.
+    3.times do
+      @run.run_participants.build
+    end
   end
 
   def create
