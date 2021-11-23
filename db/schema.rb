@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(version: 2021_11_23_160733) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "last_name"
+    t.string "first_name"
+    t.string "gender"
+    t.string "location"
+    t.string "running_exp"
+    t.text "bio"
+    t.date "birth_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
