@@ -1,6 +1,7 @@
 <h1>Select a trail!</h1>
 <% @trails.each do |trail|%>
   <ul>
+    <li><%= cl_image_tag trail.photos.first.key, height: 300, width: 400, crop: :fill %></li>
     <li><%= link_to trail.name, trail_path(trail) %></li>
     <li><%= trail.location %></li>
     <li><%= trail.distance %>km</li>
