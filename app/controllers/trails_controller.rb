@@ -9,12 +9,12 @@ class TrailsController < ApplicationController
   end
 
   # private
-  # def set_watch
-  #   @watch = Watch.find(params[:id])
-  #   authorize(@watch)
+  # def set_trail
+  #   @trail = Trail.find(params[:id])
+  #   authorize(@trail)
   # end
 
-  # def watch_params
-  #   params.require(:watch).permit(:id, :name, :style, :location, :price)
+  # def trail_params
+  #   params.require(:trail).permit(:id, :name, :style, :location, :photos: [])
   # end
 end
