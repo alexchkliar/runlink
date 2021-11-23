@@ -4,9 +4,13 @@
 <li><%= @trail.difficulty %></li>
 <li><%= @trail.rating %> ⋆⋆⋆⋆⋆</li>
 
-<h2>Pick some users to run with!</h2>
-<% @users.each do |user|%>
-  <ul>
-    <li><%= link_to user.first_name, user_path(user) %></li>
-  </ul>
+<h2>Pick a date to run and some users to run with!</h2>
+<%= simple_form_for([@trail, @run]) do |f| %>
+  <%#= f.error_notification %>
+  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= f.input :date %>
+  <%= f.simple_fields_for :run_participants do |rp| %>
+    <%= rp.input :user, as: :select, collection: @users %>
+  <% end %>
+  <%= f.submit %>
 <% end %>
