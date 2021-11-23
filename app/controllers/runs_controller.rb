@@ -1,7 +1,7 @@
 class RunsController < ApplicationController
   def new
     @trail = Trail.find(params[:trail_id])
-    @users = User.all.map { |user| [user.full_name, user.id] } # exclude current user
+    @users = User.all.map { |user| [user.name, user.id] } # exclude current user
     @run = Run.new
     # @run_participant = RunParticipant.new
     @run.run_participants.build
@@ -11,22 +11,20 @@ class RunsController < ApplicationController
   end
 
   def create
-    raise
     @run = Run.new(run_params)
-    #set current user as creator
+    @trail = Trail.find(params[:trail_id])
+    @run.trail = @trail
 
-    #trail id comes fom
-
-    # @booking.user = current_user
-
-    # @watch = Watch.find(params[:watch_id])
-    # @booking.watch = @watch
-    # authorize(@booking)
-    # if @booking.save
-    #   redirect_to my_bookings_path, notice: 'Booking was successfully created.'
-    # else
-    #   render :new
-    # end
+    if @run.save
+      @creator = RunParticipant.new
+      @creator.run = @run
+      @creator.user = current_user
+      @creator.creator = true
+      @creator.save
+      raise
+    else
+      render :new
+    end
   end
 
   def my_runs
@@ -37,6 +35,8 @@ class RunsController < ApplicationController
 
   private
   def run_params
-    params.require(:booking).permit(:date) # check how to tweak strong params with nested attributes
+    # params.require(:booking).permit(:date) # check how to tweak strong params with nested attributes
+    # params.require(:measurement).permit(:name, :groundtruth => [:type, :coordinates => []])
+    params.require(:run).permit(:date, run_participants_attributes: [:id, :user_id])
   end
 end
