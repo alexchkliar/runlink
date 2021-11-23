@@ -4,4 +4,9 @@
 <li><%= @trail.difficulty %></li>
 <li><%= @trail.rating %> ⋆⋆⋆⋆⋆</li>
 
-<h2><%= @trail.name %></li></h2>
+<h2>Pick some users to run with!</h2>
+<% @users.each do |user|%>
+  <ul>
+    <li><%= link_to user.first_name, user_path(user) %></li>
+  </ul>
+<% end %>
