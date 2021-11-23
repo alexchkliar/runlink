@@ -7,6 +7,7 @@
     <table >
       <thead>
         <tr>
+          <th>Profile picture</th>
           <th>First name</th>
           <th>Last name</th>
           <th>Gender</th>
@@ -19,6 +20,7 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
+            <td><%= cl_image_tag user.avatar.key, height: 300, width: 400, crop: :fill %></td>
             <td><%= user.first_name %></td>
             <td><%= user.last_name %></td>
             <td><%= user.gender %></td>

@@ -1,4 +1,7 @@
 <h1><%= @trail.name %></li></h1>
+<li><% @trail.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %></li>
 <li><%= @trail.location %></li>
 <li><%= @trail.distance %>km</li>
 <li><%= @trail.difficulty %></li>

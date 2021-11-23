@@ -12,4 +12,6 @@ class User < ApplicationRecord
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
+
+  has_one_attached :avatar
 end

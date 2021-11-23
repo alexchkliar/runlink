@@ -1,6 +1,8 @@
 <div class="container mt-5">
   <h1>
     <p>
+      <%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %>
+      <br>
       <%= @user.first_name %>
       <%= @user.last_name %>
     </p>
