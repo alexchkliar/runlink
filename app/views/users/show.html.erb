@@ -1,2 +1,19 @@
-<h1>@user.first</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container mt-5">
+  <h1>
+    <p>
+      <%= @user.first_name %>
+      <%= @user.last_name %>
+    </p>
+    <p>
+      Gender: <%= @user.gender %>
+      <br>
+      Location: <%= @user.location %>
+      <br>
+      Running Experience Level: <%= @user.running_exp %>
+      <br>
+      Bio: <%= @user.bio %>
+      <br>
+      Birth_date: <%= @user.birth_date %>
+    </p>
+  </h1>
+</div>
