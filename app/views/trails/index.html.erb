@@ -7,5 +7,6 @@
     <li><%= trail.difficulty %></li>
     <li><%= trail.rating %> ⋆⋆⋆⋆⋆</li>
     <li>Posted by: <%#= trail.user.name %>...</li>
+    <li><%= link_to "Organize a run on this trail", new_trail_run_path(trail) %></li>
   </ul>
 <% end %>
