@@ -8,5 +8,10 @@ class User < ApplicationRecord
   has_many :run_participants, dependent: :destroy
   has_many :sent_messages, foreign_key: :sender_id, class_name: 'Message'
   has_many :received_messages, foreign_key: :receiver_id, class_name: 'Message'
+
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+
   has_one_attached :avatar
 end
