@@ -1,2 +1,6 @@
-<h1>Trails#show</h1>
-<p>Find me in app/views/trails/show.html.erb</p>
+<h1><%= @trail.name %></li></h1>
+<li><%= @trail.location %></li>
+<li><%= @trail.distance %>km</li>
+<li><%= @trail.difficulty %></li>
+<li><%= @trail.rating %> ⋆⋆⋆⋆⋆</li>
+<li><%= link_to "Organize a run on this trail", new_trail_run_path(@trail) %></li>

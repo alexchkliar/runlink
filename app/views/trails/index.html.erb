@@ -1,2 +1,12 @@
-<h1>Trails#index</h1>
-<p>Find me in app/views/trails/index.html.erb</p>
+<h1>Select a trail!</h1>
+<% @trails.each do |trail|%>
+  <ul>
+    <li><%= link_to trail.name, trail_path(trail) %></li>
+    <li><%= trail.location %></li>
+    <li><%= trail.distance %>km</li>
+    <li><%= trail.difficulty %></li>
+    <li><%= trail.rating %> ⋆⋆⋆⋆⋆</li>
+    <li>Posted by: <%#= trail.user.name %>...</li>
+    <li><%= link_to "Organize a run on this trail", new_trail_run_path(trail) %></li>
+  </ul>
+<% end %>
