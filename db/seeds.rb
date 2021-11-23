@@ -7,3 +7,8 @@ puts "Creating users..."
 apu = User.create!(first_name: 'Apu', last_name: 'Nahasapeemapetilon', email: "a@a.a", password: "123456", gender: '', location: '', running_exp: 'Beginner', bio: lorem, last_name: '', birth_date: (Date.current - (365 * 20)))
 bob = User.create!(first_name: 'Bob', last_name: 'Smith', email: "b@b.b", password: "123456", gender: '', location: '', running_exp: 'Intermediate', bio: lorem, last_name: '', birth_date: (Date.current - (365 * 20)))
 chung = User.create!(first_name: 'Chung', last_name: 'Wing', email: "c@c.c", password: "123456", gender: '', location: '', running_exp: 'Advanced', bio: lorem, last_name: '', birth_date: (Date.current - (365 * 20)))
+
+puts "Creating trails..."
+trail1 = Trail.create!(name: "Awesome trail", location: '', distance: 55, rating: 3, user_id: apu.id)
+trail2 = Trail.create!(name: "Amazing trail", location: '', distance: 44, rating: 2, user_id: apu.id)
+trail3 = Trail.create!(name: "Incredible trail", location: '', distance: 33, rating: 1, user_id: apu.id)
