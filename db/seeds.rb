@@ -1,3 +1,5 @@
+require "open-uri"
+
 puts "Cleaning database..."
 User.destroy_all
 Trail.destroy_all
@@ -6,12 +8,34 @@ lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting indust
 
 puts "Creating users..."
 
-apu = User.create!(first_name: 'Apu', last_name: 'Nahasapeemapetilon', email: "a@a.a", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: lorem, birth_date: (Date.current - (365 * 20)))
-bob = User.create!(first_name: 'Bob', last_name: 'Smith', email: "b@b.b", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Intermediate', bio: lorem, birth_date: (Date.current - (365 * 20)))
-chung = User.create!(first_name: 'Chung', last_name: 'Wing', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: lorem, birth_date: (Date.current - (365 * 20)))
+file = URI.open('https://media.newyorker.com/photos/5a0dd9b7ae84d238abda66cb/2:2/w_898,h_898,c_limit/Hsu-Soft-Racism-of-Apu.jpg')
+apu = User.new(first_name: 'Apu', last_name: 'Nahasapeemapetilon', email: "a@a.a", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: lorem, birth_date: (Date.current - (365 * 20)))
+apu.avatar.attach(io: file, filename: 'apu_avatar.jpg', content_type: 'image/jpg')
+apu.save!
+
+file = URI.open('https://gray-wect-prod.cdn.arcpublishing.com/resizer/kzbGJWyTP-lca92kPhGFaf9PdlY=/980x0/smart/filters:quality(85)/cloudfront-us-east-1.images.arcpublishing.com/gray/QP4FUAD5WBG4ROSL7ZE2XOOP4E.jpg')
+bob = User.new(first_name: 'Bob', last_name: 'Smith', email: "b@b.b", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Intermediate', bio: lorem, birth_date: (Date.current - (365 * 20)))
+bob.avatar.attach(io: file, filename: 'bob_avatar.jpg', content_type: 'image/jpg')
+bob.save!
+
+file = URI.open('https://biographymask.com/wp-content/uploads/2021/01/Hyun-Bin-actor.jpg')
+chung = User.new(first_name: 'Chung', last_name: 'Wing', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: lorem, birth_date: (Date.current - (365 * 20)))
+chung.avatar.attach(io: file, filename: 'chung_avatar.jpg', content_type: 'image/jpg')
+chung.save!
 
 puts "Creating trails..."
-plateau = Trail.create!(name: "Awesome trail", location: 'Plateau Mont-Royal', distance: 55, rating: 3, user_id: apu.id, difficulty: 5)
-vieux = Trail.create!(name: "Amazing trail", location: 'Vieux-Port', distance: 44, rating: 2, user_id: apu.id, difficulty: 9)
-chinatown = Trail.create!(name: "Incredible trail", location: 'Chinatown', distance: 33, rating: 1, user_id: apu.id, difficulty: 10)
 
+file = URI.open('http://site.ieee.org/pimrc-2017/files/2017/05/mount-royal-park-gomontrealtourism.com_.jpg')
+plateau = Trail.new(name: "Awesome trail", location: 'Plateau Mont-Royal', distance: 55, rating: 3, user_id: apu.id, difficulty: 5)
+plateau.photo.attach(io: file, filename: 'plateau_photo.jpg', content_type: 'image/jpg')
+plateau.save!
+
+file = URI.open('https://cdn.theculturetrip.com/wp-content/uploads/2020/03/g6cy3f-650x433.jpg')
+vieux = Trail.new(name: "Amazing trail", location: 'Vieux-Port', distance: 44, rating: 2, user_id: apu.id, difficulty: 9)
+vieux.photo.attach(io: file, filename: 'vieux_photo.jpg', content_type: 'image/jpg')
+vieux.save!
+
+file = URI.open('https://www.tripsavvy.com/thmb/SEUzsEb6kmZ83WC0a2tdAhvu2XU=/1589x1067/filters:no_upscale():max_bytes(150000):strip_icc()/montreal-chinatown-walking-tour-city-limits-friendship-arches-gates-george-rose-getty-589a305a3df78caebc5bd0ce.jpg')
+chinatown = Trail.new(name: "Incredible trail", location: 'Chinatown', distance: 33, rating: 1, user_id: apu.id, difficulty: 10)
+chinatown.photo.attach(io: file, filename: 'chinatown.jpg', content_type: 'image/jpg')
+chinatown.save!
