@@ -12,7 +12,9 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+  <% unless action_name == "messages#my_messages" %>
+   <%= render 'shared/navbar' %>
+  <% end %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
