@@ -1,38 +1,34 @@
+.container-login {
+  padding: 0 20px;
+}
 
 .container-login h1 {
   font-family: Rasa;
-  font-size: 80px;
+  font-size: 90px;
   text-align: center;
   font-weight: 600;
   color: #00296B;
 }
 
-.container-login {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.simple-form-login input {
-  font-family: 'Reem Kufi';
+.form-inputs input {
+  font-family: Reem Kufi;
   border-radius: 16px;
-  margin: 0 auto;
-  width: 300px;
 }
-
-
-.btn-runlink input {
+.btn-runlink {
   font-family: Rasa;
   background-color: #003F88;
   color: white;
   padding: 15px 20px;
   font-size: 26px;
   border-radius: 16px;
-  width: 300px;
 }
 
-.btn-runlink input:hover {
+.btn-runlink:hover {
   color: black;
+}
+
+.link-to-sighup {
+  font-family: Reem Kufi;
 }
 
 // #user-email
