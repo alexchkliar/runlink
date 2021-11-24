@@ -1,2 +1,20 @@
-<h1>Runs#my_runs</h1>
-<p>Find me in app/views/runs/my_runs.html.erb</p>
+<h1>My runs</h1>
+<% @runs.each do |run| %>
+  <ul>
+    <% run.trail.photos.each do |photo| %>
+      <li><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></li>
+    <% end %>
+    <li><%= link_to run.trail.name, my_run_path(run) %></li>
+    <li>Date & time: <%= run.date %></li>
+    <li> <%= run.run_participants.length %> runners participating</li>
+    <li><%= run.trail.location %></li>
+    <li>Organizer: <%#= run.run_participants.find_by(creator: true).user.name %> </li>
+    <li>Distance: <%= run.trail.distance %>km</li>
+    <li>Difficulty: <%= run.trail.difficulty %></li>
+    <li>
+      <% run.trail.rating.ceil.times do %>
+        <%="⋆"%>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
