@@ -1,17 +1,23 @@
 
 .container-login h1 {
   font-family: Rasa;
-  font-size: 96px;
+  font-size: 80px;
   text-align: center;
   font-weight: 600;
   color: #00296B;
 }
 
-.form-inputs-login input {
+.container-login {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.simple-form-login input {
   font-family: 'Reem Kufi';
   border-radius: 16px;
   margin: 0 auto;
-  width: 500px;
+  width: 300px;
 }
 
 
@@ -19,17 +25,14 @@
   font-family: Rasa;
   background-color: #003F88;
   color: white;
-  padding: 15px 32px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  padding: 15px 20px;
+  font-size: 26px;
   border-radius: 16px;
-  margin: 0 auto;
+  width: 300px;
 }
 
 .btn-runlink input:hover {
   color: black;
-  margin: 0 auto;
 }
 
 // #user-email

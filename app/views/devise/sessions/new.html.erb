@@ -1,25 +1,27 @@
 <div class="container-login">
-<h1>RunLink</h1>
+  <h1>RunLink</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs-login">
-    <%= f.input :email,
-                label: false,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-                <%= f.input :password,
-                label: false,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div class="simple-form-login">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= f.input :email,
+                    label: false,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+                    <%= f.input :password,
+                    label: false,
+                    required: false,
+                    input_html: { autocomplete: "current-password" } %>
+  </div>
+  <div class="remember-me">
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions-login btn-runlink">
-    <%= f.button :submit, "Sign in" %>
+  <div class="btn-runlink">
+      <%= f.button :submit, "Sign in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
+  <% end %>
+  <div class="devise-links">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
