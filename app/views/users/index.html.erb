@@ -28,9 +28,9 @@
             <td><%= user.running_exp %></td>
             <td><%= user.bio %></td>
             <td><%= link_to 'Show', user %></td>
-            <%# unless policy(user).owner? %>
+            <% unless user == current_user %>%
               <td><%= link_to 'Message', my_messages_path(receiver_id: user.id)%></td>
-            <%# end %>
+            <% end %>
 
             <%# if policy(user).edit? %>
               <td><%#= link_to 'Edit', edit_user_path(user) %></td>
