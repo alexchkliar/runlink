@@ -1,0 +1,30 @@
+.banner-header {
+  display: flex;
+  height: 30vh;
+  margin-bottom: 100px;
+  align-items: center;
+  background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/new-york-city-two-men-running-on-coney-island-royalty-free-image-686735695-1534264933.jpg?crop=1.00xw:0.767xh;0,0.233xh&resize=1200:*');
+  background-position: 50% 50%;
+  background-size: cover;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.banner-heading {
+  font-size: 27px;
+  color: white;
+  margin-bottom: 8px;
+  text-shadow: black 1px 1px 19px;
+}
+
+.banner-slogan {
+  color: white;
+  text-shadow: black 1px 1px 19px;
+}
+
+
+.banner-header .btn {
+  margin-top: 24px;
+  border-radius: 16px;
+  width: 200px;
+}
