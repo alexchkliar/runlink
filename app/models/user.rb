@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :sent_messages, foreign_key: :sender_id, class_name: 'Message'
   has_many :received_messages, foreign_key: :receiver_id, class_name: 'Message'
 
-  def full_name
+  def name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
 

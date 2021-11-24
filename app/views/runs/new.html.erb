@@ -10,7 +10,9 @@
   <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :date %>
   <%= f.simple_fields_for :run_participants do |rp| %>
-    <%= rp.input :user, as: :select, collection: @users %>
+    <%#= rp.association :user, :collection => User.all(:order => 'name'), :prompt => "Choose a Company" %>
+    <%= rp.association :user, collection: @users %>
+    <%#= rp.input :user, as: :select, collection: @users %>
   <% end %>
   <%= f.submit %>
 <% end %>
