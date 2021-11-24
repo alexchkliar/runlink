@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_183200) do
+ActiveRecord::Schema.define(version: 2021_11_23_224626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,13 +51,13 @@ ActiveRecord::Schema.define(version: 2021_11_23_183200) do
     t.boolean "creator"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status"
     t.index ["run_id"], name: "index_run_participants_on_run_id"
     t.index ["user_id"], name: "index_run_participants_on_user_id"
   end
 
   create_table "runs", force: :cascade do |t|
     t.bigint "trail_id", null: false
-    t.boolean "status"
     t.datetime "date"
     t.integer "duration"
     t.datetime "created_at", precision: 6, null: false

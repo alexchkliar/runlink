@@ -12,4 +12,12 @@ class UserPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def complete_profile?
+    true
+  end
+
+  def update_profile?
+    true
+  end
 end
