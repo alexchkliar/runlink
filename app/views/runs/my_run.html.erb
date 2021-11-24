@@ -5,7 +5,12 @@
     <li><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></li>
   <% end %>
   <li><%= link_to @run.trail.location, trail_path(@run.trail) %></li>
-  <li>Organizer: <%#= @run.run_participants.find_by(creator: true).user.name %> </li>
+  <li>Organizer:
+    <%= link_to @organizer.name, user_path(@organizer) %>
+    <% if @organizer == current_user %>
+      <%= "(you)" %>
+    <% end %>
+  </li>
   <li>Distance: <%= @run.trail.distance %>km</li>
   <li>Difficulty: <%= @run.trail.difficulty %></li>
   <li>
@@ -16,7 +21,14 @@
 
 <h2> <%= @run.run_participants.length %> runners participating: </h2>
 <ul>
-  <% @run.run_participants.each do |participant| %>
-    <li><%= link_to participant.user.name, user_path(participant.user) %></li>
+  <% if @participant_users.include?(current_user) %>
+    <li><%= link_to current_user.name, user_path(current_user) %>
+    <%= "(you)" %></li>
+  <% end %>
+  <% @participant_users.each do |participant| %>
+    <% unless participant == current_user %>
+      <li><%= link_to participant.name, user_path(participant) %>
+    <% end %>
+    </li>
   <% end %>
 </ul>

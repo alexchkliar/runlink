@@ -18,7 +18,7 @@ bob = User.new(first_name: 'Bob', last_name: 'Smith', email: "b@b.b", password: 
 bob.avatar.attach(io: file, filename: 'bob_avatar.jpg', content_type: 'image/jpg')
 bob.save!
 
-file = URI.open('https://biographymask.com/wp-content/uploads/2021/01/Hyun-Bin-actor.jpg')
+file = URI.open('https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1098,format=auto/sites/default/files/styles/1200x800/public/d8/images/methode/2020/09/28/bacf5910-fbc9-11ea-9bb5-57ca6b07e40a_image_hires_112149.jpeg?itok=HSahIiN6&v=1601263315')
 chung = User.new(first_name: 'Chung', last_name: 'Wing', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: lorem, birth_date: (Date.current - (365 * 20)))
 chung.avatar.attach(io: file, filename: 'chung_avatar.jpg', content_type: 'image/jpg')
 chung.save!
@@ -44,8 +44,20 @@ puts "Creating runs..."
 run1 = Run.create!(trail_id: plateau.id, date: DateTime.current)
 
 puts "Creating run participants..."
-run1_participant1 = RunParticipant.new(user_id: apu.id, run_id: run1.id, status: 1, creator: true)
-run1_participant2 = RunParticipant.new(user_id: bob.id, run_id: run1.id, status: 1, creator: false)
-run1_participant3 = RunParticipant.new(user_id: chung.id, run_id: run1.id, status: 1, creator: false)
+
+run1_participant1 = RunParticipant.create!(user_id: apu.id, run_id: run1.id, status: 1, creator: true)
+run1_participant2 = RunParticipant.create!(user_id: bob.id, run_id: run1.id, status: 1, creator: false)
+run1_participant3 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: false)
 
 puts "Done seeding!"
+
+message_1 = Message.new(sender_id: 1, receiver_id: 2, content: "Hello friend!")
+message_1.save!
+message_2 = Message.new(sender_id: 2, receiver_id: 1, content: "Hey dude!")
+message_2.save!
+message_3 = Message.new(sender_id: 1, receiver_id: 2, content: "Good evening!")
+message_3.save!
+message_4 = Message.new(sender_id: 1, receiver_id: 3, content: "Wanna go jog?")
+message_4.save!
+message_5 = Message.new(sender_id: 2, receiver_id: 3, content: "What's up?")
+message_5.save!

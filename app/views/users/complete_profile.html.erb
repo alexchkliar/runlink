@@ -1,19 +1,20 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-    <div class="simple-form">
+      <h1 class="text-center mt-5">running profile</h1>
+    <div class="simple-form-complete-profile">
       <%= simple_form_for(@user) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :gender %>
-        <%= f.input :location %>
-        <%= f.input :running_exp %>
-        <%= f.input :bio %>
+        <%= f.input :first_name, label: false, placeholder: "First name" %>
+        <%= f.input :last_name, label: false, placeholder: "Last name" %>
+        <%= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>
+        <%= f.input :location, label: false, placeholder: "Location" %>
+        <%= f.input :running_exp, label: false, prompt: "Select your running experience", collection: ["Beginner","Intermediate", "Advanced"] %>
+        <%= f.input :bio, label: false, placeholder: "Bio" %>
         <%= f.input :birth_date %>
         <%= f.input :avatar, as: :file %>
-       <%= f.submit "Complete Profile" %>
+       <%= f.submit "Complete Profile", class: "btn-complete d-block w-100" %>
       <% end %>
     </div>
   </div>

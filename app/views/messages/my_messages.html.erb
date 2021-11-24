@@ -1,0 +1,41 @@
+
+<div class="container">
+  <h1 class="img-responsive center-block">
+    <%= cl_image_tag User.find(params[:receiver_id]).avatar.key, height: 300, width: 400, crop: :fill %>
+  </h1>
+</div>
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Messages</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <div>
+          <td>
+            <% @messages.each do |message| %>
+              <% if message.sender_id == current_user.id%>
+                <div class="text-left"><%= message.content %></div>
+                <br>
+              <% else %>
+                <div class="text-right"><%= message.content %></div>
+              <% end %>
+            <% end %>
+          </td>
+        </div>
+
+          <%# if policy(user).edit? %>
+            <td><%#= link_to 'Edit', edit_user_path(user) %></td>
+          <%# end %>
+          <%# if policy(restaurant).destroy? %>
+            <td><%#= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%# end %>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

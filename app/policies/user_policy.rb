@@ -20,4 +20,8 @@ class UserPolicy < ApplicationPolicy
   def update_profile?
     true
   end
+
+  def owner?
+    record.user == user
+  end
 end
