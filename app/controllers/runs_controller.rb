@@ -35,8 +35,6 @@ class RunsController < ApplicationController
 
   private
   def run_params
-    # params.require(:booking).permit(:date) # check how to tweak strong params with nested attributes
-    # params.require(:measurement).permit(:name, :groundtruth => [:type, :coordinates => []])
     params.require(:run).permit(:date, run_participants_attributes: [:id, :user_id])
   end
 end
