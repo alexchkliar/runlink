@@ -1,10 +1,10 @@
 require "open-uri"
 
+lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
 puts "Cleaning database..."
 User.destroy_all
 Trail.destroy_all
-
-lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
 puts "Creating users..."
 
@@ -39,5 +39,13 @@ file = URI.open('https://www.tripsavvy.com/thmb/SEUzsEb6kmZ83WC0a2tdAhvu2XU=/158
 chinatown = Trail.new(name: "Incredible trail", location: 'Chinatown', distance: 33, rating: 1, user_id: apu.id, difficulty: 10)
 chinatown.photos.attach(io: file, filename: 'chinatown.jpg', content_type: 'image/jpg')
 chinatown.save!
+
+puts "Creating runs..."
+run1 = Run.create!(trail_id: plateau.id, date: DateTime.current)
+
+puts "Creating run participants..."
+run1_participant1 = RunParticipant.new(user_id: apu.id, run_id: run1.id, status: 1, creator: true)
+run1_participant2 = RunParticipant.new(user_id: bob.id, run_id: run1.id, status: 1, creator: false)
+run1_participant3 = RunParticipant.new(user_id: chung.id, run_id: run1.id, status: 1, creator: false)
 
 puts "Done seeding!"

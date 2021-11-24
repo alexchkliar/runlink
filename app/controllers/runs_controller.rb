@@ -19,16 +19,18 @@ class RunsController < ApplicationController
       @creator.user = current_user
       @creator.creator = true
       @creator.save
-      raise
+      redirect_to my_run_path(@run), notice: 'Run session was successfully created.'
     else
       render :new
     end
   end
 
   def my_runs
+    @runs = Run.all
   end
 
   def my_run
+    @run = Run.find(params[:id])
   end
 
   private
