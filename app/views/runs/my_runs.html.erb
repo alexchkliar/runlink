@@ -8,7 +8,12 @@
     <li>Date & time: <%= run.date %></li>
     <li> <%= run.run_participants.length %> runners participating</li>
     <li><%= run.trail.location %></li>
-    <li>Organizer: <%#= run.run_participants.find_by(creator: true).user.name %> </li>
+    <li>Organizer:
+      <%= link_to run.run_participants.find_by(creator: true).user.name, user_path(run.run_participants.find_by(creator: true).user) %>
+      <% if run.run_participants.find_by(creator: true).user == current_user %>
+        <%= "(you)" %>
+      <% end %>
+    </li>
     <li>Distance: <%= run.trail.distance %>km</li>
     <li>Difficulty: <%= run.trail.difficulty %></li>
     <li>

@@ -11,8 +11,7 @@
   <%= f.input :date %>
   <%= f.simple_fields_for :run_participants do |rp| %>
     <%#= rp.association :user, :collection => User.all(:order => 'name'), :prompt => "Choose a Company" %>
-    <%= rp.association :user %>
-
+    <%= rp.association :user, collection: @users %>
     <%#= rp.input :user, as: :select, collection: @users %>
   <% end %>
   <%= f.submit %>

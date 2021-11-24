@@ -2,7 +2,8 @@ class MessagesController < ApplicationController
   def all_messages
   end
 
-  def index
+  def my_messages
+    @messages = policy_scope(Message)
   end
 
   def create
