@@ -8,7 +8,7 @@
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <%= f.input :first_name, label: false, placeholder: "First name" %>
         <%= f.input :last_name, label: false, placeholder: "Last name" %>
-        <%= f.input :gender, label: false, prompt: "Select your gender", collection: ["Male","Female"] %>
+        <%= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>
         <%= f.input :location, label: false, placeholder: "Location" %>
         <%= f.input :running_exp, label: false, prompt: "Select your running experience", collection: ["Beginner","Intermediate", "Advanced"] %>
         <%= f.input :bio, label: false, placeholder: "Bio" %>
