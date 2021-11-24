@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def complete_profile
+
   end
 
   def update_profile
