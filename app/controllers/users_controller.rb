@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def update_profile
     if @user.update(user_params)
-      redirect_to @user, notice: 'User profile was successfully updated.'
+      redirect_to users_path, notice: 'User profile was successfully updated.'
     else
       render :complete_profile
     end
