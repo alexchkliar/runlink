@@ -11,7 +11,7 @@ Trail.destroy_all
 puts "Creating users..."
 
 file = URI.open('https://data.whicdn.com/images/339247802/original.jpg')
-apu = User.new(first_name: 'Sarah', last_name: 'Van Sugardaddy', email: "a@a.a", password: "123456", gender: 'Female', location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio:, birth_date: (Date.current - (365 * 20)))
+apu = User.new(first_name: 'Sarah', last_name: 'Van Sugardaddy', email: "a@a.a", password: "123456", gender: 'Female', location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: sarah_bio, birth_date: (Date.current - (365 * 20)))
 apu.avatar.attach(io: file, filename: 'apu_avatar.jpg', content_type: 'image/jpg')
 apu.save!
 
