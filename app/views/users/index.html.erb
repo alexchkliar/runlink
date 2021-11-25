@@ -1,6 +1,5 @@
-
 <div class="container mt-5">
-  <h1>Users</h1>
+  <h1>Find runners</h1>
 
 
   <div class="table">
@@ -45,3 +44,26 @@
     </table>
   </div>
 </div>
+
+
+<% @users.each do |user| %>
+  <div>
+    <div class="profile-card-container">
+      <div class="card-profile-info">
+        <div class="profile-img"><%= cl_image_tag user.avatar.key %></div>
+        <div class="profile-info">
+          <p><%= user.first_name %>, <%= Time.zone.now.year - user.birth_date.year %></p>
+          <p><%= user.running_exp %></p>
+          <p><%= user.location %></p>
+        </div>
+      </div>
+      <div class="profile-bio">
+        <p><%= user.bio %></p>
+      </div>
+      <div class="card-buttons">
+        <%= link_to "Follow", "#" %>
+        <%= link_to "Message", my_messages_path(receiver_id: user.id) %>
+      </div>
+    </div>
+  </div>
+<% end %>
