@@ -2,6 +2,7 @@
   <h1>Find runners</h1>
 
   <% @users.each do |user| %>
+  <% unless user == current_user %>
   <div>
     <div class="profile-card-container">
       <div class="card-profile-info">
@@ -20,7 +21,7 @@
         <%= link_to "Message", my_messages_path(receiver_id: user.id) %>
       </div>
     </div>
-
+  <% end %>
   </div>
 <% end %>
 
