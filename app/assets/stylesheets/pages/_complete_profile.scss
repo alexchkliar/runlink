@@ -7,12 +7,10 @@
   padding-bottom: 20px;
 }
 
-.form-inputs-complete {
-  input, textarea {
-    font-family: Reem Kufi;
-    border-radius: 12px;
-    color: black;
-  }
+#user_first_name, #user_last_name, #user_location, #user_bio {
+  font-family: Reem Kufi;
+  border-radius: 12px;
+  color: black;
 }
 
 .btn-complete {

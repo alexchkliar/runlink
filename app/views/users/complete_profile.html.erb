@@ -8,13 +8,13 @@
       <%= f.input :last_name, label: false, placeholder: "What is your last name?" %>
       <%= f.input :location, label: false, placeholder: "Where do you live?" %>
       <div class="select-rounded">
-        <%= f.input :running_exp, label: false, prompt: "Select your running experience", collection: ["Beginner","Intermediate", "Advanced"] %>
+        <%= f.input :running_exp, label: false, prompt: "What is your running experience?", collection: ["Beginner","Intermediate", "Advanced"] %>
       </div>
       <%= f.input :bio, label: false, placeholder: "Bio" %>
       <%= f.input :birth_date %>
       <%= f.input :avatar, as: :file %>
     </div>
-      <%= f.submit "Complete Profile", class: "btn-complete d-block w-100" %>
+      <%= f.submit "Find runners", class: "btn-complete d-block w-100" %>
         <% end %>
     </div>
   </div>
