@@ -1,0 +1,31 @@
+.participating-runners-header {
+  margin: 20px 0 5px 0;
+}
+
+.runners-list, .run-participants-list {
+  margin-bottom: 20px;
+}
+
+.run-participants-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.run-participants-list img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px 0 10px;
+  padding: 0;
+}
+
+.participant-profile {
+  display: flex;
+  align-items: center;
+  outline: 2px solid $main-color;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 0 10px 0;
+  margin: 0 0 7px 0;
+  border-radius: 10px;
+  background-color: white;
+}
