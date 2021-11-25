@@ -1,6 +1,8 @@
 require "open-uri"
 
-lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+sarah_bio = "Hey! My name’s Sarah I love running and meeting new people. Let’s connect and go for a run together <3"
+john_bio = "Yoo! My name’s John I love partying. I get drunk a lot on the weekends so I figure I should run more. Let’s link up and go for a run then get drunk bro!"
+bob_bio = "Hi I'm Bob. Uh.. I'm really weird and have no friends. I picked running as a hobby to be more social but I can't run."
 
 puts "Cleaning database..."
 User.destroy_all
@@ -8,18 +10,18 @@ Trail.destroy_all
 
 puts "Creating users..."
 
-file = URI.open('https://media.newyorker.com/photos/5a0dd9b7ae84d238abda66cb/2:2/w_898,h_898,c_limit/Hsu-Soft-Racism-of-Apu.jpg')
-apu = User.new(first_name: 'Apu', last_name: 'Nahasapeemapetilon', email: "a@a.a", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: lorem, birth_date: (Date.current - (365 * 20)))
+file = URI.open('https://data.whicdn.com/images/339247802/original.jpg')
+apu = User.new(first_name: 'Sarah', last_name: 'Van Sugardaddy', email: "a@a.a", password: "123456", gender: 'Female', location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: sarah_bio, birth_date: (Date.current - (365 * 20)))
 apu.avatar.attach(io: file, filename: 'apu_avatar.jpg', content_type: 'image/jpg')
 apu.save!
 
-file = URI.open('https://gray-wect-prod.cdn.arcpublishing.com/resizer/kzbGJWyTP-lca92kPhGFaf9PdlY=/980x0/smart/filters:quality(85)/cloudfront-us-east-1.images.arcpublishing.com/gray/QP4FUAD5WBG4ROSL7ZE2XOOP4E.jpg')
-bob = User.new(first_name: 'Bob', last_name: 'Smith', email: "b@b.b", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Intermediate', bio: lorem, birth_date: (Date.current - (365 * 20)))
+file = URI.open('https://i.kym-cdn.com/photos/images/newsfeed/001/374/185/fd4.png')
+bob = User.new(first_name: 'Bob', last_name: 'Dickson', email: "b@b.b", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Intermediate', bio: bob_bio, birth_date: (Date.current - (365 * 20)))
 bob.avatar.attach(io: file, filename: 'bob_avatar.jpg', content_type: 'image/jpg')
 bob.save!
 
-file = URI.open('https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1098,format=auto/sites/default/files/styles/1200x800/public/d8/images/methode/2020/09/28/bacf5910-fbc9-11ea-9bb5-57ca6b07e40a_image_hires_112149.jpeg?itok=HSahIiN6&v=1601263315')
-chung = User.new(first_name: 'Chung', last_name: 'Wing', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: lorem, birth_date: (Date.current - (365 * 20)))
+file = URI.open('https://2.bp.blogspot.com/-n7J_nAA313c/WhwK_qVk_aI/AAAAAAAABZg/2GiiQJnHDxUE4zmWgfFTTrrdC9VeI-BtACLcBGAs/s1600/alphablackmen_2016-04-06_01-33-53.jpg')
+chung = User.new(first_name: 'John', last_name: 'Chadson', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: john_bio, birth_date: (Date.current - (365 * 20)))
 chung.avatar.attach(io: file, filename: 'chung_avatar.jpg', content_type: 'image/jpg')
 chung.save!
 

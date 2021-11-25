@@ -12,11 +12,10 @@
   </head>
 
   <body>
-  <% unless action_name == "my_messages" %>
+  <% unless action_name == "my_messages" || action_name == "new_user_session" || action_name == "new_user_registration" %>
    <%= render 'shared/navbar' %>
   <% end %>
-    <%= render 'shared/flashes' %>
-
+  <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
 </html>
