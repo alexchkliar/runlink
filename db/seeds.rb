@@ -44,6 +44,7 @@ puts "Creating runs..."
 run1 = Run.create!(trail_id: plateau.id, date: DateTime.current)
 
 puts "Creating run participants..."
+
 run1_participant1 = RunParticipant.create!(user_id: apu.id, run_id: run1.id, status: 1, creator: true)
 run1_participant2 = RunParticipant.create!(user_id: bob.id, run_id: run1.id, status: 1, creator: false)
 run1_participant3 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: false)

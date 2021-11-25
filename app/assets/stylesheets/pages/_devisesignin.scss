@@ -1,0 +1,34 @@
+.container-login {
+  padding: 0 20px;
+}
+
+.container-login h1 {
+  font-family: Rasa;
+  font-size: 90px;
+  text-align: center;
+  font-weight: 600;
+  color: #00296B;
+}
+
+.form-inputs input {
+  font-family: Reem Kufi;
+  border-radius: 12px;
+}
+.btn-runlink {
+  font-family: Rasa;
+  background-color: #003F88;
+  color: white;
+  padding: 15px 20px;
+  font-size: 26px;
+  border-radius: 16px;
+}
+
+.btn-runlink:hover {
+  color: black;
+}
+
+.link-to-sighup {
+  font-family: Reem Kufi;
+}
+
+// #user-email

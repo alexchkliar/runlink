@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :users, only: [:index, :show] do
-    resources :messages, only: [:index, :create]
+  resources :users, only: %i[index show] do
+    resources :messages, only: %i[index create]
   end
 
-  resources :trails, only: [:index, :show] do
-    resources :runs, only: [:new, :create]
+  resources :trails, only: %i[index show] do
+    resources :runs, only: %i[new create]
   end
 
   get "/my_messages", to:"messages#my_messages", as: :my_messages
