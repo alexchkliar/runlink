@@ -7,14 +7,10 @@ h1 {
   font-weight: 700;
   margin: 10px 0 10px 0;
   padding-left: 10px;
+  color: $main-color;
 }
 
-p {
-  margin: 0;
-}
-
-ul,
-li {
+ul, li, p, h2 {
   margin: 0;
   padding: 0;
 }
