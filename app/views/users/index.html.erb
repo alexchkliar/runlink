@@ -1,9 +1,7 @@
-<div class="container mt-5">
-  <h1>Find runners</h1>
+<h1>Find runners</h1>
 
-  <% @users.each do |user| %>
+<% @users.each do |user| %>
   <% unless user == current_user %>
-  <div>
     <div class="profile-card-container">
       <div class="card-profile-info">
         <div class="profile-img"><%= cl_image_tag user.avatar.key %></div>
@@ -13,20 +11,13 @@
           <p><%= user.location %></p>
         </div>
       </div>
-
       <div class="profile-card-bottom">
-        <div class="profile-bio">
-          <p><%= user.bio %></p>
-        </div>
+        <div class="profile-bio"><%= user.bio %></div>
         <div class="card-buttons">
           <%= link_to "Follow", "#" %>
           <%= link_to "Message", chatroom_path(1) %>
         </div>
-
       </div>
     </div>
   <% end %>
-  </div>
 <% end %>
-
-</div>
