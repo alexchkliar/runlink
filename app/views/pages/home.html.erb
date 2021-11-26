@@ -2,8 +2,7 @@
   <div class="banner-header">
     <div class="banner-heading">It's your time to shine.</div>
     <div class="banner-slogan">Connect with other runners in your area!</div>
-    <% if user_signed_in? %>
-     <% unless user.first_name.nil? %>
+    <% if user_signed_in? && current_user.first_name != nil %>
       <%= link_to "Find Runners", users_path, class:"btn btn-light"%>
     <% else %>
       <%= link_to "Join Now", new_user_registration_path, class:"btn btn-light" %>
