@@ -1,7 +1,7 @@
 <h1>Find runners</h1>
 
 <% @users.each do |user| %>
-  <% unless user == current_user %>
+  <% unless user == current_user || user.first_name.nil? %>
     <div class="profile-card-container">
       <div class="card-profile-info">
         <div class="profile-img"><%= cl_image_tag user.avatar.key %></div>
