@@ -2,6 +2,11 @@
   justify-content: space-between;
   background: white;
 }
+#runlink-logo {
+  font-family: 'Rasa';
+  color: #00296B;
+  text-decoration: none;
+}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -9,9 +14,4 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-}
-
-.navbar-heading {
-  font-family: 'Rasa';
-  color: #00296B;
 }
