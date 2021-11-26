@@ -26,21 +26,12 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-// import flatpickr from "flatpickr";
 import { initFlatpickr } from "../plugins/initflatpickr";
-import flatpickr from "flatpickr";
 import { initChatroomCable } from "../channels/chatroom_channel";
+import { closeAlerts } from "../components/alert";
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initFlatpickr();
   initChatroomCable();
+  initFlatpickr();
+  closeAlerts();
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-  flatpickr('#run_date', {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
-  })
-})

@@ -6,10 +6,10 @@
   <%= simple_form_for([@trail, @run]) do |f| %>
     <%#= f.error_notification %>
     <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.input :date, as: :string %>
+    <%= f.input :date, required: true, as: :string %>
     <%= f.simple_fields_for :run_participants do |rp| %>
       <%#= rp.association :user, :collection => User.all(:order => 'name'), :prompt => "Choose a Company" %>
-      <%= rp.association :user, collection: @users %>
+      <%= rp.association :user, required: true, collection: @users %>
       <%#= rp.input :user, as: :select, collection: @users %>
     <% end %>
     <%= f.submit "Schedule run", class: "btn-create-run d-block w-100" %>
