@@ -1,34 +1,54 @@
-<h1><%= @run.trail.name %> run</h1>
-<ul>
-  <li>Date & time: <%= @run.date %></li>
+<h1><%= @run.trail.name %></h1>
+<div class="new-run-top">
   <% @run.trail.photos.each do |photo| %>
-    <li><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></li>
+    <li><%= cl_image_tag photo.key, height: 180, width: 330, crop: :fill %></li>
   <% end %>
-  <li><%= link_to @run.trail.location, trail_path(@run.trail) %></li>
-  <li>Organizer:
-    <%= link_to @organizer.name, user_path(@organizer) %>
-    <% if @organizer == current_user %>
-      <%= "(you)" %>
-    <% end %>
-  </li>
-  <li>Distance: <%= @run.trail.distance %>km</li>
-  <li>Difficulty: <%= @run.trail.difficulty %></li>
-  <li>
-    <% @run.trail.rating.ceil.times do %>
-      <%="⋆"%>
-    <% end %>
-  </li></ul>
-
-<h2> <%= @run.run_participants.length %> runners participating: </h2>
-<ul>
-  <% if @participant_users.include?(current_user) %>
-    <li><%= link_to current_user.name, user_path(current_user) %>
-    <%= "(you)" %></li>
-  <% end %>
-  <% @participant_users.each do |participant| %>
-    <% unless participant == current_user %>
-      <li><%= link_to participant.name, user_path(participant) %>
-    <% end %>
+  <h2 class="trail-booking-header"><%= @run.trail.location %>, <%= @run.trail.distance %>km</h2>
+  <ul>
+    <li>Date & time: <%= @run.date %></li>
+    <li><%= link_to @run.trail.location, trail_path(@run.trail) %></li>
+    <li>Organizer:
+      <%= link_to @organizer.name, user_path(@organizer) %>
+      <% if @organizer == current_user %>
+        <%= "(you)" %>
+      <% end %>
     </li>
-  <% end %>
-</ul>
+      <%= "Rating: " %>
+      <% @run.trail.difficulty.ceil.times do %>
+        <%="★"%>
+      <% end %>
+      <% (5 - @run.trail.difficulty.ceil).times do %>
+        <%="☆"%>
+      <% end %>
+    </li>
+    <li>
+      <%= "Difficulty: " %>
+      <% @run.trail.rating.ceil.times do %>
+        <%="★"%>
+      <% end %>
+      <% (5 - @run.trail.rating.ceil).times do %>
+        <%="☆"%>
+      <% end %>
+    </li>
+  </ul>
+
+  <h2 class="participating-runners-header"> <%= @run.run_participants.length %> runners participating: </h2>
+  <div class="run-participants-list">
+    <% if @participant_users.include?(current_user) %>
+      <div class="participant-profile">
+        <%= cl_image_tag current_user.avatar.key %>
+        <%= link_to current_user.name, user_path(current_user) %>
+        <%= "(you)" %>
+      </div>
+    <% end %>
+    <% @participant_users.each do |participant| %>
+      <% unless participant == current_user %>
+        <div class="participant-profile">
+          <%= cl_image_tag participant.avatar.key %>
+          <%= link_to participant.name, user_path(participant) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to "Record Run", users_path, class:"btn-create-run d-block w-100 text-center"%>
+</div>
