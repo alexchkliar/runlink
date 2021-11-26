@@ -52,7 +52,7 @@ run1_participant2 = RunParticipant.create!(user_id: bob.id, run_id: run1.id, sta
 run1_participant3 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: false)
 
 puts "Creating chatrooms..."
-chatroom_1 = Chatroom.new(name: "general", user_id: apu.id)
+chatroom_1 = Chatroom.new(name: "general", user_id: apu.id, recipient_id: bob.id)
 chatroom_1.save!
 
 puts "Done seeding"
