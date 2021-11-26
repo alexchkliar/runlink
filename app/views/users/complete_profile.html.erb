@@ -1,5 +1,5 @@
 <div class="container-complete-profile">
-  <h1 class="text-center mt-5">Tell us a little about yourself</h1>
+  <h1 class="text-center">Tell us a little about yourself</h1>
   <%= simple_form_for(@user) do |f| %>
     <div class="form-inputs-complete">
       <%= f.error_notification %>
@@ -11,10 +11,10 @@
         <%= f.input :running_exp, required: true, label: false, prompt: "What is your running experience?", collection: ["Beginner","Intermediate", "Advanced"] %>
       </div>
       <%= f.input :bio, required: true, label: false, placeholder: "Bio" %>
-      <%= f.input :birth_date, required: true %>
+      <%= f.input :birth_date, required: true, start_year: Date.today.year - 121, end_year: Date.today.year %>
       <%= f.input :avatar, required: true, as: :file %>
     </div>
-      <%= f.button :submit, "Find runners", class: "btn-complete d-block w-100" %>
+      <%= f.button :submit, "Find runners", class: "btn-complete d-block w-100"  %>
         <% end %>
     </div>
   </div>
