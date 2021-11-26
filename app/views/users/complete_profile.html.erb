@@ -4,17 +4,17 @@
     <div class="form-inputs-complete">
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <%= f.input :first_name, label: false, placeholder: "What is your first name?" %>
-      <%= f.input :last_name, label: false, placeholder: "What is your last name?" %>
-      <%= f.input :location, label: false, placeholder: "Where do you live?" %>
+      <%= f.input :first_name, required: true, label: false, placeholder: "What is your first name?" %>
+      <%= f.input :last_name, required: true, label: false, placeholder: "What is your last name?" %>
+      <%= f.input :location, required: true, label: false, placeholder: "Where do you live?" %>
       <div class="select-rounded">
-        <%= f.input :running_exp, label: false, prompt: "What is your running experience?", collection: ["Beginner","Intermediate", "Advanced"] %>
+        <%= f.input :running_exp, required: true, label: false, prompt: "What is your running experience?", collection: ["Beginner","Intermediate", "Advanced"] %>
       </div>
-      <%= f.input :bio, label: false, placeholder: "Bio" %>
-      <%= f.input :birth_date %>
-      <%= f.input :avatar, as: :file %>
+      <%= f.input :bio, required: true, label: false, placeholder: "Bio" %>
+      <%= f.input :birth_date, required: true %>
+      <%= f.input :avatar, required: true, as: :file %>
     </div>
-      <%= f.submit "Find runners", class: "btn-complete d-block w-100" %>
+      <%= f.button :submit, "Find runners", class: "btn-complete d-block w-100" %>
         <% end %>
     </div>
   </div>
