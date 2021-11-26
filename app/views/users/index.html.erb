@@ -13,14 +13,16 @@
           <p><%= user.location %></p>
         </div>
       </div>
+
       <div class="profile-card-bottom">
         <div class="profile-bio">
           <p><%= user.bio %></p>
         </div>
         <div class="card-buttons">
           <%= link_to "Follow", "#" %>
-          <%= link_to "Message", my_messages_path(receiver_id: user.id) %>
+          <%= link_to "Message", chatroom_path(current_user) %>
         </div>
+
       </div>
     </div>
   <% end %>

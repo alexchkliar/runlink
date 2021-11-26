@@ -3,9 +3,7 @@ class RunsController < ApplicationController
     @trail = Trail.find(params[:trail_id])
     @users = User.all.excluding(current_user).map { |user| [user.name, user.id] }
     @run = Run.new
-    1.times do
-      @run.run_participants.build
-    end
+    @run.run_participants.build
   end
 
   def create
