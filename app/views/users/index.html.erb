@@ -16,8 +16,10 @@
         <p><%= user.bio %></p>
       </div>
       <div class="card-buttons">
-        <%= link_to "Follow", "#" %>
-        <%= link_to "Message", my_messages_path(receiver_id: user.id) %>
+        <% unless user == current_user %>
+          <%= link_to "Follow", "#" %>
+          <%= link_to "Message", chatroom_path(current_user) %>
+        <% end %>
       </div>
     </div>
 

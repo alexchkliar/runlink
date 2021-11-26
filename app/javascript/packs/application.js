@@ -30,11 +30,13 @@ import "bootstrap";
 // import flatpickr from "flatpickr";
 import { initFlatpickr } from "../plugins/initflatpickr";
 import flatpickr from "flatpickr";
+import { initChatroomCable } from "../channels/chatroom_channel";
 
-// document.addEventListener('turbolinks:load', () => {
-//   // Call your functions here, e.g:
-//   initFlatpickr();
-// });
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initFlatpickr();
+  initChatroomCable();
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   flatpickr('#run_date', {

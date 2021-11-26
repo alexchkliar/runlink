@@ -51,15 +51,8 @@ run1_participant1 = RunParticipant.create!(user_id: apu.id, run_id: run1.id, sta
 run1_participant2 = RunParticipant.create!(user_id: bob.id, run_id: run1.id, status: 1, creator: false)
 run1_participant3 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: false)
 
-puts "Done seeding!"
+puts "Creating chatrooms..."
+chatroom_1 = Chatroom.new(name: "general", user_id: apu.id)
+chatroom_1.save!
 
-message_1 = Message.new(sender_id: 1, receiver_id: 2, content: "Hello friend!")
-message_1.save!
-message_2 = Message.new(sender_id: 2, receiver_id: 1, content: "Hey dude!")
-message_2.save!
-message_3 = Message.new(sender_id: 1, receiver_id: 2, content: "Good evening!")
-message_3.save!
-message_4 = Message.new(sender_id: 1, receiver_id: 3, content: "Wanna go jog?")
-message_4.save!
-message_5 = Message.new(sender_id: 2, receiver_id: 3, content: "What's up?")
-message_5.save!
+puts "Done seeding"
