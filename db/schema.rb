@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_26_170330) do
+ActiveRecord::Schema.define(version: 2021_11_27_190322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 2021_11_26_170330) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "logo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -62,6 +70,10 @@ ActiveRecord::Schema.define(version: 2021_11_26_170330) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "status"
+    t.time "run_time"
+    t.float "distance"
+    t.string "difficulty"
+    t.boolean "completed"
     t.index ["run_id"], name: "index_run_participants_on_run_id"
     t.index ["user_id"], name: "index_run_participants_on_user_id"
   end
@@ -69,22 +81,50 @@ ActiveRecord::Schema.define(version: 2021_11_26_170330) do
   create_table "runs", force: :cascade do |t|
     t.bigint "trail_id", null: false
     t.datetime "date"
-    t.integer "duration"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["trail_id"], name: "index_runs_on_trail_id"
   end
 
+  create_table "trail_ratings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "trail_id", null: false
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["trail_id"], name: "index_trail_ratings_on_trail_id"
+    t.index ["user_id"], name: "index_trail_ratings_on_user_id"
+  end
+
   create_table "trails", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.integer "distance"
+    t.float "distance"
     t.integer "difficulty"
-    t.integer "rating"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_trails_on_user_id"
+  end
+
+  create_table "user_badges", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "badge_id", null: false
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
+    t.index ["user_id"], name: "index_user_badges_on_user_id"
+  end
+
+  create_table "user_ratings", force: :cascade do |t|
+    t.bigint "rater_id", null: false
+    t.bigint "ratee_id", null: false
+    t.boolean "thumbs_up"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ratee_id"], name: "index_user_ratings_on_ratee_id"
+    t.index ["rater_id"], name: "index_user_ratings_on_rater_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -102,6 +142,7 @@ ActiveRecord::Schema.define(version: 2021_11_26_170330) do
     t.string "running_exp"
     t.text "bio"
     t.date "birth_date"
+    t.integer "xp"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -113,5 +154,11 @@ ActiveRecord::Schema.define(version: 2021_11_26_170330) do
   add_foreign_key "run_participants", "runs"
   add_foreign_key "run_participants", "users"
   add_foreign_key "runs", "trails"
+  add_foreign_key "trail_ratings", "trails"
+  add_foreign_key "trail_ratings", "users"
   add_foreign_key "trails", "users"
+  add_foreign_key "user_badges", "badges"
+  add_foreign_key "user_badges", "users"
+  add_foreign_key "user_ratings", "users", column: "ratee_id"
+  add_foreign_key "user_ratings", "users", column: "rater_id"
 end

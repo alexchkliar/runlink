@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trails, dependent: :destroy
+  has_many :user_badges, dependent: :destroy
+  has_many :user_ratings, dependent: :destroy
+  has_many :trail_ratings, dependent: :destroy
   has_many :run_participants, dependent: :destroy
 
   def name

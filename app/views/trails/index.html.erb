@@ -13,22 +13,22 @@
         <div class="difficulty">
           <li class="bottom-text">
             <% trail.difficulty.ceil.times do %>
-              <%="●"%>
+              <%="★"%>
             <% end %>
             <% (5 - trail.difficulty.ceil).times do %>
-              <%="○"%>
+              <%="☆"%>
             <% end %>
           </li>
           <li><%= "Difficulty" %></li>
         </div>
         <div class="rating">
           <li class="bottom-text">
-            <% trail.rating.ceil.times do %>
-              <%="★"%>
-            <% end %>
-            <% (5 - trail.rating.ceil).times do %>
-              <%="☆"%>
-            <% end %>
+            <%# trail.rating.ceil.times do %>
+              <%#="★"%>
+            <%# end %>
+            <%# (5 - trail.rating.ceil).times do %>
+              <%#="☆"%>
+            <%# end %>
           </li>
           <li><%= "Rating" %></li>
         </div>
