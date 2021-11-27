@@ -36,6 +36,10 @@ class RunsController < ApplicationController
     end
   end
 
+  def register_run
+
+  end
+
   private
   def run_params
     params.require(:run).permit(:date, run_participants_attributes: [:id, :user_id])

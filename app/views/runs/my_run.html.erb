@@ -13,7 +13,7 @@
         <%= "(you)" %>
       <% end %>
     </li>
-      <%= "Rating: " %>
+      <%= "Difficulty: " %>
       <% @run.trail.difficulty.ceil.times do %>
         <%="★"%>
       <% end %>
@@ -22,13 +22,13 @@
       <% end %>
     </li>
     <li>
-      <%= "Difficulty: " %>
-      <% @run.trail.rating.ceil.times do %>
-        <%="★"%>
-      <% end %>
-      <% (5 - @run.trail.rating.ceil).times do %>
-        <%="☆"%>
-      <% end %>
+      <%= "Rating: " %>
+      <%# @run.trail.rating.ceil.times do %>
+        <%#="★"%>
+      <%# end %>
+      <%# (5 - @run.trail.rating.ceil).times do %>
+        <%#="☆"%>
+      <%# end %>
     </li>
   </ul>
 
@@ -50,5 +50,5 @@
       <% end %>
     <% end %>
   </div>
-  <%= link_to "Record Run", users_path, class:"btn-create-run d-block w-100 text-center"%>
+  <%= link_to "Record Run", register_run_path, class:"btn-create-run d-block w-100 text-center"%>
 </div>
