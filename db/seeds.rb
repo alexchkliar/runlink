@@ -3,6 +3,7 @@ require "open-uri"
 sarah_bio = "Hey! My name’s Sarah I love running and meeting new people. Let’s connect and go for a run together <3"
 john_bio = "Yoo! My name’s John I love partying. I get drunk a lot on the weekends so I figure I should run more. Let’s link up and go for a run then get drunk bro!"
 bob_bio = "Hi I'm Bob. Uh.. I'm really weird and have no friends. I picked running as a hobby to be more social but I can't run."
+danny_bio = "I'm 4'9 and not funny. Is this a dating app??"
 
 puts "Cleaning database..."
 Message.destroy_all
@@ -25,6 +26,11 @@ bob.save!
 file = URI.open('https://2.bp.blogspot.com/-n7J_nAA313c/WhwK_qVk_aI/AAAAAAAABZg/2GiiQJnHDxUE4zmWgfFTTrrdC9VeI-BtACLcBGAs/s1600/alphablackmen_2016-04-06_01-33-53.jpg')
 chung = User.new(first_name: 'John', last_name: 'Chadson', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: john_bio, birth_date: (Date.current - (365 * 20)))
 chung.avatar.attach(io: file, filename: 'chung_avatar.jpg', content_type: 'image/jpg')
+chung.save!
+
+file = URI.open('https://i.redd.it/irsptjj6e3i31.jpg')
+chung = User.new(first_name: 'Danny', last_name: 'DeVito', email: "d@d.d", password: "123456", gender: 'Male', location: 'Philadelphia', running_exp: 'Beginner', bio: danny_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
+chung.avatar.attach(io: file, filename: 'danny_avatar.jpg', content_type: 'image/jpg')
 chung.save!
 
 puts "Creating trails..."
@@ -55,5 +61,17 @@ run1_participant3 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, s
 
 puts "Creating chatrooms..."
 chatroom_1 = Chatroom.create!(name: "general", user_id: apu.id, recipient_id: bob.id)
+
+puts "Creating badges..."
+badge1 = Badge.create!(name: "First Run", description: "Congratulations you have completed your first run!", req_xp: 1, logo: "https://img.icons8.com/ios-glyphs/50/4a90e2/pacifier.png")
+badge2 = Badge.create!(name: "5k", description: "Congratulations you have completed your first 5k", req_xp: 5, logo: "https://img.icons8.com/ios-glyphs/30/4a90e2/baby-feet.png")
+badge3 = Badge.create!(name: "10k", description: "Congratulations you have ran 10k", req_xp: 10, logo: "https://img.icons8.com/ios-glyphs/30/4a90e2/ios-10.png")
+badge4 = Badge.create!(name: "20k", description: "Congratulations you have completed your first 20km", req_xp: 20, logo: "https://img.icons8.com/ios-filled/50/4a90e2/20.png")
+badge5 = Badge.create!(name: "40k", description: "Great job! You have ran 40km!", req_xp: 40, logo: "https://img.icons8.com/ios-filled/50/4a90e2/40.png")
+badge6 = Badge.create!(name: "80k", description: "Congratulations you ran 80km!", req_xp: 80, logo: "https://img.icons8.com/ios-filled/50/4a90e2/80.png")
+badge7 = Badge.create!(name: "160k", description: "Congratulations you ran 160km!", req_xp: 160, logo: "https://img.icons8.com/material-outlined/50/4a90e2/paralympic-runner.png")
+badge8 = Badge.create!(name: "320k", description: "Congratulations you ran 320km! Impressive.", req_xp: 320, logo: "https://img.icons8.com/ios-filled/50/4a90e2/greek-helmet.png")
+badge9 = Badge.create!(name: "Daily Runner", description: "Wow you've ran 365km! That's 1k for every day of the year! Great work!", req_xp: 365, logo: "https://img.icons8.com/ios-filled/50/4a90e2/planner.png")
+badge10 = Badge.create!(name: "640k", description: "Congratulations you ran 640km! Very impressive!", req_xp: 640, logo: "https://img.icons8.com/ios-glyphs/50/4a90e2/trophy.png")
 
 puts "Done seeding"

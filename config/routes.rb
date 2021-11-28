@@ -21,4 +21,6 @@ Rails.application.routes.draw do
 
   get "/users/:id/complete_profile", to: "users#complete_profile", as: :complete_profile
   patch "users/:id", to: "users#update_profile", as: :update_profile
+
+  get "/users/:id/my_achievements", to: "user_badges#index", as: :user_badges
 end
