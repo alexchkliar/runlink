@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_27_190322) do
+ActiveRecord::Schema.define(version: 2021_11_27_204618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 2021_11_27_190322) do
     t.integer "status"
     t.time "run_time"
     t.float "distance"
-    t.string "difficulty"
     t.boolean "completed"
+    t.integer "difficulty"
     t.index ["run_id"], name: "index_run_participants_on_run_id"
     t.index ["user_id"], name: "index_run_participants_on_user_id"
   end
