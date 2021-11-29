@@ -60,3 +60,34 @@
     text-decoration: none;
   }
 }
+
+.run-stats {
+  display:flex;
+  width: 100%;
+  background-color: $color2;
+  padding: 8px 0;
+  color: white;
+  outline: 1px solid white;
+}
+
+.runs-count, .distance-run, .thumbs-up {
+  width: 33.33333%;
+  text-align: center;
+}
+
+.distance-run {
+  box-shadow: -2px 0px 0px 0px $bg-color,
+  2px 0px 0px 0px $bg-color;
+}
+
+.badges {
+  text-align: left;
+  background-color: $color3;
+  width: 100%;
+  outline: 1px solid white;
+  padding: 8px 0 8px 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

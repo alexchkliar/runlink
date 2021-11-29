@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    all_user_ids = @users.map { |user| user.id }
+    @distances = RunParticipant.all.map { |run| [run.distance, run.user_id] }
     authorize(@users)
   end
 
@@ -10,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def complete_profile
-
   end
 
   def update_profile
