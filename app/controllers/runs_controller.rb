@@ -4,6 +4,12 @@ class RunsController < ApplicationController
     @users = User.all.excluding(current_user).map { |user| [user.name, user.id] }
     @run = Run.new
     @run.run_participants.build
+    @markers = @trail.geocoded.map do |trail|
+      {
+        lat: trail.latitude,
+        lng: trail.longitude
+      }
+    end
   end
 
   def create
