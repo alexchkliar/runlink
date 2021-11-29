@@ -5,8 +5,9 @@
   margin: 0 auto;
   img {
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 12px auto;
     outline: 2px solid $main-color;
+    justify-content: center;
   }
 }
 
@@ -23,4 +24,10 @@
   font-size: 26px;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+
+
+.trail-img {
+  width: 330px;
+  height: 330px;
 }

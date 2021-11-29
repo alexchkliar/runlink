@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "/my_runs/:id/register_run", to: "runs#register_run", as: :register_run
   patch "/my_runs/:id/", to: "runs#post_register_run"
 
-  resources :chatrooms, only: %i[index show] do
+  resources :chatrooms, only: %i[index show new] do
     resources :messages, only: :create
   end
 

@@ -40,6 +40,7 @@ class RunsController < ApplicationController
     @run.run_participants.each do |run_participant|
       @participant_users << run_participant.user
     end
+    @marker = { lat: @run.trail.latitude, lng: @run.trail.longitude }
   end
 
   def register_run

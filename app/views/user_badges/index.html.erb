@@ -1,7 +1,11 @@
 <h1>Your Achievements</h1>
 
 <% @my_badges.each do |badge| %>
-  <ul><img src=<%= badge.logo %>></ul>
-  <ul><%= badge.name %></ul>
-  <ul><%= badge.description %></ul>
+  <div class="badge-card-container">
+    <div class="badge-contents">
+      <img src=<%= badge.logo %>>
+      <h3><%= badge.name %></h3>
+      <p><%= badge.description %></p>
+    </div>
+  </div>
 <% end %>
