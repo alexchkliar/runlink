@@ -1,26 +1,44 @@
+<script src="https://kit.fontawesome.com/3d190f4026.js" crossorigin="anonymous"></script>
 <h1>Register your run</h1>
-<h2> <%= @run_participant.run.trail.name %>, <%= @run_participant.run.trail.location %></h2>
-<br>
-<h2>Input run stats:</h2>
-<%= simple_form_for([@run_participant], url: my_run_path) do |f| %>
-  <%= f.input :run_time, as: :time %>
-  <%= f.input :distance, as: :float, label: "Distance (km)" %>
-  <%= f.input :completed, as: :boolean %>
+<h3 class="run-description"><%= @run_participant.run.trail.location %>, <%= @run_participant.run.date.strftime('%F') %></h3>
+<div class="container-complete-profile">
+<h3>Input your run stats:</h3>
+  <p>Time: </p>
+  <%= simple_form_for([@run_participant], url: my_run_path) do |f| %>
+    <%#= f.error_notification %>
+    <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="time-inline">
+      <%= f.input :hours, as: :select, collection: (0..10), label: false %>
+      <div class="colon-register">:</div>
+      <%= f.input :minutes, as: :select, collection: (0..59), label: false %>
+      <div class="colon-register">:</div>
+      <%= f.input :seconds, as: :select, collection: (0..59), label: false %>
+    </div>
+    <%= f.input :distance, as: :float, label: "Distance (km)" %>
+    <h3>Review your run:</h3>
+    <div class="star-ratings">
+      <%= f.input :difficulty, as: :select, label: "Run challenge", collection: (1..5) %>
+      <%= f.simple_fields_for :trail do |sf| %>
+        <%#= sf.association :users, collection: @users %>
+        <%#= sf.input @run_participant.run.trail.id, as: :select, collection: (1..5), label: "Trail rating (1-5)" %>
+        <%= sf.input @run_participant.run.trail.id, collection: (1..5).to_a, label: "Trail rating"%>
+        <%# sf.collection_radio_buttons(:article, :author_id, Author.all, :id, :name_with_initial) %>
+      <% end %>
+    </div>
+    <div class="completed-checkbox"><%= f.hidden_field :completed, as: :boolean,  input_html: { checked: true } %></div>
 
-  <h2>Give thumbs up to your fellow runners!</h2>
-  <%= f.simple_fields_for :user_ratings do |sf| %>
-    <%#= sf.association :users, collection: @users %>
-    <% @users.each do |user| %>
-     <%= sf.input user[1], as: :boolean, label: user[0] %>
-    <% end %>
+    <h3>Thumbs-up fellow runners:</h3>
+    <div class="thumbs-up-container">
+      <%= f.simple_fields_for :user_ratings do |sf| %>
+        <%#= sf.association :users, collection: @users %>
+        <% @users.each do |user| %>
+          <%= sf.input user[1], as: :boolean, label: ("👍 "+user[0]),
+                                input_html: { class: "tag-selector" },
+                                item_wrapper_class: 'tag-item'
+          %>
+        <% end %>
+      <% end %>
+    </div>
+    <%= f.submit "Submit run", class: "btn-create-run d-block w-100" %>
   <% end %>
-
-  <h2>Rate trail:</h2>
-
-  <%= f.simple_fields_for :trail do |sf| %>
-    <%#= sf.association :users, collection: @users %>
-    <%= sf.input @run_participant.run.trail.id, as: :select, collection: (1..5), label: "Trail rating (1-5)" %>
-  <% end %>
-
-  <%= f.submit "Submit run", class: "btn-create-run d-block w-100" %>
-<% end %>
+</div>
