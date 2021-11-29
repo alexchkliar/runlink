@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   patch "users/:id", to: "users#update_profile", as: :update_profile
 
   get "/users/:id/my_achievements", to: "user_badges#index", as: :user_badges
-
+  get "/users/:id/my_achievements", to: "user_badges#index", as: :user_badgess
 end
