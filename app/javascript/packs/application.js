@@ -29,9 +29,12 @@ import "bootstrap";
 import { initFlatpickr } from "../plugins/initflatpickr";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { closeAlerts } from "../components/alert";
+import { initMapbox } from '../plugins/init_mapbox';
+
 
 document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   initFlatpickr();
+  initMapbox();
   closeAlerts();
 });
