@@ -36,18 +36,18 @@ danny.save!
 puts "Creating trails..."
 
 file = URI.open('http://site.ieee.org/pimrc-2017/files/2017/05/mount-royal-park-gomontrealtourism.com_.jpg')
-plateau = Trail.new(name: "Awesome trail", location: 'Plateau Mont-Royal', distance: 5.23, user_id: apu.id, difficulty: 4)
-plateau.photos.attach(io: file, filename: 'plateau_photo.jpg', content_type: 'image/jpg')
+plateau = Trail.new(name: "Mount Royal Park Loop", location: 'Mount Royal Park', distance: 8.4, user_id: apu.id, difficulty: 4, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638221914/Screenshot_from_2021-11-29_16-20-33_y7knd0.png")
+plateau.photos.attach(io: file, filename: 'mount_royal_park_loop_photo.jpg', content_type: 'image/jpg')
 plateau.save!
 
-file = URI.open('https://cdn.theculturetrip.com/wp-content/uploads/2020/03/g6cy3f-650x433.jpg')
-vieux = Trail.new(name: "Amazing trail", location: 'Vieux-Port', distance: 44, user_id: apu.id, difficulty: 3)
-vieux.photos.attach(io: file, filename: 'vieux_photo.jpg', content_type: 'image/jpg')
+file = URI.open('https://westmount.org/wp-content/uploads/2015/10/dog_walk_web.jpg')
+vieux = Trail.new(name: "West Mount loop", location: 'West Mount', distance: 3.1, user_id: apu.id, difficulty: 3, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222561/Screenshot_from_2021-11-29_16-22-55_mm2yf9.png")
+vieux.photos.attach(io: file, filename: 'west_mount_photo.jpg', content_type: 'image/jpg')
 vieux.save!
 
-file = URI.open('https://www.tripsavvy.com/thmb/SEUzsEb6kmZ83WC0a2tdAhvu2XU=/1589x1067/filters:no_upscale():max_bytes(150000):strip_icc()/montreal-chinatown-walking-tour-city-limits-friendship-arches-gates-george-rose-getty-589a305a3df78caebc5bd0ce.jpg')
-chinatown = Trail.new(name: "Incredible trail", location: 'Chinatown', distance: 33, user_id: apu.id, difficulty: 2)
-chinatown.photos.attach(io: file, filename: 'chinatown.jpg', content_type: 'image/jpg')
+file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/41540348/extra_large_19a3cbf151fd08e2783102106f47ff84.jpg')
+chinatown = Trail.new(name: "Lachine Canal Multipurpose Path", location: 'Lachine', distance: 6.6, user_id: apu.id, difficulty: 2, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222834/image_hyaode.png")
+chinatown.photos.attach(io: file, filename: 'lachine_canal_photo.jpg', content_type: 'image/jpg')
 chinatown.save!
 
 puts "Creating runs..."
