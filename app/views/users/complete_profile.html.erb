@@ -1,19 +1,15 @@
 <div class="container-complete-profile">
   <h1 class="text-center">Tell us a little about yourself</h1>
   <%= simple_form_for(@user) do |f| %>
-    <div class="form-inputs-complete">
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <%= f.input :first_name, required: true, label: false, placeholder: "What is your first name?" %>
       <%= f.input :last_name, required: true, label: false, placeholder: "What is your last name?" %>
       <%= f.input :location, required: true, label: false, placeholder: "Where do you live?" %>
-      <div class="select-rounded">
-        <%= f.input :running_exp, required: true, label: false, prompt: "What is your running experience?", collection: ["Beginner","Intermediate", "Advanced"] %>
-      </div>
+      <%= f.input :running_exp, required: true, label: false, prompt: "What is your running experience?", input_html: {class: "select-rounded"}, collection: ["Beginner","Intermediate", "Advanced"] %>
       <%= f.input :bio, required: true, label: false, placeholder: "Bio" %>
-      <%= f.input :birth_date, required: true, start_year: Date.today.year - 121, end_year: Date.today.year %>
+      <%= f.input :birth_date, required: true, start_year: Date.today.year - 121, end_year: Date.today.year, input_html: {class: "select-rounded"} %>
       <%= f.input :avatar, required: true, as: :file %>
-    </div>
       <%= f.button :submit, "Find runners", class: "btn-complete d-block w-100"  %>
       <% end %>
     </div>

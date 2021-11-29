@@ -7,8 +7,13 @@
   padding-bottom: 20px;
 }
 
-#user_first_name, #user_last_name, #user_location, #user_bio {
-  font-family: Reem Kufi;
+#user_first_name, #user_last_name, #user_location, #user_bio,
+#run_participant_distance,
+#run_participant_difficulty,
+#run_participant_trail_2,
+#run_participant_hours,
+#run_participant_minutes,
+#run_participant_seconds {
   border-radius: 12px;
   color: black;
 }
@@ -23,12 +28,15 @@
 }
 
 .select-rounded {
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid #cccccc;
-  padding-right: 20px;
+  // padding-right: 20px;
   background-color: white;
   margin-bottom: 10px;
+  .form-group {
+    margin-bottom: 0;
+  }
 }
 
 .select-rounded select {

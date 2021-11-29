@@ -30,6 +30,7 @@ import { initFlatpickr } from "../plugins/initflatpickr";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { closeAlerts } from "../components/alert";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initStarRating } from '../plugins/init_star_rating';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,3 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   closeAlerts();
 });
+
+initStarRating();

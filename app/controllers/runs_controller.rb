@@ -57,8 +57,7 @@ class RunsController < ApplicationController
     run_participant_current.distance = participant["distance"].to_f
     run_participant_current.difficulty = participant["difficulty"].to_i
     run_participant_current.completed = participant["completed"] == "1"
-    # need to change data type below somehow
-    run_participant_current.run_time = Time.new(2000,1,1,participant["run_time(4i)"],participant["run_time(5i)"],1, "+00:00")
+    run_participant_current.seconds = (params[:run_participant]["hours"].to_i * 60 * 60) + (params[:run_participant]["minutes"].to_i * 60) + params[:run_participant]["seconds"].to_i
     run_participant_current.save!
     trail_rating = TrailRating.new(user_id: current_user.id, trail_id: participant["trail"].keys[0].to_i, rating: participant["trail"].values[0].to_i)
     trail_rating.save!
@@ -71,7 +70,7 @@ class RunsController < ApplicationController
       user_rating.thumbs_up = rating
       user_rating.save!
     end
-    redirect_to my_run_path(@run), notice: 'Run was succesfully saved.'
+    redirect_to user_badges_path, notice: 'Run was succesfully saved.'
   end
 
   private
