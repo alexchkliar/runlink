@@ -1,0 +1,26 @@
+<h1>Register your run</h1>
+<h2> <%= @run_participant.run.trail.name %>, <%= @run_participant.run.trail.location %></h2>
+<br>
+<h2>Input run stats:</h2>
+<%= simple_form_for([@run_participant], url: my_run_path) do |f| %>
+  <%= f.input :run_time, as: :time %>
+  <%= f.input :distance, as: :float, label: "Distance (km)" %>
+  <%= f.input :completed, as: :boolean %>
+
+  <h2>Give thumbs up to your fellow runners!</h2>
+  <%= f.simple_fields_for :user_ratings do |sf| %>
+    <%#= sf.association :users, collection: @users %>
+    <% @users.each do |user| %>
+     <%= sf.input user[1], as: :boolean, label: user[0] %>
+    <% end %>
+  <% end %>
+
+  <h2>Rate trail:</h2>
+
+  <%= f.simple_fields_for :trail do |sf| %>
+    <%#= sf.association :users, collection: @users %>
+    <%= sf.input @run_participant.run.trail.id, as: :select, collection: (1..5), label: "Trail rating (1-5)" %>
+  <% end %>
+
+  <%= f.submit "Submit run", class: "btn-create-run d-block w-100" %>
+<% end %>

@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_11_28_222351) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,8 +74,8 @@ ActiveRecord::Schema.define(version: 2021_11_28_222351) do
     t.integer "status"
     t.time "run_time"
     t.float "distance"
-    t.string "difficulty"
     t.boolean "completed"
+    t.integer "difficulty"
     t.index ["run_id"], name: "index_run_participants_on_run_id"
     t.index ["user_id"], name: "index_run_participants_on_user_id"
   end

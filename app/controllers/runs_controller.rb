@@ -4,6 +4,12 @@ class RunsController < ApplicationController
     @users = User.all.excluding(current_user).map { |user| [user.name, user.id] }
     @run = Run.new
     @run.run_participants.build
+    @markers = @trail.geocoded.map do |trail|
+      {
+        lat: trail.latitude,
+        lng: trail.longitude
+      }
+    end
   end
 
   def create
@@ -37,11 +43,42 @@ class RunsController < ApplicationController
   end
 
   def register_run
+    @run_participant = RunParticipant.find_by(user_id: current_user.id, run_id: params[:id])
+    @run = Run.find(params[:id])
+    @trail = @run.trail
+    @users = User.all.excluding(current_user).map { |user| [user.name, user.id] }
+  end
 
+  def post_register_run
+    @run = Run.find(params[:id])
+    run_participant_current = RunParticipant.find_by(user_id: current_user.id, run_id: params[:id])
+    participant = params[:run_participant]
+    run_participant_current.distance = participant["distance"].to_f
+    run_participant_current.difficulty = participant["difficulty"].to_i
+    run_participant_current.completed = participant["completed"] == "1"
+    # need to change data type below somehow
+    run_participant_current.run_time = Time.new(2000,1,1,participant["run_time(4i)"],participant["run_time(5i)"],1, "+00:00")
+    run_participant_current.save!
+    trail_rating = TrailRating.new(user_id: current_user.id, trail_id: participant["trail"].keys[0].to_i, rating: participant["trail"].values[0].to_i)
+    trail_rating.save!
+    participant["user_ratings"].keys.each do |key|
+      user_id = key.to_i
+      rating = participant["user_ratings"][key].to_i == 1
+      user_rating = UserRating.new
+      user_rating.rater_id = current_user.id
+      user_rating.ratee_id = user_id
+      user_rating.thumbs_up = rating
+      user_rating.save!
+    end
+    redirect_to my_run_path(@run), notice: 'Run was succesfully saved.'
   end
 
   private
   def run_params
     params.require(:run).permit(:date, run_participants_attributes: [:id, :user_id])
+  end
+
+  def run_participation_params
+    params.require(:run_participant).permit(:date, run_participants_attributes: [:id, :user_id])
   end
 end

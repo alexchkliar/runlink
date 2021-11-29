@@ -1,7 +1,13 @@
+<%= stylesheet_pack_tag 'application' %>
 <h1><%= @trail.name %></h1>
 <div class="new-run-top">
   <%= cl_image_tag @trail.photos.first.key, height: 180, width: 330, crop: :fill %></li>
   <h2 class="trail-booking-header"><%= @trail.location %>, <%= @trail.distance %>km</h2>
+  <div id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
   <%= simple_form_for([@trail, @run]) do |f| %>
     <%#= f.error_notification %>
