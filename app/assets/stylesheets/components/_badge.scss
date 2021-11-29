@@ -1,0 +1,28 @@
+.badge-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  width: 362px;
+  margin: 0px;
+  border-radius: 16px;
+  margin: 0 auto 32px auto;
+}
+
+
+.badge-contents {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 24px;
+}
+
+.badge-contents img {
+  margin: 24px;
+}
+
+
+.badge-contents h3 {
+  color: #003F88;
+}
