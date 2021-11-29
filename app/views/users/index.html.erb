@@ -41,7 +41,17 @@
         <div class="profile-bio"><%= user.bio %></div>
         <div class="card-buttons">
           <%= link_to "Follow", "#" %>
-          <%= link_to "Message", chatroom_path(1) %>
+            <% @chatroom = Chatroom.where(user_id: current_user.id, recipient_id: user.id).first %>
+            <% if @chatroom.nil? %>
+              <% @chatroom = Chatroom.where(user_id: user.id, recipient_id: current_user.id).first %>
+              <% if @chatroom.nil? %>
+                <%= link_to "Message", new_chatroom_path(user_id: current_user.id, recipient_id: user.id) %>
+              <% else %>
+                <%= link_to "Message", chatroom_path(@chatroom) %>
+              <% end %>
+            <% else %>
+              <%= link_to "Message", chatroom_path(@chatroom) %>
+            <% end %>
         </div>
       </div>
     </div>
