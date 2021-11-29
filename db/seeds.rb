@@ -14,24 +14,24 @@ Trail.destroy_all
 puts "Creating users..."
 
 file = URI.open('https://data.whicdn.com/images/339247802/original.jpg')
-apu = User.new(first_name: 'Sarah', last_name: 'Runs', email: "a@a.a", password: "123456", gender: 'Female', location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: sarah_bio, birth_date: (Date.current - (365 * 20)))
+apu = User.new(first_name: 'Sarah', last_name: 'Runs', email: "a@a.a", password: "123456", gender: 'Female', location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: sarah_bio, birth_date: (Date.current - (365 * 20)), xp: 5)
 apu.avatar.attach(io: file, filename: 'apu_avatar.jpg', content_type: 'image/jpg')
 apu.save!
 
 file = URI.open('https://i.kym-cdn.com/photos/images/newsfeed/001/374/185/fd4.png')
-bob = User.new(first_name: 'Bob', last_name: 'Smith', email: "b@b.b", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Intermediate', bio: bob_bio, birth_date: (Date.current - (365 * 20)))
+bob = User.new(first_name: 'Bob', last_name: 'Smith', email: "b@b.b", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Intermediate', bio: bob_bio, birth_date: (Date.current - (365 * 20)), xp: 10)
 bob.avatar.attach(io: file, filename: 'bob_avatar.jpg', content_type: 'image/jpg')
 bob.save!
 
 file = URI.open('https://2.bp.blogspot.com/-n7J_nAA313c/WhwK_qVk_aI/AAAAAAAABZg/2GiiQJnHDxUE4zmWgfFTTrrdC9VeI-BtACLcBGAs/s1600/alphablackmen_2016-04-06_01-33-53.jpg')
-chung = User.new(first_name: 'John', last_name: 'Chadson', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: john_bio, birth_date: (Date.current - (365 * 20)))
+chung = User.new(first_name: 'John', last_name: 'Chadson', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: john_bio, birth_date: (Date.current - (365 * 20)), xp: 365)
 chung.avatar.attach(io: file, filename: 'chung_avatar.jpg', content_type: 'image/jpg')
 chung.save!
 
 file = URI.open('https://i.redd.it/irsptjj6e3i31.jpg')
-chung = User.new(first_name: 'Danny', last_name: 'DeVito', email: "d@d.d", password: "123456", gender: 'Male', location: 'Philadelphia', running_exp: 'Beginner', bio: danny_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
-chung.avatar.attach(io: file, filename: 'danny_avatar.jpg', content_type: 'image/jpg')
-chung.save!
+danny = User.new(first_name: 'Danny', last_name: 'DeVito', email: "d@d.d", password: "123456", gender: 'Male', location: 'Philadelphia', running_exp: 'Beginner', bio: danny_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
+danny.avatar.attach(io: file, filename: 'danny_avatar.jpg', content_type: 'image/jpg')
+danny.save!
 
 puts "Creating trails..."
 
