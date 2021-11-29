@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = policy_scope(Chatroom).where(user_id: current_user.id).or(policy_scope(Chatroom)
-                                       .where(recipient_id: current_user.id))
+    @chatrooms = policy_scope(Chatroom).where(user_id: current_user.id)
+                                       .or(policy_scope(Chatroom).where(recipient_id: current_user.id))
   end
 
   def show
