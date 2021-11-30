@@ -53,7 +53,13 @@ class RunsController < ApplicationController
     @run_participant = RunParticipant.find_by(user_id: current_user.id, run_id: params[:id])
     @run = Run.find(params[:id])
     @trail = @run.trail
-    @users = User.all.excluding(current_user).map { |user| [user.name, user.id] }
+
+    @valid_users = []
+    User.all.each do |user|
+      @valid_users << user unless user.first_name.nil? || user == current_user
+    end
+
+    @users = @valid_users.map { |user| [user.name, user.id] }
   end
 
   def post_register_run
