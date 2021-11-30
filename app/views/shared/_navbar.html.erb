@@ -11,6 +11,7 @@
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
+        <% if user_signed_in? && current_user.first_name != nil %>
         <li class="nav-item active">
           <%= link_to "Find runners", users_path , class: "nav-link" %>
         </li>
@@ -20,6 +21,7 @@
         <li class="nav-item active">
           <%= link_to "Messages", chatrooms_path , class: "nav-link" %>
         </li>
+        <% end %>
         <li class="nav-item active">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
