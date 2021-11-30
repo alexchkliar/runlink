@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     all_user_ids = @users.map { |user| user.id }
     @distances = RunParticipant.all.map { |run| [run.distance, run.user_id] }
     authorize(@users)
+
+    @badges = Badge.all
   end
 
   def show
@@ -20,6 +22,14 @@ class UsersController < ApplicationController
     else
       render :complete_profile
     end
+  end
+
+  def leaderboard
+    @valid_users = []
+    User.all.each do |user|
+      @valid_users << user unless user.first_name.nil?
+    end
+    @sorted_users = @valid_users.sort_by { |user| -user.xp }
   end
 
   private

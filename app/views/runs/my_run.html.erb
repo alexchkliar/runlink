@@ -1,8 +1,27 @@
 <h1><%= @run.trail.name %></h1>
 <div class="new-run-top">
-  <% @run.trail.photos.each do |photo| %>
-    <li><%= cl_image_tag photo.key, height: 180, width: 330, crop: :fill %></li>
-  <% end %>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= cl_image_tag @run.trail.photos.first.key, height: 180, width: 330, crop: :fill %>
+      </div>
+      <div class="carousel-item">
+        <%= cl_image_tag @run.trail.photos.second.key, height: 180, width: 330, crop: :fill %>
+      </div>
+      <div class="carousel-item">
+        <%= cl_image_tag @run.trail.photos.third.key, height: 180, width: 330, crop: :fill %>
+      </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
   <h2 class="trail-booking-header"><%= @run.trail.location %>, <%= @run.trail.distance %>km</h2>
   <ul>
     <li>Date & time: <%= @run.date %></li>

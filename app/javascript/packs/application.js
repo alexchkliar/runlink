@@ -32,6 +32,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initStarRating } from '../plugins/init_star_rating';
 import { fetchWeather } from '../plugins/init_weather';
 // import $ from 'jquery';
+import { initSweetalert } from '../plugins/init_sweetalert';
+
 
 document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
@@ -40,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   closeAlerts();
   initStarRating();
   fetchWeather();
+  initSweetalert();
 });
