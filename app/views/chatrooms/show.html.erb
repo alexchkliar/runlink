@@ -1,20 +1,19 @@
 <div class="d-flex flex-row justify-content-between py-2 px-3 adiv chat-header">
-  <%= link_to "< All Messages", chatrooms_path %>
+  <%= link_to "< Chats", chatrooms_path %>
   <%= link_to "Trails >", trails_path %>
 </div>
-<h1>
   <% if @chatroom.user_id == current_user.id%>
     <div class="chatroom-img"><%= cl_image_tag User.find(@chatroom.recipient_id).avatar.key %></div>
   <% else %>
     <div class="chatroom-img"><%= cl_image_tag User.find(@chatroom.user_id).avatar.key %></div>
   <% end %>
-</h1>
+<div class="username"><%= User.find(@chatroom.recipient_id).name %></div>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <%= render "messages/message", message: message %>
   <% end %>
 </div>
-<div class="form-group">
+<div class="form-bottom">
   <%= simple_form_for [ @chatroom, @message ] do |f| %>
     <%= f.input :content, required: true, label: false, placeholder: "Type here" %>
     <%= f.submit "Send", class: "btn-complete d-block w-100 my-3" %>

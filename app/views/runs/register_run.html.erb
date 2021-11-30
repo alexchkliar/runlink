@@ -1,6 +1,6 @@
 <script src="https://kit.fontawesome.com/3d190f4026.js" crossorigin="anonymous"></script>
 <h1>Register your run</h1>
-<h3 class="run-description"><%= @run_participant.run.trail.location %>, <%#= @run_participant.run.date.strftime('%F') %></h3>
+<h3 class="run-description"><%= @run_participant.run.trail.location %>, <%= @run_participant.run.date.strftime('%F') %></h3>
 <div class="container-complete-profile">
 <h3>Input your run stats:</h3>
   <p>Time: </p>
@@ -17,11 +17,11 @@
     <%= f.input :distance, as: :float, label: "Distance (km)" %>
     <h3>Review your run:</h3>
     <div class="star-ratings">
-      <%= f.input :difficulty, as: :select, label: "Run challenge", collection: (1..5) %>
+      <%= f.input :difficulty, as: :select, label: "Run challenge", collection: (1..5).to_a %>
       <%= f.simple_fields_for :trail do |sf| %>
         <%#= sf.association :users, collection: @users %>
         <%#= sf.input @run_participant.run.trail.id, as: :select, collection: (1..5), label: "Trail rating (1-5)" %>
-        <%= sf.input @run_participant.run.trail.id, collection: (1..5).to_a, label: "Trail rating"%>
+        <%= sf.input @run_participant.run.trail.id, label: "Trail rating", input_html: { id: "trail-star-target" }, collection: (1..5).to_a%>
         <%# sf.collection_radio_buttons(:article, :author_id, Author.all, :id, :name_with_initial) %>
       <% end %>
     </div>

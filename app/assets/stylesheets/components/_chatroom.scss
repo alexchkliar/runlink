@@ -9,32 +9,45 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+}
 
-  h1 {
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid $gray-200;
-    margin-bottom: 0;
-  }
+.username {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 2px 0;
+}
+
+.form-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 #messages {
   padding: 0 1rem;
   padding-top: 1rem;
   overflow: scroll;
-  max-height: calc(100vh - 66px - 65px - 71px);
+  max-height: calc(100vh - 375px);
+  background-color:white;
+  border: 1px rgba(206,212,218,1) solid;
+  padding: 0 12px;
+  margin: 0 16px;
+  border-radius: 3px;
 }
 
 #new_message {
   padding: 1rem;
   border-top: 1px solid $gray-200;
+}
 
-  .form-group {
-    margin-bottom: 0;
-  }
+.chatroom-img {
+  display: flex;
 }
 
 .chatroom-img img {
-  width: 20%;
-  height: 20%;
-  border-radius: 15px;
+  margin: -40px auto 0 auto;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  outline: 2px $main-color solid;
 }
