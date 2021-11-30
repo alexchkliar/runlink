@@ -38,6 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initMapbox();
   closeAlerts();
+  initStarRating();
 });
-
-initStarRating();
