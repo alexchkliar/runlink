@@ -1,12 +1,11 @@
 .new-run-top {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   img {
     border-radius: 3px;
-    margin: 12px auto;
-    outline: 1px solid $main-color;
+    margin: 0 auto;
     justify-content: center;
   }
 }

@@ -1,0 +1,37 @@
+.weather-img {
+  height: 50px;
+  width: 50px;
+}
+
+#weather-table {
+  margin: 0 auto;
+}
+
+
+#weather-table td {
+  width: 50px;
+}
+
+#weather-table th {
+  width: 50px;
+  border: 1px solid $main-color;
+  text-align: center;
+}
+
+#weather-table .first-main-row {
+  text-align: center;
+  border-top: 1px solid $main-color;
+  border-right: 1px solid $main-color;
+  border-left: 1px solid $main-color;
+}
+
+#weather-table .second-main-row {
+  border-right: 1px solid $main-color;
+  border-bottom: 1px solid $main-color;
+  border-left: 1px solid $main-color;
+}
+
+table {
+  background-color: white;
+  margin: 10px auto 0 auto;
+}
