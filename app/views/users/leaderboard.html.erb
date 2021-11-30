@@ -1,0 +1,27 @@
+<h1>Leaderboard</h1>
+
+<div class="leaderboard">
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Runner</th>
+      <th>XP</th>
+    </tr>
+    <% counter = 0 %>
+    <% @sorted_users.each do |user| %>
+        <% if user == current_user%>
+          <tr class="you">
+            <td><%= counter += 1 %></td>
+            <td>You</td>
+            <td><%= current_user.xp %></td>
+          </tr>
+          <% else %>
+            <tr>
+              <td><%= counter += 1 %></td>
+              <td><%= user.name %></td>
+              <td><%= user.xp %></td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+</div>
