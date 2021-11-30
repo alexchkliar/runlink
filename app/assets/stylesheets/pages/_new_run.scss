@@ -1,19 +1,18 @@
 .new-run-top {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   img {
-    border-radius: 5px;
-    margin: 12px auto;
-    outline: 2px solid $main-color;
+    border-radius: 3px;
+    margin: 0 auto;
     justify-content: center;
   }
 }
 
 .trail-booking-header {
   font-size: 25px;
-  margin: 10px 0 15px 0;
+  margin: 5px 0;
 }
 
 .btn-create-run {
@@ -30,4 +29,10 @@
 .trail-img {
   width: 330px;
   height: 330px;
+}
+
+.divider-line {
+  border-bottom: 2px solid $main-color;
+  width: 80%;
+  margin: 15px auto;
 }

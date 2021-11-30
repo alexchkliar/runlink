@@ -1,5 +1,3 @@
-<h1><%= @trail.name %></h1>
-
 <script type='text/javascript'>
   function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
@@ -24,9 +22,13 @@
 </script>
 <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=At7tKBq6JEFi0ksqaAjmwbPRvOh9tCsibl_-tiUJ2S_2j35L4a8U142v4E4PpN6V&callback=loadMapScenario' async defer></script>
 
+<div class="empty-location-div" id="Montreal"></div>
+<h1><%= @trail.name %></h1>
+
 <div id='printoutPanel'></div>
 <div class="new-run-top">
-
+<div class="divider-line"></div>
+  <h2 class="trail-booking-header"><%= "Distance: " %> <%= @trail.distance %>km</h2>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -51,15 +53,18 @@
   </div>
 
   <div id='myMap' style='width: 330px; height: 250px;'></div>
-  <h2 class="trail-booking-header"><%= @trail.location %>, <%= @trail.distance %>km</h2>
+  <div class="divider-line"></div>
+  <h2 class="trail-booking-header">7-day forecast</h2>
+  <table id="weather-table" data-weather-api-key="<%= ENV["WEATHER_API_KEY"] %>"></table>
+  <div class="divider-line"></div>
 
   <%= simple_form_for([@trail, @run]) do |f| %>
     <%#= f.error_notification %>
     <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.input :date, required: true, as: :string %>
+    <%= f.input :date, required: true, as: :string, label: "When do you want to run?" %>
     <%= f.simple_fields_for :run_participants do |rp| %>
       <%#= rp.association :user, :collection => User.all(:order => 'name'), :prompt => "Choose a Company" %>
-      <%= rp.association :user, required: true, collection: @users %>
+      <%= rp.association :user, required: true, collection: @users, label: "Who do you want to run with?" %>
       <%#= rp.input :user, as: :select, collection: @users %>
     <% end %>
     <%= f.submit "Schedule run", class: "btn-create-run d-block w-100" %>
