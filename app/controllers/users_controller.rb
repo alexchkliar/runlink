@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     all_user_ids = @users.map { |user| user.id }
     @distances = RunParticipant.all.map { |run| [run.distance, run.user_id] }
     authorize(@users)
+
+    @badges = Badge.all
   end
 
   def show
