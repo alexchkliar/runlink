@@ -1,8 +1,6 @@
 <% @runs.each do |run| %>
   <ul>
-    <% run.trail.photos.each do |photo| %>
-      <li><%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %></li>
-    <% end %>
+    <li><%= cl_image_tag run.trail.photos.first.key, height: 300, width: 400, crop: :fill %></li>
     <li><%= link_to run.trail.name, my_run_path(run) %></li>
     <li>Date & time: <%= run.date %></li>
     <li> <%= run.run_participants.length %> runners participating</li>
