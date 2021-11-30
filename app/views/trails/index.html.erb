@@ -1,4 +1,21 @@
+<script>
+  const fetchWeather = (city) => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=90cba1ae8de1ce52e1fc423a5f44a279&units=metric`)
+      .then(response => response.json())
+      .then((weather) => {
+        console.log(weather);
+      });
+  };
+  fetchWeather("Montreal");
+  // document.getElementById('city-input').select2({ data: cities, width: '100%' }); // <-- add the `data` and `width` options
+  // navigator.geolocation.getCurrentPosition((data) => {
+  //   console.log(123);
+  //   console.log(data);
+  // });
+</script>
+
 <h1>Select a trail</h1>
+<div id="city-input"></div>
 <div class="card-container">
   <% @trails.each do |trail|%>
   <div class="trail-card">

@@ -27,16 +27,22 @@
 <div id='printoutPanel'></div>
 <div class="new-run-top">
   <%= cl_image_tag @trail.photos.first.key, height: 180, width: 330, crop: :fill %></li>
+  <div class="divider-line"></div>
+  <h2 class="trail-booking-header"><%= "Distance: " %> <%= @trail.distance %>km</h2>
   <div id='myMap' style='width: 330px; height: 250px;'></div>
-  <h2 class="trail-booking-header"><%= @trail.location %>, <%= @trail.distance %>km</h2>
+  <div class="divider-line"></div>
+  <h2 class="trail-booking-header">7-day forecast</h2>
+
+
+  <div class="divider-line"></div>
 
   <%= simple_form_for([@trail, @run]) do |f| %>
     <%#= f.error_notification %>
     <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.input :date, required: true, as: :string %>
+    <%= f.input :date, required: true, as: :string, label: "When do you want to run?" %>
     <%= f.simple_fields_for :run_participants do |rp| %>
       <%#= rp.association :user, :collection => User.all(:order => 'name'), :prompt => "Choose a Company" %>
-      <%= rp.association :user, required: true, collection: @users %>
+      <%= rp.association :user, required: true, collection: @users, label: "Who do you want to run with?" %>
       <%#= rp.input :user, as: :select, collection: @users %>
     <% end %>
     <%= f.submit "Schedule run", class: "btn-create-run d-block w-100" %>

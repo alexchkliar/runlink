@@ -10,12 +10,6 @@ class RunsController < ApplicationController
     @users = @valid_users.map { |user| [user.name, user.id] }
     @run = Run.new
     @run.run_participants.build
-    # @markers = @trail.geocoded.map do |trail|
-    #   {
-    #     lat: trail.latitude,
-    #     lng: trail.longitude
-    #   }
-    # end
   end
 
   def create
@@ -54,6 +48,7 @@ class RunsController < ApplicationController
     @run = Run.find(params[:id])
     @trail = @run.trail
     @users = User.all.excluding(current_user).map { |user| [user.name, user.id] }
+    @users = Run.find(params["id"].to_i).run_participants.excluding(RunParticipant.where(user_id: current_user.id)).map {|runner| [runner.user.name, runner.user.id]}
   end
 
   def post_register_run
