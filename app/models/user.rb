@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   has_many :trails, dependent: :destroy
   has_many :user_badges, dependent: :destroy
-  has_many :user_ratings, dependent: :destroy
+  has_many :rater_user_ratings, dependent: :destroy, foreign_key: :rater_id, class_name: "UserRating"
+  has_many :ratee_user_ratings, dependent: :destroy, foreign_key: :ratee_id, class_name: "UserRating"
   has_many :trail_ratings, dependent: :destroy
   has_many :run_participants, dependent: :destroy
 
