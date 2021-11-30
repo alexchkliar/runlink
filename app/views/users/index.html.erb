@@ -18,7 +18,7 @@
           Runs
         </div>
         <div class="distance-run">
-          <%= RunParticipant.where(user_id: user.id).map { |participant| participant.distance.nil? ? 0 : participant.distance }.sum.to_f %>km
+          <%= user.xp %>km
           <br>
           Distance
         </div>
@@ -30,12 +30,10 @@
 
       </div>
       <div class="badges">
-        Badges:
-        <i class="fas fa-globe-americas"></i>
-        <i class="far fa-handshake"></i>
-        <i class="far fa-thumbs-up"></i>
-        <i class="fas fa-running"></i>
-        <i class="fas fa-medal"></i>
+        <% my_badges = @badges.select { |badge| user.xp >= badge.req_xp } %>
+        <% my_badges.each do |badge| %>
+        <img class="mini-badge" src=<%= badge.logo %>>
+        <% end %>
       </div>
       <div class="profile-card-bottom">
         <div class="profile-bio"><%= user.bio %></div>
