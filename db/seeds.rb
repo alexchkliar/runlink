@@ -40,7 +40,7 @@ file = URI.open('http://site.ieee.org/pimrc-2017/files/2017/05/mount-royal-park-
 montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo.jpg', content_type: 'image/jpg')
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/42408073/extra_large_40ea1b12fb757665b620ea5d620d6568.jpg')
 montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo2.jpg', content_type: 'image/jpg')
-file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/42479901/extra_large_a3820a5454b0c20628df7c58b145b393.jpg')
+file = URI.open('https://cdn.shopify.com/s/files/1/0897/1620/articles/SS20_Horizon_ForestFemmes-_62_-2100_2100x.jpg?v=1588617775')
 montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo3.jpg', content_type: 'image/jpg')
 montroyal.save!
 
@@ -59,7 +59,7 @@ file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/41540348/e
 lachinecanal.photos.attach(io: file, filename: 'lachine_canal_photo.jpg', content_type: 'image/jpg')
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/37401465/extra_large_d717141299fe5b57b686a0de153fedf3.jpg')
 lachinecanal.photos.attach(io: file, filename: 'lachine_canal_photo2.jpg', content_type: 'image/jpg')
-file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/35810786/extra_large_3d04f11df38b3d63b441b1cd4c1f37f1.jpg')
+file = URI.open('https://cdn.theculturetrip.com/wp-content/uploads/2020/03/g6cy3f-650x433.jpg')
 lachinecanal.photos.attach(io: file, filename: 'lachine_canal_photo3.jpg', content_type: 'image/jpg')
 lachinecanal.save!
 
