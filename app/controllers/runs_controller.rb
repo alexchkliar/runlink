@@ -1,7 +1,9 @@
 class RunsController < ApplicationController
   def new
     @trail = Trail.find(params[:trail_id])
-    @users = User.all.excluding(current_user).map { |user| [user.name, user.id] }
+    @users = User.all.excluding(current_user).map do |user|
+      [user.name, user.id]
+    end
     @run = Run.new
     @run.run_participants.build
     # @markers = @trail.geocoded.map do |trail|

@@ -14,7 +14,7 @@
     <%= render "messages/message", message: message %>
   <% end %>
 </div>
-<div class="form-group">
+<div class="footer-chatroom">
   <%= simple_form_for [ @chatroom, @message ] do |f| %>
     <%= f.input :content, required: true, label: false, placeholder: "Type here" %>
     <%= f.submit "Send", class: "btn-complete d-block w-100 my-3" %>
