@@ -22,6 +22,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def leaderboard
+    @valid_users = []
+    User.all.each do |user|
+      @valid_users << user unless user.first_name.nil?
+    end
+    @sorted_users = @valid_users.sort_by { |user| -user.xp }
+  end
+
   private
 
   def set_user
