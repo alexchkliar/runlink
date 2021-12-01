@@ -1,0 +1,58 @@
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+
+  width: 90%;
+  margin: 28px auto;
+}
+
+.leaderboard-pos {
+  font-size: 30px;
+  font-weight: bold;
+  width: 40px;
+  text-align: center;
+  opacity: 70%;
+  margin-right: 20px;
+}
+
+
+.leaderboard-card {
+  display: flex;
+  border-radius: 1000px;
+  background: #003F88;
+  flex-grow: 1;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2), 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+}
+
+
+.leaderboard-card-you {
+  display: flex;
+  border-radius: 1000px;
+  background: #5b98df;
+  flex-grow: 1;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2), 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+}
+
+
+.leaderboard-avatar {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  transform: scale(1.35);
+}
+
+.leaderboard-user-info {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 0px 20px;
+  color: white;
+
+  h2, h4 {
+    margin: 0;
+    font-size: 20px;
+    opacity: 97%;
+  }
+}
