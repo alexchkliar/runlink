@@ -67,6 +67,8 @@ class RunsController < ApplicationController
     run_participant_current.completed = participant["completed"] == "1"
     run_participant_current.seconds = (params[:run_participant]["hours"].to_i * 60 * 60) + (params[:run_participant]["minutes"].to_i * 60) + params[:run_participant]["seconds"].to_i
     run_participant_current.save!
+    current_user.xp += run_participant_current.distance.to_i
+    current_user.save!
     trail_rating = TrailRating.new(user_id: current_user.id, trail_id: participant["trail"].keys[0].to_i, rating: participant["trail"].values[0].to_i)
     trail_rating.save!
     participant["user_ratings"].keys.each do |key|
