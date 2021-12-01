@@ -32,7 +32,7 @@
       <div class="badges">
         <% my_badges = @badges.select { |badge| user.xp >= badge.req_xp } %>
         <% my_badges.each do |badge| %>
-        <img class="mini-badge" src=<%= badge.logo %>>
+        <i class="<%= badge.logo %>" id="mini-badge"></i>
         <% end %>
       </div>
       <div class="profile-card-bottom">

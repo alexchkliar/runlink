@@ -3,15 +3,16 @@
 <h3 class="run-description"><%= @run_participant.run.trail.location %>, <%= @run_participant.run.date.strftime('%d-%b-%Y') %></h3>
 <div class="container-complete-profile">
 <h3>Input your run stats:</h3>
-  <p>Time: </p>
+  <label>Time: </label>
   <%= simple_form_for([@run_participant], url: my_run_path) do |f| %>
     <%#= f.error_notification %>
     <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="time-inline">
+      <div class="time-label">H:</div>
       <%= f.input :hours, as: :select, collection: (0..10), label: false %>
-      <div class="colon-register">:</div>
+      <div class="time-label">M:</div>
       <%= f.input :minutes, as: :select, collection: (0..59), label: false %>
-      <div class="colon-register">:</div>
+      <div class="time-label">S:</div>
       <%= f.input :seconds, as: :select, collection: (0..59), label: false %>
     </div>
     <%= f.input :distance, as: :float, label: "Distance (km)" %>

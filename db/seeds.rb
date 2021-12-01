@@ -1,9 +1,9 @@
 require "open-uri"
 
-sarah_bio = "Hey! My name’s Sarah I love running and meeting new people. Let’s connect and go for a run together <3"
-john_bio = "Yoo! My name’s John I love partying. I get drunk a lot on the weekends so I figure I should run more. Let’s link up and go for a run then get drunk bro!"
-bob_bio = "Hi I'm Bob. Uh.. I'm really weird and have no friends. I picked running as a hobby to be more social but I can't run."
-danny_bio = "I'm 4'9 and not funny. Is this a dating app??"
+sarah_bio = "Lorem impsum impsum impsum impsum impsum impsum impsum impsum impsum impsum"
+john_bio = "Lorem impsum impsum impsum impsum impsum impsum impsum impsum impsum impsum"
+bob_bio = "Lorem impsum impsum impsum impsum impsum impsum impsum impsum impsum impsum"
+danny_bio = "Lorem impsum impsum impsum impsum impsum impsum impsum impsum impsum impsum"
 
 puts "Cleaning database..."
 Message.destroy_all
@@ -24,7 +24,7 @@ bob.avatar.attach(io: file, filename: 'bob_avatar.jpg', content_type: 'image/jpg
 bob.save!
 
 file = URI.open('https://2.bp.blogspot.com/-n7J_nAA313c/WhwK_qVk_aI/AAAAAAAABZg/2GiiQJnHDxUE4zmWgfFTTrrdC9VeI-BtACLcBGAs/s1600/alphablackmen_2016-04-06_01-33-53.jpg')
-chung = User.new(first_name: 'John', last_name: 'Chadson', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: john_bio, birth_date: (Date.current - (365 * 20)), xp: 365)
+chung = User.new(first_name: 'John', last_name: 'Chadson', email: "c@c.c", password: "123456", gender: 'Male', location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: john_bio, birth_date: (Date.current - (365 * 20)), xp: 1000)
 chung.avatar.attach(io: file, filename: 'chung_avatar.jpg', content_type: 'image/jpg')
 chung.save!
 
@@ -44,8 +44,7 @@ file = URI.open('https://cdn.shopify.com/s/files/1/0897/1620/articles/SS20_Horiz
 montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo3.jpg', content_type: 'image/jpg')
 montroyal.save!
 
-
-westmount = Trail.new(name: "West Mount loop", location: 'West Mount', distance: 3.1, user_id: apu.id, difficulty: 3, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222561/Screenshot_from_2021-11-29_16-22-55_mm2yf9.png")
+westmount = Trail.new(name: "Westmount loop", location: 'Westmount', distance: 3.1, user_id: apu.id, difficulty: 3, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222561/Screenshot_from_2021-11-29_16-22-55_mm2yf9.png")
 file = URI.open('https://westmount.org/wp-content/uploads/2015/10/dog_walk_web.jpg')
 westmount.photos.attach(io: file, filename: 'west_mount_photo.jpg', content_type: 'image/jpg')
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/30825090/extra_large_38df8ca4c6247b2175b1c0d61a414d8d.jpg')
@@ -76,15 +75,15 @@ puts "Creating chatrooms..."
 chatroom_1 = Chatroom.create!(name: "general", user_id: apu.id, recipient_id: bob.id)
 
 puts "Creating badges..."
-badge1 = Badge.create!(name: "First Run", description: "Congratulations, you have completed your first run!", req_xp: 1, logo: "https://img.icons8.com/ios-glyphs/50/4a90e2/pacifier.png")
-badge2 = Badge.create!(name: "5k", description: "Congratulations, you have completed your first 5km", req_xp: 5, logo: "https://img.icons8.com/ultraviolet/40/000000/baby-feet.png")
-badge3 = Badge.create!(name: "10k", description: "Congratulations, you have ran 10km!", req_xp: 10, logo: "https://img.icons8.com/color/48/000000/10.png")
-badge4 = Badge.create!(name: "20k", description: "Congratulations, you have completed your first 20km!", req_xp: 20, logo: "https://img.icons8.com/color/48/000000/20.png")
-badge5 = Badge.create!(name: "40k", description: "Great job! You `have ran 40km!", req_xp: 40, logo: "https://img.icons8.com/color/48/000000/40.png")
-badge6 = Badge.create!(name: "80k", description: "Congratulations, you ran 80km!", req_xp: 80, logo: "https://img.icons8.com/color/48/000000/80.png")
-badge7 = Badge.create!(name: "160k", description: "Congratulations, you ran 160km!", req_xp: 160, logo: "https://img.icons8.com/material-outlined/50/4a90e2/paralympic-runner.png")
-badge8 = Badge.create!(name: "320k", description: "Congratulations, you ran 320km! Impressive!", req_xp: 320, logo: "https://img.icons8.com/ios-filled/50/4a90e2/greek-helmet.png")
-badge9 = Badge.create!(name: "Daily Runner", description: "Wow, you have ran at least 1km for every day of the year! Great work!", req_xp: 365, logo: "https://img.icons8.com/ios-filled/50/4a90e2/planner.png")
-badge10 = Badge.create!(name: "640k", description: "Congratulations, you have ran 640km! Very impressive!", req_xp: 640, logo: "https://img.icons8.com/ios-glyphs/50/4a90e2/trophy.png")
+badge1 = Badge.create!(name: "Newbie", description: "Completed first run.", req_xp: 1, logo: "fas fa-baby") # baby
+badge2 = Badge.create!(name: "10k", description: "Ran 10km to date.", req_xp: 10, logo: "fas fa-shoe-prints") # shoe print
+badge3 = Badge.create!(name: "Cardio", description: "Ran 10km in a single run.", req_xp: 20, logo: "fas fa-heart") # heart
+badge4 = Badge.create!(name: "Endurance", description: "Completed 5 uphill runs of at least 1km each.", req_xp: 20, logo: "fas fa-dumbbell") # dumbbell
+badge5 = Badge.create!(name: "Social", description: "Connected with 100 fellow runners.", req_xp: 25, logo: "fas fa-handshake") # handshake
+badge6 = Badge.create!(name: "Team spirit", description: "Received 100 thumbs-up.", req_xp: 50, logo: "fas fa-thumbs-up") # thumbs-up
+badge7 = Badge.create!(name: "Lightning", description: "Ran 5km in less than 20 minutes.", req_xp: 100, logo: "fas fa-bolt") # bolt
+badge8 = Badge.create!(name: "Avid runner", description: "Participated in 50 runs.", req_xp: 250, logo: "fas fa-running") # runner
+badge9 = Badge.create!(name: "Master of persistence", description: "Ran at least 1km per day for a full year.", req_xp: 365, logo: "fas fa-calendar-week") # agenda
+badge10 = Badge.create!(name: "Legend", description: "Ran 500km to date.", req_xp: 500, logo: "fas fa-star") # star
 
 puts "Done seeding"

@@ -5,6 +5,8 @@
   .run_participant_hours, .run_participant_minutes, .run_participant_seconds {
     width: 30%;
   }
+  height: 38px;
+  margin-bottom: 10px;
 }
 
 .star-ratings {
@@ -17,4 +19,11 @@
   padding: 10px 0 10px 10px;
   color: white;
   margin: 0 0 10px 0;
+}
+
+.time-label {
+  margin: auto;
+  padding: 0;
+  height: 38px;
+  padding: 5px;
 }

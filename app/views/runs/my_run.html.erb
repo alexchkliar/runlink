@@ -43,7 +43,7 @@
     <li>
       <%= "Rating: " %>
     <% if TrailRating.where(trail_id: @run.trail.id).length == 0 %>
-        <% "None" %>
+        <%= "N/A" %>
       <% else %>
       <% (TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.sum / TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.length.to_f).ceil.times do %>
           <%="★"%>
