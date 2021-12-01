@@ -3,11 +3,17 @@ class RunsController < ApplicationController
     @trail = Trail.find(params[:trail_id])
 
     @valid_users = []
-    User.all.each do |user|
-      @valid_users << user unless user.first_name.nil? || user == current_user
+
+    recipients_in_chats_ids1 = Chatroom.all.where(user_id: current_user).map { |chatroom| chatroom.recipient_id }
+    recipients_in_chats_ids2 = Chatroom.all.where(recipient_id: current_user).map { |chatroom| chatroom.recipient_id }
+    recipients_in_chats_ids = (recipients_in_chats_ids1 + recipients_in_chats_ids2)
+    # temp_users = recipients_in_chats_ids.map {|user_id| User.find(user_id).name }
+
+    @users = []
+    recipients_in_chats_ids.each do |user_id|
+      @users << User.find(user_id).name unless User.find(user_id).first_name.nil? || user_id == current_user
     end
 
-    @users = @valid_users.map { |user| [user.name, user.id] }
     @run = Run.new
     @run.run_participants.build
   end

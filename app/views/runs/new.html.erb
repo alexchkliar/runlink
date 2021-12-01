@@ -1,7 +1,7 @@
 <script type='text/javascript'>
   function loadMapScenario() {
     var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
-      center: new Microsoft.Maps.Location(47.606209, -122.332071),
+      center: new Microsoft.Maps.Location(45.503338, -73.591250),
       zoom: 12,
       showMapTypeSelector:false
     });
@@ -62,10 +62,10 @@
   <%= simple_form_for([@trail, @run]) do |f| %>
     <%#= f.error_notification %>
     <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.input :date, required: true, as: :string, label: "When do you want to run?" %>
+    <%= f.input :date, required: true, as: :string, label: "When do you want to run with #{@users.first}?" %>
     <%= f.simple_fields_for :run_participants do |rp| %>
       <%#= rp.association :user, :collection => User.all(:order => 'name'), :prompt => "Choose a Company" %>
-      <%= rp.association :user, required: true, collection: @users, label: "Who do you want to run with?" %>
+      <%= rp.hidden_field :user, required: true, collection: @users, label: "Who do you want to run with?", selected: @users.first %>
       <%#= rp.input :user, as: :select, collection: @users %>
     <% end %>
     <%= f.submit "Schedule run", class: "btn-create-run d-block w-100" %>
