@@ -7,6 +7,7 @@ const initFlatpickr = function() {
     const fp = flatpickr('#run_date', {
       enableTime: true,
       dateFormat: "Y-m-d H:i",
+      minDate: "today"
     });
   }
 };
