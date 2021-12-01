@@ -24,10 +24,10 @@
   </div>
   <h2 class="trail-booking-header"><%= @run.trail.location %>, <%= @run.trail.distance %>km</h2>
   <ul>
-    <li>Date & time: <%= @run.date %></li>
-    <li><%= link_to @run.trail.location, trail_path(@run.trail) %></li>
+    <li>Date & time: <%= @run.date.strftime("%m %B %Y, %I:%M%p") %></li>
+    <li><%= link_to @run.trail.location, "#" %></li>
     <li>Organizer:
-      <%= link_to @organizer.name, user_path(@organizer) %>
+      <%= link_to @organizer.name, "#" %>
       <% if @organizer == current_user %>
         <%= "(you)" %>
       <% end %>
@@ -42,12 +42,16 @@
     </li>
     <li>
       <%= "Rating: " %>
-      <%# @run.trail.rating.ceil.times do %>
-        <%#="★"%>
-      <%# end %>
-      <%# (5 - @run.trail.rating.ceil).times do %>
-        <%#="☆"%>
-      <%# end %>
+    <% if TrailRating.where(trail_id: @run.trail.id).length == 0 %>
+        <% "None" %>
+      <% else %>
+      <% (TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.sum / TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.length.to_f).ceil.times do %>
+          <%="★"%>
+        <% end %>
+      <% (5 - (TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.sum / TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.length.to_f).ceil).times do %>
+          <%="☆"%>
+        <% end %>
+      <% end %>
     </li>
   </ul>
 
@@ -56,7 +60,7 @@
     <% if @participant_users.include?(current_user) %>
       <div class="participant-profile">
         <%= cl_image_tag current_user.avatar.key %>
-        <%= link_to current_user.name, user_path(current_user) %>
+        <%= link_to current_user.name, "#" %>
         <%= "(you)" %>
       </div>
     <% end %>
@@ -64,7 +68,7 @@
       <% unless participant == current_user %>
         <div class="participant-profile">
           <%= cl_image_tag participant.avatar.key %>
-          <%= link_to participant.name, user_path(participant) %>
+          <%= link_to participant.name, "#" %>
         </div>
       <% end %>
     <% end %>

@@ -25,7 +25,6 @@
   margin-bottom: 15px;
 }
 
-
 .trail-img {
   width: 330px;
   height: 330px;
@@ -35,4 +34,14 @@
   border-bottom: 2px solid $main-color;
   width: 80%;
   margin: 15px auto;
+}
+
+.carousel-item {
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    // border: 1px solid $main-color;
+    // border-radius: 3px;
+  }
 }

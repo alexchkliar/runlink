@@ -76,15 +76,15 @@ puts "Creating chatrooms..."
 chatroom_1 = Chatroom.create!(name: "general", user_id: apu.id, recipient_id: bob.id)
 
 puts "Creating badges..."
-badge1 = Badge.create!(name: "First Run", description: "Congratulations you have completed your first run!", req_xp: 1, logo: "https://img.icons8.com/ios-glyphs/50/4a90e2/pacifier.png")
-badge2 = Badge.create!(name: "5k", description: "Congratulations you have completed your first 5k", req_xp: 5, logo: "https://img.icons8.com/ios-glyphs/30/4a90e2/baby-feet.png")
-badge3 = Badge.create!(name: "10k", description: "Congratulations you have ran 10k", req_xp: 10, logo: "https://img.icons8.com/ios-glyphs/30/4a90e2/ios-10.png")
-badge4 = Badge.create!(name: "20k", description: "Congratulations you have completed your first 20km", req_xp: 20, logo: "https://img.icons8.com/ios-filled/50/4a90e2/20.png")
-badge5 = Badge.create!(name: "40k", description: "Great job! You have ran 40km!", req_xp: 40, logo: "https://img.icons8.com/ios-filled/50/4a90e2/40.png")
-badge6 = Badge.create!(name: "80k", description: "Congratulations you ran 80km!", req_xp: 80, logo: "https://img.icons8.com/ios-filled/50/4a90e2/80.png")
-badge7 = Badge.create!(name: "160k", description: "Congratulations you ran 160km!", req_xp: 160, logo: "https://img.icons8.com/material-outlined/50/4a90e2/paralympic-runner.png")
-badge8 = Badge.create!(name: "320k", description: "Congratulations you ran 320km! Impressive.", req_xp: 320, logo: "https://img.icons8.com/ios-filled/50/4a90e2/greek-helmet.png")
-badge9 = Badge.create!(name: "Daily Runner", description: "Wow you've ran 365km! That's 1k for every day of the year! Great work!", req_xp: 365, logo: "https://img.icons8.com/ios-filled/50/4a90e2/planner.png")
-badge10 = Badge.create!(name: "640k", description: "Congratulations you ran 640km! Very impressive!", req_xp: 640, logo: "https://img.icons8.com/ios-glyphs/50/4a90e2/trophy.png")
+badge1 = Badge.create!(name: "First Run", description: "Congratulations, you have completed your first run!", req_xp: 1, logo: "https://img.icons8.com/ios-glyphs/50/4a90e2/pacifier.png")
+badge2 = Badge.create!(name: "5k", description: "Congratulations, you have completed your first 5km", req_xp: 5, logo: "https://img.icons8.com/ultraviolet/40/000000/baby-feet.png")
+badge3 = Badge.create!(name: "10k", description: "Congratulations, you have ran 10km!", req_xp: 10, logo: "https://img.icons8.com/color/48/000000/10.png")
+badge4 = Badge.create!(name: "20k", description: "Congratulations, you have completed your first 20km!", req_xp: 20, logo: "https://img.icons8.com/color/48/000000/20.png")
+badge5 = Badge.create!(name: "40k", description: "Great job! You `have ran 40km!", req_xp: 40, logo: "https://img.icons8.com/color/48/000000/40.png")
+badge6 = Badge.create!(name: "80k", description: "Congratulations, you ran 80km!", req_xp: 80, logo: "https://img.icons8.com/color/48/000000/80.png")
+badge7 = Badge.create!(name: "160k", description: "Congratulations, you ran 160km!", req_xp: 160, logo: "https://img.icons8.com/material-outlined/50/4a90e2/paralympic-runner.png")
+badge8 = Badge.create!(name: "320k", description: "Congratulations, you ran 320km! Impressive!", req_xp: 320, logo: "https://img.icons8.com/ios-filled/50/4a90e2/greek-helmet.png")
+badge9 = Badge.create!(name: "Daily Runner", description: "Wow, you have ran at least 1km for every day of the year! Great work!", req_xp: 365, logo: "https://img.icons8.com/ios-filled/50/4a90e2/planner.png")
+badge10 = Badge.create!(name: "640k", description: "Congratulations, you have ran 640km! Very impressive!", req_xp: 640, logo: "https://img.icons8.com/ios-glyphs/50/4a90e2/trophy.png")
 
 puts "Done seeding"

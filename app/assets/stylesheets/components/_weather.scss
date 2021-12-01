@@ -1,21 +1,24 @@
 .weather-img {
-  height: 50px;
-  width: 50px;
+  height: 100%;
+  width: 100%;
 }
 
 #weather-table {
   margin: 0 auto;
+  width: 100%;
+  // font-size: 15px;
 }
-
 
 #weather-table td {
-  width: 50px;
+  width: 14.285%;
 }
 
-#weather-table th {
-  width: 50px;
-  border: 1px solid $main-color;
-  text-align: center;
+#weather-table {
+  th {
+    width: 14.285%;
+    border: 1px solid $main-color;
+    text-align: center;
+  }
 }
 
 #weather-table .first-main-row {

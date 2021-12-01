@@ -1,14 +1,17 @@
-<h1>Your Achievements</h1>
-
-<% @my_badges.each do |badge| %>
-  <div class="badge-card-container">
-    <div class="badge-contents">
-      <img src=<%= badge.logo %>>
-      <h3><%= badge.name %></h3>
-      <p><%= badge.description %></p>
+<h1>Your achievements</h1>
+<div class="badge-container">
+  <% @my_badges.each do |badge| %>
+    <div class="badge-card-container">
+      <div class="badge-contents">
+        <img src=<%= badge.logo %>>
+        <h3><%= badge.name %></h3>
+        <p><%= badge.description %></p>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+
+  <a href="/leaderboard" class="btn-create-run d-block text-center">View leaderboard</a>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function(){
