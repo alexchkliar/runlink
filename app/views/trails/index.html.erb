@@ -23,12 +23,16 @@
         </div>
         <div class="rating">
           <li class="bottom-text">
-            <%# trail.rating.ceil.times do %>
-              <%#="★"%>
-            <%# end %>
-            <%# (5 - trail.rating.ceil).times do %>
-              <%#="☆"%>
-            <%# end %>
+            <% if TrailRating.where(trail_id: trail.id).length == 0 %>
+              <% "None" %>
+            <% else %>
+              <% (TrailRating.where(trail_id: trail.id).map { |trail_rating| trail_rating.rating }.sum / TrailRating.where(trail_id: trail.id).map { |trail_rating| trail_rating.rating }.length.to_f).ceil.times do %>
+                <%="★"%>
+              <% end %>
+              <% (5 - (TrailRating.where(trail_id: trail.id).map { |trail_rating| trail_rating.rating }.sum / TrailRating.where(trail_id: trail.id).map { |trail_rating| trail_rating.rating }.length.to_f).ceil).times do %>
+                <%="☆"%>
+              <% end %>
+            <% end %>
           </li>
           <li><%= "Rating" %></li>
         </div>

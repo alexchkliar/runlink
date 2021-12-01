@@ -26,6 +26,7 @@
   width: 100px;
   border-radius: 50%;
   outline: 2px solid white;
+  object-fit: cover;
 }
 
 .profile-card-bottom {
@@ -65,7 +66,7 @@
   display:flex;
   width: 100%;
   padding: 8px 0;
-  color: #003F88;
+  color: $main-color;
   outline: 1px solid white;
 }
 
@@ -75,17 +76,17 @@
 }
 
 .distance-run {
-  box-shadow: -2px 0px 0px 0px $bg-color,
-  2px 0px 0px 0px $bg-color;
+  box-shadow: -2px 0px 0px 0px rgba(225,225,225,1), 2px 0px 0px 0px rgba(225,225,225,1);
 }
 
 .badges {
-  color: #003F88;
+  // color: $main-color;
   text-align: center;
-  width: 100%;
-  padding: 8px 0 8px 20px;
+  padding: 8px 0;
   display: flex;
   align-items: center;
   gap: 8px;
   justify-content: center;
+  border-bottom: 2px rgba(225, 225, 225, 1) solid;
+  width: 90%;
 }

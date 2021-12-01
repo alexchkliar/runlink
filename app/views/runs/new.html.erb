@@ -27,21 +27,18 @@
 
 <div id='printoutPanel'></div>
 <div class="new-run-top">
-<div class="divider-line"></div>
-  <h2 class="trail-booking-header"><%= "Distance: " %> <%= @trail.distance %>km</h2>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleControls" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= cl_image_tag @trail.photos.first.key, height: 180, width: 330, crop: :fill %>
+        <%= cl_image_tag @trail.photos.first.key, crop: :fill %>
       </div>
       <div class="carousel-item">
-        <%= cl_image_tag @trail.photos.second.key, height: 180, width: 330, crop: :fill %>
+        <%= cl_image_tag @trail.photos.second.key, crop: :fill %>
       </div>
       <div class="carousel-item">
-        <%= cl_image_tag @trail.photos.third.key, height: 180, width: 330, crop: :fill %>
+        <%= cl_image_tag @trail.photos.third.key, crop: :fill %>
       </div>
     </div>
-
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -52,9 +49,13 @@
     </a>
   </div>
 
-  <div id='myMap' style='width: 330px; height: 250px;'></div>
   <div class="divider-line"></div>
-  <h2 class="trail-booking-header">7-day forecast</h2>
+  <h2 class="trail-booking-header"><%= "Trail distance: " %> <%= @trail.distance %>km</h2>
+
+  <div id="myMap"></div>
+  <div class="divider-line"></div>
+  <h2 class="trail-booking-header">Local 7-day forecast</h2>
+
   <table id="weather-table" data-weather-api-key="<%= ENV["WEATHER_API_KEY"] %>"></table>
   <div class="divider-line"></div>
 
