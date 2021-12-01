@@ -7,25 +7,32 @@
       <div class="card-profile-info">
         <div class="profile-img"><%= cl_image_tag user.avatar.key %></div>
         <div class="profile-info">
-          <strong><p><%= user.first_name %>, <%= Time.zone.now.year - user.birth_date.year %></p></strong>
+          <p><strong class="name-age-card-info"><%= user.first_name %>, <%= Time.zone.now.year - user.birth_date.year %></strong></p>
           <p><%= user.running_exp %></p>
           <p><%= user.location %></p>
         </div>
       </div>
       <div class="run-stats">
-        <div class="runs-count"><%= RunParticipant.where(user_id: user.id).count %>
-          <br>
+        <div class="runs-count">
           Runs
+          <br>
+          <span class="card-stats-text">
+            <%= RunParticipant.where(user_id: user.id).count %>
+          </span>
         </div>
         <div class="distance-run">
-          <%= user.xp %>km
-          <br>
           Distance
+          <br>
+          <span class="card-stats-text">
+          <%= user.xp %>km
+          </span>
         </div>
         <div class="thumbs-up">
-          <%= UserRating.where(ratee_id: user.id).count %>
-          <br>
           Thumbs up
+          <br>
+          <span class="card-stats-text">
+          <%= UserRating.where(ratee_id: user.id).count %>
+          </span>
         </div>
 
       </div>
