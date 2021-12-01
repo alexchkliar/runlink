@@ -49,15 +49,11 @@
     </a>
   </div>
 
-  <div class="divider-line"></div>
-  <h2 class="trail-booking-header"><%= "Trail distance: " %> <%= @trail.distance %>km</h2>
-
   <div id="myMap"></div>
-  <div class="divider-line"></div>
-  <h2 class="trail-booking-header">Local 7-day forecast</h2>
+
 
   <table id="weather-table" data-weather-api-key="<%= ENV["WEATHER_API_KEY"] %>"></table>
-  <div class="divider-line"></div>
+
 
   <%= simple_form_for([@trail, @run]) do |f| %>
     <%#= f.error_notification %>

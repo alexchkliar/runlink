@@ -9,6 +9,12 @@
   <% end %>
 <div class="username"><%= User.find(@chatroom.recipient_id).name %></div>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+  <% if @chatroom.messages.first.nil?%>
+    <div class="text-center text-muted">
+      <br>
+      No message to display
+    </div>
+  <% end %>
   <% @chatroom.messages.each do |message| %>
     <%= render "messages/message", message: message %>
   <% end %>
