@@ -23,6 +23,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import Chart from 'chart.js/auto';
 
 // Internal imports, e.g:
 import { initFlatpickr } from "../plugins/init_flatpickr";

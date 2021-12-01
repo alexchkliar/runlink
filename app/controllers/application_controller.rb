@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
       complete_profile_path(resource)
     end
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
