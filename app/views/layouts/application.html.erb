@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RunLink</title>
+    <title>RunLink | For running enthusiasts</title>
+    <meta name="description" content="Connect with other running enthusiasts to keep each other motivated, track your runs while earning badges to celebrate key milestones, and see how you stack up against other runners.">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,7 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"></script>
+    <%= favicon_link_tag %>
   </head>
 
   <body>
