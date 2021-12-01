@@ -7,9 +7,10 @@ const dayConverter = (day) => {
 }
 
 const fetchWeather = () => {
-  const city = document.querySelector(".empty-location-div").id;
+  const city = document.querySelector(".empty-location-div")?.id;
+  // const city = "Montreal";
+  if (!city) return;
   const apiKey = document.getElementById("weather-table").dataset.weatherApiKey;
-  console.log(apiKey);
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`)
   .then(response => response.json())
   .then((weather) => {
