@@ -63,7 +63,11 @@ lachinecanal.photos.attach(io: file, filename: 'lachine_canal_photo3.jpg', conte
 lachinecanal.save!
 
 puts "Creating runs..."
-run1 = Run.create!(trail_id: montroyal.id, date: DateTime.current)
+run1 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,25,10,0,0))
+run2 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,26,10,0,0))
+run3 = Run.create!(trail_id: lachinecanal.id, date: DateTime.new(2021,11,27,10,0,0))
+run4 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,28,10,0,0))
+run5 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
 
 puts "Creating run participants..."
 
