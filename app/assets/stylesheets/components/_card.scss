@@ -3,11 +3,11 @@
   flex-direction: column;
   align-items: center;
   background: white;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
   width: 362px;
   margin: 0px;
   border-radius: 16px;
-  margin: 0 auto 32px auto;
+  margin: 0 auto 24px auto;
 }
 
 .card-profile-info {
@@ -35,6 +35,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 8px 0 20px 0;
+  width: 90%;
 }
 
 .profile-info {
@@ -76,17 +77,6 @@
 }
 
 .distance-run {
-  box-shadow: -2px 0px 0px 0px rgba(225,225,225,1), 2px 0px 0px 0px rgba(225,225,225,1);
-}
-
-.badges {
-  // color: $main-color;
-  text-align: center;
-  padding: 8px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-  border-bottom: 2px rgba(225, 225, 225, 1) solid;
-  width: 90%;
+  border-left: 2px solid rgba(225,225,225,1);
+  border-right: 2px solid rgba(225,225,225,1);
 }

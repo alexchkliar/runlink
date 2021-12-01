@@ -3,7 +3,7 @@
   <% @my_badges.each do |badge| %>
     <div class="badge-card-container">
       <div class="badge-contents">
-        <img src=<%= badge.logo %>>
+        <i class="<%= badge.logo %>" id="main-badge"></i>
         <h3><%= badge.name %></h3>
         <p><%= badge.description %></p>
       </div>

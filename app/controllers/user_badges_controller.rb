@@ -1,5 +1,4 @@
 class UserBadgesController < ApplicationController
-
   def index
     badges = Badge.all
     xp = current_user.xp

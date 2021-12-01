@@ -3,36 +3,59 @@
   flex-direction: column;
   align-items: center;
   background: white;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
   width: 362px;
   margin: 0px;
   border-radius: 16px;
-  margin: 0 auto 32px auto;
+  margin: 0 auto 16px auto;
 }
-
 
 .badge-contents {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 24px;
+  margin: 12px;
 }
 
-.badge-contents img {
-  margin: 24px;
+#main-badge {
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: $main-color;
 }
 
 
 .badge-contents h3 {
-  color: #003F88;
+  color: $main-color;
+  margin: 0;
 }
 
-.mini-badge {
-  height: 24px;
-  width: 24px;
+#mini-badge {
+  height: 28px;
+  width: 28px;
+  color: white;
 }
 
 .badge-container {
   width: 90%;
   margin: 0 auto;
+}
+
+.badges {
+  // color: $main-color;
+  text-align: center;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  border-bottom: 2px rgba(225, 225, 225, 1) solid;
+  width: 90%;
+  font-size: 15px;
+  i {
+    background-color: $main-color;
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
