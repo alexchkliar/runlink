@@ -19,7 +19,6 @@ const fetchWeather = () => {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=${apiKey}&units=metric`)
     .then(response => response.json())
     .then((forecast) => {
-      console.log(forecast);
       let range = Array.from({length: 7}, (_, i) => i + 1)
       let forecasts = []
       let boxes = []
@@ -31,6 +30,7 @@ const fetchWeather = () => {
         ])
       });
       const table = document.getElementById("weather-table")
+      table.innerHTML = ""
       for(let i=0; i < forecasts.length; i++){
         const element1 = document.createElement("td");
         const element2 = document.createElement("th");
@@ -51,7 +51,6 @@ const fetchWeather = () => {
         element1.appendChild(element4);
         table.appendChild(element1);
       }
-      console.log(forecasts)
     });
   });
 };

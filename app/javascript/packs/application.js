@@ -30,7 +30,7 @@ import { initFlatpickr } from "../plugins/init_flatpickr";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { closeAlerts } from "../components/alert";
 import { initMapbox } from '../plugins/init_mapbox';
-import { initStarRating } from '../plugins/init_star_rating';
+import { cleaner, initStarRating } from '../plugins/init_star_rating';
 import { fetchWeather } from '../plugins/init_weather';
 // import $ from 'jquery';
 import { initSweetalert } from '../plugins/init_sweetalert';

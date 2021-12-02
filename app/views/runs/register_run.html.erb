@@ -22,7 +22,7 @@
       <%= f.simple_fields_for :trail do |sf| %>
         <%#= sf.association :users, collection: @users %>
         <%#= sf.input @run_participant.run.trail.id, as: :select, collection: (1..5), label: "Trail rating (1-5)" %>
-        <%= sf.input @run_participant.run.trail.id, label: "Trail rating", input_html: { id: "trail-star-target" }, collection: (1..5).to_a%>
+        <%= sf.input @run_participant.run.trail.id, label: "Trail rating", input_html: { id: "trail-star-target", class: "trail-star-target-class" }, collection: (1..5).to_a%>
         <%# sf.collection_radio_buttons(:article, :author_id, Author.all, :id, :name_with_initial) %>
       <% end %>
     </div>
