@@ -73,7 +73,7 @@ tyrone.save!
 
 puts "Creating trails..."
 
-montroyal = Trail.new(name: "Mount Royal Park Loop", location: 'Mount Royal Park', distance: 8.4, user_id: apu.id, difficulty: 4, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638221914/Screenshot_from_2021-11-29_16-20-33_y7knd0.png", description: "Mount Royal Park Loop is a 8.4 kilometer heavily trafficked loop trail that features a lake and is good for all skill levels. The trail offers a number of activity options and is accessible year-round.")
+montroyal = Trail.new(name: "Mount Royal Park Loop", location: 'Mount Royal Park', distance: 8.4, user_id: chung.id, difficulty: 4, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638221914/Screenshot_from_2021-11-29_16-20-33_y7knd0.png", description: "Mount Royal Park Loop is a 8.4 kilometer heavily trafficked loop trail that features a lake and is good for all skill levels. The trail offers a number of activity options and is accessible year-round.")
 file = URI.open('http://site.ieee.org/pimrc-2017/files/2017/05/mount-royal-park-gomontrealtourism.com_.jpg')
 montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo.jpg', content_type: 'image/jpg')
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/42408073/extra_large_40ea1b12fb757665b620ea5d620d6568.jpg')
@@ -83,7 +83,7 @@ montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo3.jpg', 
 montroyal.save!
 puts "Mount Royal saved..."
 
-westmount = Trail.new(name: "Westmount Loop", location: 'Westmount', distance: 3.1, user_id: apu.id, difficulty: 3, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222561/Screenshot_from_2021-11-29_16-22-55_mm2yf9.png", description: "Westmount Loop is a 3.1 kilometer lightly trafficked loop trail that offers the chance to see wildlife and is good for all skill levels. The trail is primarily used for hiking, walking, running, and nature trips.")
+westmount = Trail.new(name: "Westmount Loop", location: 'Westmount', distance: 3.1, user_id: chung.id, difficulty: 3, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222561/Screenshot_from_2021-11-29_16-22-55_mm2yf9.png", description: "Westmount Loop is a 3.1 kilometer lightly trafficked loop trail that offers the chance to see wildlife and is good for all skill levels. The trail is primarily used for hiking, walking, running, and nature trips.")
 file = URI.open('https://westmount.org/wp-content/uploads/2015/10/dog_walk_web.jpg')
 westmount.photos.attach(io: file, filename: 'west_mount_photo.jpg', content_type: 'image/jpg')
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/30825090/extra_large_38df8ca4c6247b2175b1c0d61a414d8d.jpg')
@@ -93,7 +93,7 @@ westmount.photos.attach(io: file, filename: 'west_mount_photo3.jpg', content_typ
 westmount.save!
 puts "Westmount saved..."
 
-lachinecanal = Trail.new(name: "Lachine Canal Multipurpose Path", location: 'Lachine', distance: 6.6, user_id: apu.id, difficulty: 2, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222834/image_hyaode.png", description: "Lachine Canal Multipurpose Path is a 6.6 kilometer heavily trafficked loop trail that features a river. The trail is good for all skill levels and offers a number of activity options.")
+lachinecanal = Trail.new(name: "Lachine Canal Multipurpose Path", location: 'Lachine', distance: 6.6, user_id: chung.id, difficulty: 2, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222834/image_hyaode.png", description: "Lachine Canal Multipurpose Path is a 6.6 kilometer heavily trafficked loop trail that features a river. The trail is good for all skill levels and offers a number of activity options.")
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/41540348/extra_large_19a3cbf151fd08e2783102106f47ff84.jpg')
 lachinecanal.photos.attach(io: file, filename: 'lachine_canal_photo.jpg', content_type: 'image/jpg')
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/37401465/extra_large_d717141299fe5b57b686a0de153fedf3.jpg')
@@ -112,12 +112,12 @@ run5 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0)
 
 puts "Creating run participants..."
 
-run1_participant1 = RunParticipant.create!(user_id: apu.id, run_id: run1.id, status: 1, creator: true)
-run1_participant2 = RunParticipant.create!(user_id: bob.id, run_id: run1.id, status: 1, creator: false)
-run1_participant3 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: false)
+run1_participant1 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: true)
+run1_participant2 = RunParticipant.create!(user_id: don.id, run_id: run1.id, status: 1, creator: false)
+run1_participant3 = RunParticipant.create!(user_id: emily.id, run_id: run1.id, status: 1, creator: false)
 
 puts "Creating chatrooms..."
-chatroom_1 = Chatroom.create!(name: "general", user_id: apu.id, recipient_id: bob.id)
+chatroom_1 = Chatroom.create!(name: "general", user_id: chung.id, recipient_id: don.id)
 
 puts "Creating badges..."
 badge1 = Badge.create!(name: "Newbie", description: "Completed first run.", req_xp: 1, logo: "fas fa-baby") # baby
