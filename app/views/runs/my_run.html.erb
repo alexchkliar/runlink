@@ -34,10 +34,10 @@
     </li>
       <%= "Difficulty: " %>
       <% @run.trail.difficulty.ceil.times do %>
-        <%="★"%>
+        <i class="fas fa-running"></i>
       <% end %>
       <% (5 - @run.trail.difficulty.ceil).times do %>
-        <%="☆"%>
+        <i class="fas fa-running" id="not-filled-light"></i>
       <% end %>
     </li>
     <li>
@@ -46,10 +46,10 @@
         <%= "N/A" %>
       <% else %>
       <% (TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.sum / TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.length.to_f).ceil.times do %>
-          <%="★"%>
+          <i class="fas fa-star"></i>
         <% end %>
       <% (5 - (TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.sum / TrailRating.where(trail_id: @run.trail.id).map { |trail_rating| trail_rating.rating }.length.to_f).ceil).times do %>
-          <%="☆"%>
+          <i class="fas fa-star" id="not-filled-light"></i>
         <% end %>
       <% end %>
     </li>

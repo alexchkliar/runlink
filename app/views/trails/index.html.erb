@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/3d190f4026.js" crossorigin="anonymous"></script>
 <h1>Select a trail</h1>
 <div class="card-container">
   <% @trails.each do |trail|%>
@@ -13,10 +14,10 @@
         <div class="difficulty">
           <li class="bottom-text">
             <% trail.difficulty.ceil.times do %>
-              <%="★"%>
+              <i class="fas fa-running"></i>
             <% end %>
             <% (5 - trail.difficulty.ceil).times do %>
-              <%="☆"%>
+              <i class="fas fa-running" id="not-filled"></i>
             <% end %>
           </li>
           <li><%= "Difficulty" %></li>
@@ -27,17 +28,17 @@
               <%= "N/A" %>
             <% else %>
               <% (TrailRating.where(trail_id: trail.id).map { |trail_rating| trail_rating.rating }.sum / TrailRating.where(trail_id: trail.id).map { |trail_rating| trail_rating.rating }.length.to_f).ceil.times do %>
-                <%="★"%>
+                <i class="fas fa-star"></i>
               <% end %>
               <% (5 - (TrailRating.where(trail_id: trail.id).map { |trail_rating| trail_rating.rating }.sum / TrailRating.where(trail_id: trail.id).map { |trail_rating| trail_rating.rating }.length.to_f).ceil).times do %>
-                <%="☆"%>
+                <i class="fas fa-star" id="not-filled"></i>
               <% end %>
             <% end %>
           </li>
           <li><%= "Rating" %></li>
         </div>
         <div class="distance">
-          <li class="bottom-text"><%= number_with_precision(trail.distance.to_f, precision: 1) %>km</li>
+          <li class="bottom-text distance-label"><%= number_with_precision(trail.distance.to_f, precision: 1) %>km</li>
           <li><%= "Distance" %></li>
         </div>
       </div>
