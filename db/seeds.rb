@@ -1,6 +1,5 @@
 require "open-uri"
 
-
 chung_bio = "Hi my name is Chung. I just move to Montreal from Hong Kong I love to run and want to meet new people in city! Sorry my english not good."
 don_bio = "Yoyo it's ya boy Don. Love helping other runners stay consistent to reach their goals. Teamwork makes the dream work baby!"
 emily_bio = "Hey I'm Emily I'm a health centre receptionist who enjoys listening to music, watching YouTube videos and extreme ironing. I'm super energetic and love running."
