@@ -40,14 +40,8 @@
   border-top: 1px solid $gray-200;
 }
 
-.chatroom-img {
-  display: flex;
-}
-
 .chatroom-img img {
-  margin: -40px auto 0 auto;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  outline: 2px $main-color solid;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
 }
