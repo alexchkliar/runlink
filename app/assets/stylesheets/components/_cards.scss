@@ -84,6 +84,8 @@ a {
 .trail-name {
   font-size: 25px;
   font-weight: 700;
+  text-align: center;
+  margin: 5px 15px 10px 15px ;
   a {
     text-decoration: none;
   }
@@ -93,13 +95,8 @@ a {
   color: $main-color;
 }
 
-.trail-location {
-  padding-bottom: 25px;
-}
-
-.trail-name,
-.trail-location {
-  margin-left: 12px;
+.trail-description {
+  margin: 5px 15px 15px 15px;
 }
 
 #not-filled {
