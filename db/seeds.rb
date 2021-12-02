@@ -151,10 +151,10 @@ badge8 = Badge.create!(name: "Avid runner", description: "Participated in 50 run
 badge9 = Badge.create!(name: "Master of persistence", description: "Ran at least 1km per day for a full year.", req_xp: 365, logo: "fas fa-calendar-week") # agenda
 badge10 = Badge.create!(name: "Legend", description: "Ran 500km to date.", req_xp: 500, logo: "fas fa-star") # star
 
-puts "Creating Trail raitings..."
+puts "Creating Trail ratings..."
 
-trail_rating1 = TrailRating.create!(user_id: don.id, trail_id: montroyal.id, rating: 4)
-trail_rating2 = TrailRating.create!(user_id: emily.id, trail_id: westmount.id, rating: 5)
+trail_rating1 = TrailRating.create!(user_id: don.id, trail_id: montroyal.id, rating: 5)
+trail_rating2 = TrailRating.create!(user_id: emily.id, trail_id: westmount.id, rating: 4)
 trail_rating3 = TrailRating.create!(user_id: fatima.id, trail_id: lachinecanal.id, rating: 4)
 
 
