@@ -19,9 +19,11 @@
     <%= render "messages/message", message: message %>
   <% end %>
 </div>
-<div class="form-bottom">
-  <%= simple_form_for [ @chatroom, @message ] do |f| %>
-    <%= f.input :content, required: true, label: false, placeholder: "Type here" %>
-    <%= f.submit "Send", class: "btn-complete d-block w-100 my-3" %>
-  <% end %>
+<div class="form-button-container">
+  <div class="form-bottom">
+    <%= simple_form_for [ @chatroom, @message ] do |f| %>
+      <%= f.input :content, required: true, label: false, placeholder: "Type here" %>
+      <%= f.submit "Send", class: "btn-complete d-block w-100 my-3" %>
+    <% end %>
+  </div>
 </div>
