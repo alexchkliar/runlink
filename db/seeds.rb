@@ -104,17 +104,24 @@ lachinecanal.save!
 puts "Lachine Canal saved..."
 
 puts "Creating runs..."
-run1 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,25,10,0,0))
-run2 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,26,10,0,0))
+run1 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,4,10,0,0))
+run2 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,8,10,0,0))
 run3 = Run.create!(trail_id: lachinecanal.id, date: DateTime.new(2021,11,27,10,0,0))
-run4 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,28,10,0,0))
-run5 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run4 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,16,10,0,0))
+run5 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,20,10,0,0))
 
 puts "Creating run participants..."
 
 run1_participant1 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: true)
 run1_participant2 = RunParticipant.create!(user_id: don.id, run_id: run1.id, status: 1, creator: false)
 run1_participant3 = RunParticipant.create!(user_id: emily.id, run_id: run1.id, status: 1, creator: false)
+run1_participant4 = RunParticipant.create!(user_id: emily.id, run_id: run1.id, status: 1, creator: false)
+run1_participant5 = RunParticipant.create!(user_id: emily.id, run_id: run1.id, status: 1, creator: false)
+
+run1_participant6 = RunParticipant.create!(user_id: chung.id, run_id: run2.id, status: 1, creator: true)
+run1_participant7 = RunParticipant.create!(user_id: chung.id, run_id: run3.id, status: 1, creator: true)
+run1_participant8 = RunParticipant.create!(user_id: chung.id, run_id: run4.id, status: 1, creator: true)
+run1_participant9 = RunParticipant.create!(user_id: chung.id, run_id: run5.id, status: 1, creator: true)
 
 puts "Creating chatrooms..."
 chatroom_1 = Chatroom.create!(name: "general", user_id: chung.id, recipient_id: don.id)
