@@ -4,10 +4,12 @@
 </div>
   <% if @chatroom.user_id == current_user.id%>
     <div class="chatroom-img"><%= cl_image_tag User.find(@chatroom.recipient_id).avatar.key %></div>
+    <div class="username"><%= User.find(@chatroom.recipient_id).name %></div>
   <% else %>
     <div class="chatroom-img"><%= cl_image_tag User.find(@chatroom.user_id).avatar.key %></div>
+    <div class="username"><%= User.find(@chatroom.user_id).name %></div>
   <% end %>
-<div class="username"><%= User.find(@chatroom.recipient_id).name %></div>
+
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% if @chatroom.messages.first.nil?%>
     <div class="text-center text-muted">
