@@ -1,9 +1,16 @@
 require "open-uri"
 
-sarah_bio = "Lorem impsum impsum impsum impsum impsum impsum impsum impsum impsum impsum"
-john_bio = "Lorem impsum impsum impsum impsum impsum impsum impsum impsum impsum impsum"
-bob_bio = "Lorem impsum impsum impsum impsum impsum impsum impsum impsum impsum impsum"
-danny_bio = "Lorem impsum impsum impsum impsum impsum impsum impsum impsum impsum impsum"
+
+chung_bio = "Hi my name is Chung. I just move to Montreal from Hong Kong I love to run and want to meet new people in city! Sorry my english not good."
+don_bio = "Yoyo it's ya boy Don. Love helping other runners stay consitent to reach their goals. Teamwork makes the dream work baby!"
+emily_bio = "Hey I'm Emily I'm a health centre receptionist who enjoys listening to music, watching YouTube videos and extreme ironing. I'm super energetic and love running."
+fatima_bio = " Hey hey I'm Fatima. I'm a 23-year-old kitchen assistant who enjoys adult colouring book, thought I'd pick up running to during the pandmic to keep myself fit!"
+issac_bio = "Running allows me to set my mind free. Nothing seems impossible. Nothing unattainable"
+jessica_bio = "I run because I can. When I get tired, I remember those who can't run, what they would give to have this simple gift I take for granted, and I run harder for them. I know they would do the same for me."
+raj_bio = "Hello I'm Raj. I just moved from India. I love programming I hope to someday work at Google. I run sometimes..."
+shawnty_bio = "Run often. Run long. But never outrun your joy of running."
+tina_bio = "What seems hard now will one day be your warm-up."
+tyrone_bio = "If you want to change your body, exercise. If you want to change your life, become a runner."
 
 puts "Cleaning database..."
 Message.destroy_all
