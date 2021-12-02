@@ -122,17 +122,11 @@ run14 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0
 run15 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
 run16 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
 
-
-
-
-
 puts "Creating run participants..."
 
 run1_participant1 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: true)
 run1_participant2 = RunParticipant.create!(user_id: don.id, run_id: run1.id, status: 1, creator: false)
 run1_participant3 = RunParticipant.create!(user_id: emily.id, run_id: run1.id, status: 1, creator: false)
-
-
 run1_participant4 = RunParticipant.create!(user_id: don.id, run_id: run2.id, status: 1, creator: false)
 run1_participant5 = RunParticipant.create!(user_id: fatima.id, run_id: run2.id, status: 1, creator: false)
 run1_participant6 = RunParticipant.create!(user_id: issac.id, run_id: run2.id, status: 1, creator: false)
@@ -157,5 +151,12 @@ badge7 = Badge.create!(name: "Lightning", description: "Ran 5km in less than 20 
 badge8 = Badge.create!(name: "Avid runner", description: "Participated in 50 runs.", req_xp: 250, logo: "fas fa-running") # runner
 badge9 = Badge.create!(name: "Master of persistence", description: "Ran at least 1km per day for a full year.", req_xp: 365, logo: "fas fa-calendar-week") # agenda
 badge10 = Badge.create!(name: "Legend", description: "Ran 500km to date.", req_xp: 500, logo: "fas fa-star") # star
+
+puts "Creating Trail raitings..."
+
+trail_rating1 = TrailRating.create!(user_id: don.id, trail_id: montroyal.id, rating: 4)
+trail_rating2 = TrailRating.create!(user_id: emily.id, trail_id: westmount.id, rating: 5)
+trail_rating3 = TrailRating.create!(user_id: fatima.id, trail_id: lachinecanal.id, rating: 4)
+
 
 puts "Done seeding"
