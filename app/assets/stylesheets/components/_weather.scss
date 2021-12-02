@@ -6,22 +6,31 @@
 #weather-table {
   margin: 12px 0px 12px 0px;
   width: 100%;
-  border: 1px solid gray;
   padding: 6px;
-  border-radius: 8px;
-}
-
-#weather-table td {
-  width: 14.285%;
-}
-
-#weather-table {
+  // border: 1px solid gray;
+  border-radius: 5px;
+  outline: 1px solid gray;
   th {
     width: 14.285%;
     // border: 1px solid $main-color;
     text-align: center;
   }
+  td {
+    width: 14.285%;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+  }
+
+  td:first-child {
+    border-left: none;
+  }
+
+  td:last-child {
+    border-right: none;
+  }
 }
+
+
 
 #weather-table .first-main-row {
   text-align: center;

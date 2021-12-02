@@ -21,10 +21,10 @@
           </span>
         </div>
         <div class="distance-run">
-          Distance
+          XP
           <br>
           <span class="card-stats-text">
-          <%= user.xp %>km
+          <%= number_with_precision(user.xp, :precision => 0, :delimiter => ',') %>
           </span>
         </div>
         <div class="thumbs-up">

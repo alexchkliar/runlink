@@ -4,7 +4,7 @@
   width: 90%;
   margin: 0 auto;
   img {
-    border-radius: 3px;
+    // border-radius: 3px;
     margin: 0 auto;
     justify-content: center;
     margin: 12px 0px;
@@ -45,4 +45,9 @@
     // border: 1px solid $main-color;
     // border-radius: 3px;
   }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  opacity: 0.85;
 }

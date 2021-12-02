@@ -69,10 +69,12 @@
   height: 10px;
   background-color: $main-color;
   border-radius: 0px 0px 10px 10px;
+  // outline: 1px $main-color solid;
 }
 
 .rating {
-  box-shadow: -2px 0px 0px 0px $bg-color, 2px 0px 0px 0px $bg-color;
+  border-left: 2px solid $bg-color;
+  border-right: 2px solid $bg-color;
 }
 
 a {

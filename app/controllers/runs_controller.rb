@@ -1,19 +1,10 @@
 class RunsController < ApplicationController
   def new
     @trail = Trail.find(params[:trail_id])
-
-    @valid_users = []
-
     recipients_in_chats_ids1 = Chatroom.all.where(user_id: current_user).map { |chatroom| chatroom.recipient_id }
     recipients_in_chats_ids2 = Chatroom.all.where(recipient_id: current_user).map { |chatroom| chatroom.recipient_id }
     recipients_in_chats_ids = (recipients_in_chats_ids1 + recipients_in_chats_ids2)
-    # temp_users = recipients_in_chats_ids.map {|user_id| User.find(user_id).name }
-
-    @users = []
-    recipients_in_chats_ids.each do |user_id|
-      @users << User.find(user_id).name unless User.find(user_id).first_name.nil? || user_id == current_user
-    end
-
+    @users = recipients_in_chats_ids.map { |user_id| User.find(user_id) unless User.find(user_id).first_name.nil? || user_id == current_user }
     @run = Run.new
     @run.run_participants.build
   end
@@ -22,7 +13,6 @@ class RunsController < ApplicationController
     @run = Run.new(run_params)
     @trail = Trail.find(params[:trail_id])
     @run.trail = @trail
-
     if @run.save
       @creator = RunParticipant.new
       @creator.run = @run
@@ -31,7 +21,7 @@ class RunsController < ApplicationController
       @creator.save
       redirect_to my_run_path(@run), notice: 'Run session was successfully created.'
     else
-      render :new
+      render :new, notice: 'Run was not saved.'
     end
   end
 
@@ -92,9 +82,5 @@ class RunsController < ApplicationController
   private
   def run_params
     params.require(:run).permit(:date, run_participants_attributes: [:id, :user_id])
-  end
-
-  def run_participation_params
-    params.require(:run_participant).permit(:date, run_participants_attributes: [:id, :user_id])
   end
 end
