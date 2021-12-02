@@ -9,6 +9,7 @@ puts "Cleaning database..."
 Message.destroy_all
 Chatroom.destroy_all
 User.destroy_all
+RunParticipant.destroy_all
 Trail.destroy_all
 
 puts "Creating users..."
