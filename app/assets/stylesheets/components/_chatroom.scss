@@ -50,10 +50,12 @@
 .chatroom-img {
   display: flex;
   justify-content: center;
+  margin-top: -40px;
 }
 .chatroom-img img {
  width: 150px;
  height: 150px;
+ border-radius: 50%;
 }
 
 .chatroom-profile-card {
@@ -67,4 +69,9 @@
   width: 150px;
   height: 150px;
   border-radius: 24px;
+}
+
+.col-lg-4 {
+  display: flex;
+  justify-content: center;
 }
