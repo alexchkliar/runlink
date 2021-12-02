@@ -22,7 +22,7 @@ Trail.destroy_all
 puts "Creating users..."
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/chung_fatorj.jpg')
-chung = User.new(first_name: 'Chung', last_name: 'Ma', email: "a@a.a", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: chung_bio, birth_date: (Date.current - (365 * 20)), xp: 5)
+chung = User.new(first_name: 'Chung', last_name: 'Ma', email: "a@a.a", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: chung_bio, birth_date: (Date.current - (365 * 20)), xp: 0)
 chung.avatar.attach(io: file, filename: 'chung_avatar.jpg', content_type: 'image/jpg')
 chung.save!
 
@@ -32,17 +32,17 @@ don.avatar.attach(io: file, filename: 'don_avatar.jpg', content_type: 'image/jpg
 don.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/emily_cgy5ht.jpg')
-emily = User.new(first_name: 'Emily', last_name: 'Chadson', email: "c@c.c", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: emily_bio, birth_date: (Date.current - (365 * 20)), xp: 1000)
+emily = User.new(first_name: 'Emily', last_name: 'Chadson', email: "c@c.c", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: emily_bio, birth_date: (Date.current - (365 * 20)), xp: 10)
 emily.avatar.attach(io: file, filename: 'emily_avatar.jpg', content_type: 'image/jpg')
 emily.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/fatima_vounaa.jpg')
-fatima = User.new(first_name: 'Fatima', last_name: 'DeVito', email: "d@d.d", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: fatima_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
+fatima = User.new(first_name: 'Fatima', last_name: 'DeVito', email: "d@d.d", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: fatima_bio, birth_date: (Date.current - (365 * 50)), xp: 15)
 fatima.avatar.attach(io: file, filename: 'fatima_avatar.jpg', content_type: 'image/jpg')
 fatima.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/issac_ixokxj.jpg')
-issac = User.new(first_name: 'Issac', last_name: 'DeVito', email: "e@e.e", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: issac_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
+issac = User.new(first_name: 'Issac', last_name: 'DeVito', email: "e@e.e", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: issac_bio, birth_date: (Date.current - (365 * 50)), xp: 15)
 issac.avatar.attach(io: file, filename: 'issac_avatar.jpg', content_type: 'image/jpg')
 issac.save!
 
@@ -52,22 +52,22 @@ jessica.avatar.attach(io: file, filename: 'jessica_avatar.jpg', content_type: 'i
 jessica.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/raj_m3g93m.jpg')
-raj = User.new(first_name: 'Raj', last_name: 'DeVito', email: "g@g.g", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: raj_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
+raj = User.new(first_name: 'Raj', last_name: 'DeVito', email: "g@g.g", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: raj_bio, birth_date: (Date.current - (365 * 50)), xp: 4)
 raj.avatar.attach(io: file, filename: 'raj_avatar.jpg', content_type: 'image/jpg')
 raj.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/shawnty_aemihc.jpg')
-shawnty = User.new(first_name: 'Shawnty', last_name: 'DeVito', email: "h@h.h", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: shawnty_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
+shawnty = User.new(first_name: 'Shawnty', last_name: 'DeVito', email: "h@h.h", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: shawnty_bio, birth_date: (Date.current - (365 * 50)), xp: 6)
 shawnty.avatar.attach(io: file, filename: 'shawnty_avatar.jpg', content_type: 'image/jpg')
 shawnty.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/tina_i2qegb.jpg')
-tina = User.new(first_name: 'Tina', last_name: 'DeVito', email: "i@i.i", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: tina_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
+tina = User.new(first_name: 'Tina', last_name: 'DeVito', email: "i@i.i", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: tina_bio, birth_date: (Date.current - (365 * 50)), xp: 35)
 tina.avatar.attach(io: file, filename: 'tina_avatar.jpg', content_type: 'image/jpg')
 tina.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462915/tyrone_muympy.jpg')
-tyrone = User.new(first_name: 'Tyrone', last_name: 'DeVito', email: "j@j.j", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: tyrone_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
+tyrone = User.new(first_name: 'Tyrone', last_name: 'DeVito', email: "j@j.j", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: tyrone_bio, birth_date: (Date.current - (365 * 50)), xp: 14)
 tyrone.avatar.attach(io: file, filename: 'tyrone_avatar.jpg', content_type: 'image/jpg')
 tyrone.save!
 
@@ -122,8 +122,8 @@ chatroom_1 = Chatroom.create!(name: "general", user_id: chung.id, recipient_id: 
 puts "Creating badges..."
 badge1 = Badge.create!(name: "Newbie", description: "Completed first run.", req_xp: 1, logo: "fas fa-baby") # baby
 badge2 = Badge.create!(name: "10k", description: "Ran 10km to date.", req_xp: 10, logo: "fas fa-shoe-prints") # shoe print
-badge3 = Badge.create!(name: "Cardio", description: "Ran 10km in a single run.", req_xp: 20, logo: "fas fa-heart") # heart
-# badge4 = Badge.create!(name: "Endurance", description: "Completed 5 uphill runs of at least 1km each.", req_xp: 20, logo: "fas fa-dumbbell") # dumbbell
+badge3 = Badge.create!(name: "Cardio", description: "Ran 20km to date.", req_xp: 20, logo: "fas fa-heart") # heart
+badge4 = Badge.create!(name: "Endurance", description: "Completed 5 uphill runs of at least 1km each.", req_xp: 20, logo: "fas fa-dumbbell") # dumbbell
 badge5 = Badge.create!(name: "Social", description: "Connected with 100 fellow runners.", req_xp: 25, logo: "fas fa-handshake") # handshake
 badge6 = Badge.create!(name: "Team spirit", description: "Received 100 thumbs-up.", req_xp: 50, logo: "fas fa-thumbs-up") # thumbs-up
 badge7 = Badge.create!(name: "Lightning", description: "Ran 5km in less than 20 minutes.", req_xp: 100, logo: "fas fa-bolt") # bolt
