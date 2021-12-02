@@ -9,7 +9,7 @@
         <%= cl_image_tag trail.photos.first.key, height: 180, width: 330, crop: :fill %></li>
       </div>
       <div class="trail-name"><%= link_to trail.name, trail_path(trail) %></div>
-      <div class="trail-location">description here</div>
+      <div class="trail-description"><%= trail.description %></div>
       <div class="card-text-bottom">
         <div class="difficulty">
           <li class="bottom-text">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_184247) do
+ActiveRecord::Schema.define(version: 2021_12_02_151356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_184247) do
     t.float "latitude"
     t.float "longitude"
     t.string "trail_img_url"
+    t.string "description"
     t.index ["user_id"], name: "index_trails_on_user_id"
   end
 
