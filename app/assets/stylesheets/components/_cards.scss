@@ -14,13 +14,15 @@
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-img{
+.card-img {
   display: flex;
   justify-content: center;
   border-bottom: 2px solid $main-color;
-  img {
-    border-radius: 10px 10px 0px 0px;
-  }
+  border-radius: 10px 10px 0px 0px;
+  #cardCarousel3 { border-radius: 10px 10px 0px 0px; }
+  .carousel-inner { border-radius: 10px 10px 0px 0px; }
+  .carousel-item { border-radius: 10px 10px 0px 0px; }
+  img { border-radius: 10px 10px 0px 0px; }
 }
 
 .organize-button {
