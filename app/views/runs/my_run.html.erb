@@ -1,27 +1,31 @@
+<script type='text/javascript'>
+  function loadMapScenario() {
+    var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+      center: new Microsoft.Maps.Location(45.503338, -73.591250),
+      zoom: 12,
+      showMapTypeSelector:false
+    });
+    Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+      var directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+      // Set Route Mode to walking
+      directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.walking });
+      var waypoint1 = new Microsoft.Maps.Directions.Waypoint({ address: '4185 Chemin de la Côte-des-Neiges, Montreal, Quebec H3H 1X2' });
+      var waypoint2 = new Microsoft.Maps.Directions.Waypoint({ address: 'Beaver Lake, Montreal, Quebec, Canada' });
+      var waypoint3 = new Microsoft.Maps.Directions.Waypoint({ address: '1196 Camillien Houde Voie, Montreal QC H3H 1A1' });
+      directionsManager.addWaypoint(waypoint1);
+      directionsManager.addWaypoint(waypoint2);
+      directionsManager.addWaypoint(waypoint3);
+      // Set the element in which the itinerary will be rendered
+      directionsManager.calculateDirections();
+    });
+  }
+</script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=At7tKBq6JEFi0ksqaAjmwbPRvOh9tCsibl_-tiUJ2S_2j35L4a8U142v4E4PpN6V&callback=loadMapScenario' async defer></script>
+
 <h1><%= @run.trail.name %></h1>
 <div class="new-run-top">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= cl_image_tag @run.trail.photos.first.key, height: 180, width: 330, crop: :fill %>
-      </div>
-      <div class="carousel-item">
-        <%= cl_image_tag @run.trail.photos.second.key, height: 180, width: 330, crop: :fill %>
-      </div>
-      <div class="carousel-item">
-        <%= cl_image_tag @run.trail.photos.third.key, height: 180, width: 330, crop: :fill %>
-      </div>
-    </div>
+  <div id="myMap"></div>
 
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
   <h2 class="trail-booking-header"><%= @run.trail.location %>, <%= @run.trail.distance %>km</h2>
   <ul>
     <li>Date & time: <%= @run.date.strftime("%m %B %Y, %I:%M%p") %></li>
