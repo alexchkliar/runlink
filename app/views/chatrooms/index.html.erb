@@ -1,8 +1,19 @@
-<% @chatrooms.each do |chatroom| %>
-  <% if chatroom.user_id == current_user.id%>
-    <%= link_to User.find(chatroom.recipient_id).first_name, chatroom_path(chatroom) %>
-  <% else %>
-    <%= link_to User.find(chatroom.user_id).first_name, chatroom_path(chatroom) %>
+<div class="chatroom-container">
+  <% @chatrooms.each do |chatroom| %>
+    <% if chatroom.user_id == current_user.id%>
+      <div class="col-lg-4">
+        <div class="chatroom-card p-0">
+          <div class="chatroom-img"><%= cl_image_tag User.find(chatroom.recipient_id).avatar.key%></div>
+          <%= link_to User.find(chatroom.recipient_id).first_name, chatroom_path(chatroom) %>
+        </div>
+      </div>
+    <% else %>
+      <div class="col-lg-4">
+        <div class="chatroom-card p-0">
+          <div class="chatroom-img"><%= cl_image_tag User.find(chatroom.user_id).avatar.key%></div>
+          <%= link_to User.find(chatroom.user_id).first_name, chatroom_path(chatroom) %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-  <br>
-<% end %>
+</div>
