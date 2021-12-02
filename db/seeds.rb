@@ -2,9 +2,9 @@ require "open-uri"
 
 
 chung_bio = "Hi my name is Chung. I just move to Montreal from Hong Kong I love to run and want to meet new people in city! Sorry my english not good."
-don_bio = "Yoyo it's ya boy Don. Love helping other runners stay consitent to reach their goals. Teamwork makes the dream work baby!"
+don_bio = "Yoyo it's ya boy Don. Love helping other runners stay consistent to reach their goals. Teamwork makes the dream work baby!"
 emily_bio = "Hey I'm Emily I'm a health centre receptionist who enjoys listening to music, watching YouTube videos and extreme ironing. I'm super energetic and love running."
-fatima_bio = " Hey hey I'm Fatima. I'm a 23-year-old kitchen assistant who enjoys adult colouring book, thought I'd pick up running to during the pandmic to keep myself fit!"
+fatima_bio = " Hey hey I'm Fatima. I'm a 23-year-old kitchen assistant who enjoys adult colouring book, thought I'd pick up running to during the pandemic to keep myself fit!"
 issac_bio = "Running allows me to set my mind free. Nothing seems impossible. Nothing unattainable"
 jessica_bio = "I run because I can. When I get tired, I remember those who can't run, what they would give to have this simple gift I take for granted, and I run harder for them. I know they would do the same for me."
 raj_bio = "Hello I'm Raj. I just moved from India. I love programming I hope to someday work at Google. I run sometimes..."
@@ -18,56 +18,57 @@ Chatroom.destroy_all
 User.destroy_all
 RunParticipant.destroy_all
 Trail.destroy_all
+Badge.destroy_all
 
 puts "Creating users..."
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/chung_fatorj.jpg')
-chung = User.new(first_name: 'Chung', last_name: 'Ma', email: "a@a.a", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: chung_bio, birth_date: (Date.current - (365 * 20)), xp: 0)
+chung = User.new(first_name: 'Chung', last_name: 'Ma', email: "a@a.a", password: "123456", location: 'Ville Saint-Laurent', running_exp: 'Beginner', bio: chung_bio, birth_date: (Date.current - (365 * 21)), xp: 0)
 chung.avatar.attach(io: file, filename: 'chung_avatar.jpg', content_type: 'image/jpg')
 chung.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/don_z0xhid.jpg')
-don = User.new(first_name: 'Don', last_name: 'Smith', email: "b@b.b", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Intermediate', bio: don_bio, birth_date: (Date.current - (365 * 20)), xp: 10)
+don = User.new(first_name: 'Don', last_name: 'Smith', email: "b@b.b", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Intermediate', bio: don_bio, birth_date: (Date.current - (365 * 25)), xp: 10)
 don.avatar.attach(io: file, filename: 'don_avatar.jpg', content_type: 'image/jpg')
 don.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/emily_cgy5ht.jpg')
-emily = User.new(first_name: 'Emily', last_name: 'Chadson', email: "c@c.c", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Advanced', bio: emily_bio, birth_date: (Date.current - (365 * 20)), xp: 10)
+emily = User.new(first_name: 'Emily', last_name: 'Chadson', email: "c@c.c", password: "123456", location: 'Longueil', running_exp: 'Advanced', bio: emily_bio, birth_date: (Date.current - (365 * 26)), xp: 10)
 emily.avatar.attach(io: file, filename: 'emily_avatar.jpg', content_type: 'image/jpg')
 emily.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/fatima_vounaa.jpg')
-fatima = User.new(first_name: 'Fatima', last_name: 'DeVito', email: "d@d.d", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: fatima_bio, birth_date: (Date.current - (365 * 50)), xp: 15)
+fatima = User.new(first_name: 'Fatima', last_name: 'DeVito', email: "d@d.d", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: fatima_bio, birth_date: (Date.current - (365 * 31)), xp: 15)
 fatima.avatar.attach(io: file, filename: 'fatima_avatar.jpg', content_type: 'image/jpg')
 fatima.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/issac_ixokxj.jpg')
-issac = User.new(first_name: 'Issac', last_name: 'DeVito', email: "e@e.e", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: issac_bio, birth_date: (Date.current - (365 * 50)), xp: 15)
+issac = User.new(first_name: 'Issac', last_name: 'DeVito', email: "e@e.e", password: "123456", location: 'Dollard Des Ormeaux', running_exp: 'Beginner', bio: issac_bio, birth_date: (Date.current - (365 * 44)), xp: 15)
 issac.avatar.attach(io: file, filename: 'issac_avatar.jpg', content_type: 'image/jpg')
 issac.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/jessica_j1q8sj.jpg')
-jessica = User.new(first_name: 'Jessica', last_name: 'DeVito', email: "f@f.f", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: jessica_bio, birth_date: (Date.current - (365 * 50)), xp: 20)
+jessica = User.new(first_name: 'Jessica', last_name: 'DeVito', email: "f@f.f", password: "123456", location: 'Notre-Dame-de-Grâce', running_exp: 'Beginner', bio: jessica_bio, birth_date: (Date.current - (365 * 28)), xp: 20)
 jessica.avatar.attach(io: file, filename: 'jessica_avatar.jpg', content_type: 'image/jpg')
 jessica.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/raj_m3g93m.jpg')
-raj = User.new(first_name: 'Raj', last_name: 'DeVito', email: "g@g.g", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: raj_bio, birth_date: (Date.current - (365 * 50)), xp: 4)
+raj = User.new(first_name: 'Raj', last_name: 'DeVito', email: "g@g.g", password: "123456", location: 'Longeuil', running_exp: 'Beginner', bio: raj_bio, birth_date: (Date.current - (365 * 32)), xp: 4)
 raj.avatar.attach(io: file, filename: 'raj_avatar.jpg', content_type: 'image/jpg')
 raj.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/shawnty_aemihc.jpg')
-shawnty = User.new(first_name: 'Shawnty', last_name: 'DeVito', email: "h@h.h", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: shawnty_bio, birth_date: (Date.current - (365 * 50)), xp: 6)
+shawnty = User.new(first_name: 'Shawnty', last_name: 'DeVito', email: "h@h.h", password: "123456", location: "Nun's Island", running_exp: 'Beginner', bio: shawnty_bio, birth_date: (Date.current - (365 * 27)), xp: 6)
 shawnty.avatar.attach(io: file, filename: 'shawnty_avatar.jpg', content_type: 'image/jpg')
 shawnty.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/tina_i2qegb.jpg')
-tina = User.new(first_name: 'Tina', last_name: 'DeVito', email: "i@i.i", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: tina_bio, birth_date: (Date.current - (365 * 50)), xp: 35)
+tina = User.new(first_name: 'Tina', last_name: 'DeVito', email: "i@i.i", password: "123456", location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: tina_bio, birth_date: (Date.current - (365 * 32)), xp: 35)
 tina.avatar.attach(io: file, filename: 'tina_avatar.jpg', content_type: 'image/jpg')
 tina.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462915/tyrone_muympy.jpg')
-tyrone = User.new(first_name: 'Tyrone', last_name: 'DeVito', email: "j@j.j", password: "123456", location: 'Philadelphia', running_exp: 'Beginner', bio: tyrone_bio, birth_date: (Date.current - (365 * 50)), xp: 14)
+tyrone = User.new(first_name: 'Tyrone', last_name: 'DeVito', email: "j@j.j", password: "123456", location: 'Ville Saint-Laurent', running_exp: 'Beginner', bio: tyrone_bio, birth_date: (Date.current - (365 * 29)), xp: 14)
 tyrone.avatar.attach(io: file, filename: 'tyrone_avatar.jpg', content_type: 'image/jpg')
 tyrone.save!
 
