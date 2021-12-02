@@ -67,7 +67,7 @@ tina.avatar.attach(io: file, filename: 'tina_avatar.jpg', content_type: 'image/j
 tina.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462915/tyrone_muympy.jpg')
-tyrone = User.new(first_name: 'Tyrone', last_name: 'DeVito', email: "j@j.j", password: "123456", location: 'Ville Saint-Laurent', running_exp: 'Beginner', bio: tyrone_bio, birth_date: (Date.current - (365 * 29)), xp: 14)
+tyrone = User.new(first_name: 'Lauren', last_name: 'DeVito', email: "j@j.j", password: "123456", location: 'Ville Saint-Laurent', running_exp: 'Beginner', bio: tyrone_bio, birth_date: (Date.current - (365 * 29)), xp: 0)
 tyrone.avatar.attach(io: file, filename: 'tyrone_avatar.jpg', content_type: 'image/jpg')
 tyrone.save!
 
@@ -109,12 +109,38 @@ run2 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,26,10,0,0)
 run3 = Run.create!(trail_id: lachinecanal.id, date: DateTime.new(2021,11,27,10,0,0))
 run4 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,28,10,0,0))
 run5 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run6 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run7 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run8 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run9 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run10 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run11 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run12 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run13 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run14 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run15 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+run16 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
+
+
+
+
 
 puts "Creating run participants..."
 
 run1_participant1 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: true)
 run1_participant2 = RunParticipant.create!(user_id: don.id, run_id: run1.id, status: 1, creator: false)
 run1_participant3 = RunParticipant.create!(user_id: emily.id, run_id: run1.id, status: 1, creator: false)
+
+
+run1_participant4 = RunParticipant.create!(user_id: don.id, run_id: run2.id, status: 1, creator: false)
+run1_participant5 = RunParticipant.create!(user_id: fatima.id, run_id: run2.id, status: 1, creator: false)
+run1_participant6 = RunParticipant.create!(user_id: issac.id, run_id: run2.id, status: 1, creator: false)
+run1_participant7 = RunParticipant.create!(user_id: jessica.id, run_id: run2.id, status: 1, creator: false)
+run1_participant8 = RunParticipant.create!(user_id: raj.id, run_id: run2.id, status: 1, creator: false)
+run1_participant9 = RunParticipant.create!(user_id: shawnty.id, run_id: run2.id, status: 1, creator: false)
+run1_participant10 = RunParticipant.create!(user_id: tina.id, run_id: run2.id, status: 1, creator: false)
+run1_participant11 = RunParticipant.create!(user_id: tina.id, run_id: run2.id, status: 1, creator: false)
+run1_participant12 = RunParticipant.create!(user_id: tina.id, run_id: run2.id, status: 1, creator: false)
 
 puts "Creating chatrooms..."
 chatroom_1 = Chatroom.create!(name: "general", user_id: chung.id, recipient_id: don.id)
