@@ -4,6 +4,8 @@
     <div class="banner-slogan">Connect with other runners in your area!</div>
     <% if user_signed_in? && current_user.first_name != nil %>
       <%= link_to "Find Runners", users_path, class:"btn btn-light"%>
+    <% elsif user_signed_in? %>
+      <%= link_to "Start your Journey", new_user_registration_path, class:"btn btn-light" %>
     <% else %>
       <%= link_to "Join now", new_user_registration_path, class:"btn btn-light" %>
     <% end %>
