@@ -3,7 +3,7 @@
 <div class="card-container">
   <% @trails.each do |trail|%>
   <div class="trail-card">
-    <%= link_to "Run trail", new_trail_run_path(trail), class: "organize-button" %>
+    <%= link_to "Run trail", new_trail_run_path(trail, running_partner: params[:running_partner]), class: "organize-button" %>
     <ul>
       <div class="card-img">
         <%= cl_image_tag trail.photos.first.key, height: 180, width: 330, crop: :fill %></li>

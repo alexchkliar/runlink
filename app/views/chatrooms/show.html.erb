@@ -1,6 +1,6 @@
 <div class="d-flex flex-row justify-content-between py-2 px-3 adiv chat-header">
   <%= link_to "< Chats", chatrooms_path %>
-  <%= link_to "Trails >", trails_path %>
+  <%= link_to "Trails >", trails_path(running_partner: @chatroom.recipient_id) %>
 </div>
   <% if @chatroom.user_id == current_user.id%>
     <div class="chatroom-img"><%= cl_image_tag User.find(@chatroom.recipient_id).avatar.key %></div>

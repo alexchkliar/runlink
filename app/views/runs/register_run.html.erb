@@ -15,7 +15,7 @@
       <div class="time-label">S:</div>
       <%= f.input :seconds, as: :select, collection: (0..59), label: false %>
     </div>
-    <%= f.input :distance, as: :float, label: "Distance (km)" %>
+    <%= f.input :distance, as: :float, label: "Distance (km)", input_html: {value: Run.find(params[:id].to_i).trail.distance} %>
     <h3>Review your run:</h3>
     <div class="star-ratings">
       <%= f.input :difficulty, as: :select, label: "Run challenge", collection: (1..5).to_a %>
