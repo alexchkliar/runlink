@@ -1,6 +1,7 @@
+
 .badge-card-container {
   display: flex;
-  flex-direction: column;
+  // flex-wrap: wrap;
   align-items: center;
   background: white;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
@@ -10,24 +11,38 @@
   margin: 0 auto 16px auto;
 }
 
+.badge-text-container {
+  text-align: left;
+  margin-left: 15px;
+}
+
 .badge-contents {
   display: flex;
   align-items: center;
-  flex-direction: column;
   margin: 12px;
 }
 
 #main-badge {
   font-size: 50px;
-  margin-bottom: 10px;
   color: $main-color;
+  background-color: $color3;
+  color: white;
+  height: 75px;
+  width: 75px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
+#large-badge {
 
+}
 .badge-contents h3 {
   color: $main-color;
   margin: 0;
 }
+
 
 #mini-badge {
   height: 28px;
