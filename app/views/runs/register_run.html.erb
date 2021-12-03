@@ -18,7 +18,7 @@
     <%= f.input :distance, as: :float, label: "Distance (km)", input_html: {value: Run.find(params[:id].to_i).trail.distance} %>
     <h3>Review your run:</h3>
     <div class="star-ratings">
-      <%= f.input :difficulty, as: :select, label: "Run challenge", collection: (1..5).to_a %>
+      <%= f.input :difficulty, as: :select, label: "Run difficulty", collection: (1..5).to_a %>
       <%= f.simple_fields_for :trail do |sf| %>
         <%#= sf.association :users, collection: @users %>
         <%#= sf.input @run_participant.run.trail.id, as: :select, collection: (1..5), label: "Trail rating (1-5)" %>
