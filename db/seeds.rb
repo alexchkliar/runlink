@@ -101,7 +101,6 @@ montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo2.jpg', 
 file = URI.open('https://cdn.shopify.com/s/files/1/0897/1620/articles/SS20_Horizon_ForestFemmes-_62_-2100_2100x.jpg?v=1588617775')
 montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo3.jpg', content_type: 'image/jpg')
 montroyal.save!
-puts "Mount Royal saved..."
 
 westmount = Trail.new(name: "Westmount Loop", location: 'Westmount', distance: 3.1, user_id: jessica.id, difficulty: 3, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222561/Screenshot_from_2021-11-29_16-22-55_mm2yf9.png", description: "Westmount Loop is a 3.1 kilometer lightly trafficked loop trail that offers the chance to see wildlife and is good for all skill levels. The trail is primarily used for hiking, walking, running, and nature trips.")
 file = URI.open('https://westmount.org/wp-content/uploads/2015/10/dog_walk_web.jpg')
@@ -111,7 +110,6 @@ westmount.photos.attach(io: file, filename: 'west_mount_photo2.jpg', content_typ
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/38939226/extra_large_c8bc971f802b3601ca17471da8cb6eb4.jpg')
 westmount.photos.attach(io: file, filename: 'west_mount_photo3.jpg', content_type: 'image/jpg')
 westmount.save!
-puts "Westmount saved..."
 
 lachinecanal = Trail.new(name: "Lachine Canal Multipurpose Path", location: 'Lachine', distance: 6.6, user_id: jessica.id, difficulty: 2, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222834/image_hyaode.png", description: "Lachine Canal Multipurpose Path is a 6.6 kilometer heavily trafficked loop trail that features a river. The trail is good for all skill levels and offers a number of activity options.")
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/41540348/extra_large_19a3cbf151fd08e2783102106f47ff84.jpg')
@@ -121,7 +119,6 @@ lachinecanal.photos.attach(io: file, filename: 'lachine_canal_photo2.jpg', conte
 file = URI.open('https://cdn.theculturetrip.com/wp-content/uploads/2020/03/g6cy3f-650x433.jpg')
 lachinecanal.photos.attach(io: file, filename: 'lachine_canal_photo3.jpg', content_type: 'image/jpg')
 lachinecanal.save!
-puts "Lachine Canal saved..."
 
 puts "Creating runs..."
 run1 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,11,10,0,0))

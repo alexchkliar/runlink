@@ -9,6 +9,7 @@
     "bootstrap": "4.6",
     "cdbootstrap": "^1.0.0",
     "chart.js": "^3.6.1",
+    "chartkick": "^4.1.1",
     "flatpickr": "^4.6.9",
     "jquery": "^3.6.0",
     "jquery-bar-rating": "^1.2.2",
