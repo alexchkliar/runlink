@@ -33,7 +33,7 @@
   <%= simple_form_for([@trail, @run]) do |f| %>
     <%#= f.error_notification %>
     <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.input :date, required: true, as: :string, label: "When do you want to run with #{@running_partner.name}?" %>
+    <%= f.input :date, required: true, as: :string, label: "When do you want to run with <span class='font-weight-bold'>#{@running_partner.name}</span>?".html_safe %>
     <%= f.simple_fields_for :run_participants do |rp| %>
       <%= rp.input :user_id, required: true, label: false, input_html: {value: @running_partner.id}, as: :hidden %>
       <%#= rp.hidden_field :user, required: true, collection: @users, label: "Who do you want to run with?", selected: @users.first.id %>

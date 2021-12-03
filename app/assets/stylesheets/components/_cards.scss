@@ -49,12 +49,13 @@
 }
 
 .card-text-bottom {
-  padding-top: 10px;
+  padding: 10px 0;
   display: flex;
   background-color: $main-color;
   color: white;
   text-align: center;
   box-sizing: border-box;
+  border-radius: 0 0 10px 10px;
 }
 
 .distance,
