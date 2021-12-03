@@ -1,10 +1,9 @@
 <body>
-  <h1>Your XP progress</h1>
-  <div class="card chart-container">
-    <canvas id="chart"></canvas>
-  </div>
+  <h1>Recent XP progress</h1>
+  <%= line_chart @final_hash, width: "362px", height: "200px", id: "xp-chart" %>
 
-  <h1>Your achievements</h1>
+  <br>
+  <h1>Achievements</h1>
   <div class="badge-container">
     <% @my_badges.each do |badge| %>
       <div class="badge-card-container">
@@ -19,7 +18,7 @@
       </div>
     <% end %>
 
-    <a href="/leaderboard" class="btn-create-run d-block text-center">View leaderboard</a>
+    <a href="/leaderboard" class="btn-create-run d-block text-center" id="leaderboard-button">View leaderboard</a>
   </div>
 </body>
 

@@ -81,7 +81,6 @@ montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo2.jpg', 
 file = URI.open('https://cdn.shopify.com/s/files/1/0897/1620/articles/SS20_Horizon_ForestFemmes-_62_-2100_2100x.jpg?v=1588617775')
 montroyal.photos.attach(io: file, filename: 'mount_royal_park_loop_photo3.jpg', content_type: 'image/jpg')
 montroyal.save!
-puts "Mount Royal saved..."
 
 westmount = Trail.new(name: "Westmount Loop", location: 'Westmount', distance: 3.1, user_id: chung.id, difficulty: 3, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222561/Screenshot_from_2021-11-29_16-22-55_mm2yf9.png", description: "Westmount Loop is a 3.1 kilometer lightly trafficked loop trail that offers the chance to see wildlife and is good for all skill levels. The trail is primarily used for hiking, walking, running, and nature trips.")
 file = URI.open('https://westmount.org/wp-content/uploads/2015/10/dog_walk_web.jpg')
@@ -91,7 +90,6 @@ westmount.photos.attach(io: file, filename: 'west_mount_photo2.jpg', content_typ
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/38939226/extra_large_c8bc971f802b3601ca17471da8cb6eb4.jpg')
 westmount.photos.attach(io: file, filename: 'west_mount_photo3.jpg', content_type: 'image/jpg')
 westmount.save!
-puts "Westmount saved..."
 
 lachinecanal = Trail.new(name: "Lachine Canal Multipurpose Path", location: 'Lachine', distance: 6.6, user_id: chung.id, difficulty: 2, trail_img_url: "https://res.cloudinary.com/davidshin0413/image/upload/v1638222834/image_hyaode.png", description: "Lachine Canal Multipurpose Path is a 6.6 kilometer heavily trafficked loop trail that features a river. The trail is good for all skill levels and offers a number of activity options.")
 file = URI.open('https://cdn-assets.alltrails.com/uploads/photo/image/41540348/extra_large_19a3cbf151fd08e2783102106f47ff84.jpg')
@@ -101,7 +99,6 @@ lachinecanal.photos.attach(io: file, filename: 'lachine_canal_photo2.jpg', conte
 file = URI.open('https://cdn.theculturetrip.com/wp-content/uploads/2020/03/g6cy3f-650x433.jpg')
 lachinecanal.photos.attach(io: file, filename: 'lachine_canal_photo3.jpg', content_type: 'image/jpg')
 lachinecanal.save!
-puts "Lachine Canal saved..."
 
 puts "Creating runs..."
 run1 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,25,10,0,0))
@@ -121,26 +118,37 @@ run14 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0
 run15 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
 run16 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,29,10,0,0))
 
-
-
-
-
 puts "Creating run participants..."
 
-run1_participant1 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: true)
-run1_participant2 = RunParticipant.create!(user_id: don.id, run_id: run1.id, status: 1, creator: false)
-run1_participant3 = RunParticipant.create!(user_id: emily.id, run_id: run1.id, status: 1, creator: false)
+# run1_participant1 = RunParticipant.create!(user_id: chung.id, run_id: run1.id, status: 1, creator: true)
+# run1_participant2 = RunParticipant.create!(user_id: don.id, run_id: run1.id, status: 1, creator: false)
+# run1_participant3 = RunParticipant.create!(user_id: emily.id, run_id: run1.id, status: 1, creator: false)
+# run1_participant4 = RunParticipant.create!(user_id: don.id, run_id: run2.id, status: 1, creator: false)
+# run1_participant5 = RunParticipant.create!(user_id: fatima.id, run_id: run2.id, status: 1, creator: false)
+# run1_participant6 = RunParticipant.create!(user_id: issac.id, run_id: run2.id, status: 1, creator: false)
+# run1_participant7 = RunParticipant.create!(user_id: jessica.id, run_id: run2.id, status: 1, creator: false)
+# run1_participant8 = RunParticipant.create!(user_id: raj.id, run_id: run2.id, status: 1, creator: false)
+# run1_participant9 = RunParticipant.create!(user_id: shawnty.id, run_id: run2.id, status: 1, creator: false)
+# run1_participant10 = RunParticipant.create!(user_id: tina.id, run_id: run2.id, status: 1, creator: false)
+# run1_participant11 = RunParticipant.create!(user_id: tina.id, run_id: run2.id, status: 1, creator: false)
+# run1_participant12 = RunParticipant.create!(user_id: tina.id, run_id: run2.id, status: 1, creator: false)
 
+run17 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,27,10,0,0))
+run18 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,28,10,0,0))
+run19 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,29,10,0,0))
+run20 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,30,10,0,0))
+run21 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,12,01,10,0,0))
+run22 = Run.create!(trail_id: lachinecanal.id, date: DateTime.new(2021,12,02,10,0,0))
+run23 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,12,03,10,0,0))
 
-run1_participant4 = RunParticipant.create!(user_id: don.id, run_id: run2.id, status: 1, creator: false)
-run1_participant5 = RunParticipant.create!(user_id: fatima.id, run_id: run2.id, status: 1, creator: false)
-run1_participant6 = RunParticipant.create!(user_id: issac.id, run_id: run2.id, status: 1, creator: false)
-run1_participant7 = RunParticipant.create!(user_id: jessica.id, run_id: run2.id, status: 1, creator: false)
-run1_participant8 = RunParticipant.create!(user_id: raj.id, run_id: run2.id, status: 1, creator: false)
-run1_participant9 = RunParticipant.create!(user_id: shawnty.id, run_id: run2.id, status: 1, creator: false)
-run1_participant10 = RunParticipant.create!(user_id: tina.id, run_id: run2.id, status: 1, creator: false)
-run1_participant11 = RunParticipant.create!(user_id: tina.id, run_id: run2.id, status: 1, creator: false)
-run1_participant12 = RunParticipant.create!(user_id: tina.id, run_id: run2.id, status: 1, creator: false)
+run1_participant13 = RunParticipant.create!(user_id: chung.id, run_id: run17.id, status: 1, creator: false, distance: 8)
+run1_participant14 = RunParticipant.create!(user_id: chung.id, run_id: run18.id, status: 1, creator: false, distance: 21)
+run1_participant15 = RunParticipant.create!(user_id: chung.id, run_id: run19.id, status: 1, creator: false, distance: 18)
+run1_participant16 = RunParticipant.create!(user_id: chung.id, run_id: run20.id, status: 1, creator: false, distance: 14)
+run1_participant20 = RunParticipant.create!(user_id: chung.id, run_id: run21.id, status: 1, creator: false, distance: 22)
+run1_participant17 = RunParticipant.create!(user_id: chung.id, run_id: run21.id, status: 1, creator: false, distance: 5)
+run1_participant18 = RunParticipant.create!(user_id: chung.id, run_id: run22.id, status: 1, creator: false, distance: 3)
+run1_participant19 = RunParticipant.create!(user_id: chung.id, run_id: run23.id, status: 1, creator: false, distance: 9)
 
 puts "Creating chatrooms..."
 chatroom_1 = Chatroom.create!(name: "general", user_id: chung.id, recipient_id: don.id)
