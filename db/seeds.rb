@@ -1,15 +1,15 @@
 require "open-uri"
 
-jessica_bio = "Hi! I'm usually run around 5 AM, but I know I'm not the only one!"
+jessica_bio = "Hi! I usually run around 5 AM, but I know I'm not the only one!"
 connor_bio = "Run often. Run long. But never outrun your joy of running."
-lauren_bio = " Hey there I'm Lauren. I thought I'd pick up running to during the pandemic to keep myself fit!"
+lauren_bio = " Hey there, I'm Lauren! I thought I'd pick up running to during the pandemic to keep myself fit."
 don_bio = "Love helping other runners stay consistent to reach their goals. Teamwork makes the dream work!"
-issac_bio = "Running allows me to set my mind free. Nothing seems impossible. Nothing unattainable"
-henry_bio = "Hi my name is Henry. I just move to Montreal from Hong Kong I love to run and want to meet new people in city!"
+issac_bio = "Running allows me to set my mind free. Nothing seems impossible. Dream big."
+henry_bio = "Hi my name is Henry. I just move to Montreal from Hong Kong. I love to run and want to meet new people in this great city!"
 emily_bio = "Hey I'm Emily I'm a health centre receptionist who enjoys listening to music and watch movies. I'm super energetic and love running."
-raj_bio = "Hello I'm Raj. I just moved from India. I love programming I hope to someday work at Google. I run sometimes..."
+raj_bio = "Hello I'm Raj. I just moved to Canada from India and hope to meet other fellow runners. Besides running, I love programming."
 melissa_bio = "If you want to change your body, exercise. If you want to change your life, become a runner."
-tina_bio = "What seems hard now will one day be your warm-up."
+tina_bio = "Whatever challenge seems hard now will one day be your warm-up."
 
 puts "Cleaning database..."
 Message.destroy_all
@@ -28,7 +28,7 @@ jessica = User.new(first_name: 'Jessica', last_name: 'Simpson', email: "b@b.b", 
 jessica.avatar.attach(io: file, filename: 'jessica_avatar.jpg', content_type: 'image/jpg')
 jessica.save!
 
-file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/shawnty_aemihc.jpg')
+file = URI.open('https://media.istockphoto.com/photos/senior-black-man-exploring-picture-id1181252994?k=20&m=1181252994&s=612x612&w=0&h=oKzOxdMz9XGO0BawsGvzu4MZNda6U4o4ZryXaT1N4o8=')
 connor = User.new(first_name: 'Connor', last_name: 'James', email: "c@c.c", password: "123456",
                   location: "Nun's Island", running_exp: 'Beginner', bio: connor_bio,
                   birth_date: Date.new(1958, 1, 1), xp: 6)
@@ -50,22 +50,22 @@ don.avatar.attach(io: file, filename: 'don_avatar.jpg', content_type: 'image/jpg
 don.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/issac_ixokxj.jpg')
-issac = User.new(first_name: 'Issac', last_name: 'Asimov', email: "e@e.e", password: "123456",
-                 location: 'Dollard Des Ormeaux', running_exp: 'Intermediate', bio: issac_bio,
-                 birth_date: Date.new(1975, 1, 1), xp: 48)
+issac = User.new(first_name: 'Isaac', last_name: 'Asimov', email: "e@e.e", password: "123456",
+                 location: 'Dollard-Des-Ormeaux', running_exp: 'Intermediate', bio: issac_bio,
+                 birth_date: Date.new(1976, 1, 1), xp: 48)
 issac.avatar.attach(io: file, filename: 'issac_avatar.jpg', content_type: 'image/jpg')
 issac.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/chung_fatorj.jpg')
 henry = User.new(first_name: 'Henry', last_name: 'Chung', email: "f@f.f", password: "123456",
                  location: 'Ville Saint-Laurent', running_exp: 'Beginner', bio: henry_bio,
-                 birth_date: Date.new(1995, 1, 1), xp: 2)
+                 birth_date: Date.new(1994, 1, 1), xp: 2)
 henry.avatar.attach(io: file, filename: 'henry_avatar.jpg', content_type: 'image/jpg')
 henry.save!
 
-file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462035/emily_cgy5ht.jpg')
+file = URI.open('https://post.healthline.com/wp-content/uploads/2020/08/Marathon_Women_running-732x549-thumbnail-732x549.jpg')
 emily = User.new(first_name: 'Emily', last_name: 'Parker', email: "g@g.g", password: "123456",
-                 location: 'Longueil', running_exp: 'Intermediate', bio: emily_bio,
+                 location: 'Downtown', running_exp: 'Intermediate', bio: emily_bio,
                  birth_date: Date.new(1986, 1, 1), xp: 25)
 emily.avatar.attach(io: file, filename: 'emily_avatar.jpg', content_type: 'image/jpg')
 emily.save!
@@ -77,7 +77,7 @@ raj = User.new(first_name: 'Raj', last_name: 'Koothrappali', email: "h@h.h", pas
 raj.avatar.attach(io: file, filename: 'raj_avatar.jpg', content_type: 'image/jpg')
 raj.save!
 
-file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462915/tyrone_muympy.jpg')
+file = URI.open('https://media.istockphoto.com/photos/happy-millennial-girl-running-on-quay-and-listening-to-music-picture-id1160220628?k=20&m=1160220628&s=612x612&w=0&h=9fFkg_byCUBafA4lXvnoT3gAB_mwuvRQDC1Z8w_EpSo=')
 melissa = User.new(first_name: 'Melissa', last_name: 'Leonard', email: "i@i.i", password: "123456",
                    location: 'Ville Saint-Laurent', running_exp: 'Beginner', bio: melissa_bio,
                    birth_date: Date.new(2003, 1, 1), xp: 5)
@@ -143,8 +143,7 @@ run19 = Run.create!(trail_id: montroyal.id, date: DateTime.new(2021,11,29,10,0,0
 run20 = Run.create!(trail_id: westmount.id, date: DateTime.new(2021,11,30,10,0,0))
 
 puts "Creating run participants..."
-
-run1_participant1 = RunParticipant.create!(user_id: don.id, run_id: run1.id, status: 1, creator: true)
+run1_participant1 = RunParticipant.create!(user_id: don.id, run_id: run1.id, status: 1, creator: true, distance: 5.5)
 run1_participant2 = RunParticipant.create!(user_id: lauren.id, run_id: run1.id, status: 1, creator: false)
 
 run2_participant1 = RunParticipant.create!(user_id: jessica.id, run_id: run2.id, status: 1, creator: true)
@@ -153,40 +152,40 @@ run2_participant2 = RunParticipant.create!(user_id: issac.id, run_id: run2.id, s
 run3_participant1 = RunParticipant.create!(user_id: melissa.id, run_id: run3.id, status: 1, creator: true)
 run3_participant2 = RunParticipant.create!(user_id: henry.id, run_id: run3.id, status: 1, creator: false)
 
-run4_participant1 = RunParticipant.create!(user_id: don.id, run_id: run4.id, status: 1, creator: true)
+run4_participant1 = RunParticipant.create!(user_id: don.id, run_id: run4.id, status: 1, creator: true, distance: 2.8)
 run4_participant2 = RunParticipant.create!(user_id: raj.id, run_id: run4.id, status: 1, creator: false)
 
 run5_participant1 = RunParticipant.create!(user_id: connor.id, run_id: run5.id, status: 1, creator: true)
 run5_participant2 = RunParticipant.create!(user_id: tina.id, run_id: run5.id, status: 1, creator: false)
 
-run6_participant1 = RunParticipant.create!(user_id: don.id, run_id: run6.id, status: 1, creator: true)
+run6_participant1 = RunParticipant.create!(user_id: don.id, run_id: run6.id, status: 1, creator: true, distance: 4.3)
 run6_participant2 = RunParticipant.create!(user_id: connor.id, run_id: run6.id, status: 1, creator: false)
 
-run7_participant1 = RunParticipant.create!(user_id: don.id, run_id: run7.id, status: 1, creator: true)
+run7_participant1 = RunParticipant.create!(user_id: don.id, run_id: run7.id, status: 1, creator: true, distance: 2.9)
 run7_participant2 = RunParticipant.create!(user_id: henry.id, run_id: run7.id, status: 1, creator: false)
 
-run8_participant1 = RunParticipant.create!(user_id: don.id, run_id: run8.id, status: 1, creator: true)
+run8_participant1 = RunParticipant.create!(user_id: don.id, run_id: run8.id, status: 1, creator: true, distance: 7.1)
 run8_participant2 = RunParticipant.create!(user_id: jessica.id, run_id: run8.id, status: 1, creator: false)
 
-run9_participant1 = RunParticipant.create!(user_id: don.id, run_id: run9.id, status: 1, creator: true)
+run9_participant1 = RunParticipant.create!(user_id: don.id, run_id: run9.id, status: 1, creator: true, distance: 5.8)
 run9_participant2 = RunParticipant.create!(user_id: issac.id, run_id: run9.id, status: 1, creator: false)
 
-run10_participant1 = RunParticipant.create!(user_id: don.id, run_id: run10.id, status: 1, creator: true)
+run10_participant1 = RunParticipant.create!(user_id: don.id, run_id: run10.id, status: 1, creator: true, distance: 5.8)
 run10_participant2 = RunParticipant.create!(user_id: connor.id, run_id: run10.id, status: 1, creator: false)
 
-run11_participant1 = RunParticipant.create!(user_id: don.id, run_id: run11.id, status: 1, creator: true)
+run11_participant1 = RunParticipant.create!(user_id: don.id, run_id: run11.id, status: 1, creator: true, distance: 10.1)
 run11_participant2 = RunParticipant.create!(user_id: melissa.id, run_id: run11.id, status: 1, creator: false)
 
-run12_participant1 = RunParticipant.create!(user_id: don.id, run_id: run12.id, status: 1, creator: true)
+run12_participant1 = RunParticipant.create!(user_id: don.id, run_id: run12.id, status: 1, creator: true, distance: 8.1)
 run12_participant2 = RunParticipant.create!(user_id: tina.id, run_id: run12.id, status: 1, creator: false)
 
-run13_participant1 = RunParticipant.create!(user_id: don.id, run_id: run13.id, status: 1, creator: true)
+run13_participant1 = RunParticipant.create!(user_id: don.id, run_id: run13.id, status: 1, creator: true, distance: 2.9)
 run13_participant2 = RunParticipant.create!(user_id: melissa.id, run_id: run13.id, status: 1, creator: false)
 
-run14_participant1 = RunParticipant.create!(user_id: don.id, run_id: run14.id, status: 1, creator: true)
+run14_participant1 = RunParticipant.create!(user_id: don.id, run_id: run14.id, status: 1, creator: true, distance: 7.5)
 run14_participant2 = RunParticipant.create!(user_id: lauren.id, run_id: run14.id, status: 1, creator: false)
 
-run15_participant1 = RunParticipant.create!(user_id: don.id, run_id: run15.id, status: 1, creator: true)
+run15_participant1 = RunParticipant.create!(user_id: don.id, run_id: run15.id, status: 1, creator: true, distance: 8.9)
 run15_participant2 = RunParticipant.create!(user_id: jessica.id, run_id: run15.id, status: 1, creator: false)
 
 puts "Creating badges..."
@@ -201,10 +200,7 @@ badge8 = Badge.create!(name: "Avid runner", description: "Participated in 50 run
 badge9 = Badge.create!(name: "Master of persistence", description: "Ran at least 1km per day for a full year.", req_xp: 365, logo: "fas fa-calendar-week") # agenda
 badge10 = Badge.create!(name: "Legend", description: "Ran 500km to date.", req_xp: 500, logo: "fas fa-star") # star
 
-
-
 puts "Creating user ratings..."
-
 user_rating1 = UserRating.create!(rater_id: jessica.id, ratee_id: don.id, thumbs_up: true)
 user_rating2 = UserRating.create!(rater_id: melissa.id, ratee_id: don.id, thumbs_up: true)
 user_rating3 = UserRating.create!(rater_id: lauren.id, ratee_id: don.id, thumbs_up: true)
