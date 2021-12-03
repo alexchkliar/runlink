@@ -22,7 +22,7 @@ Badge.destroy_all
 puts "Creating users..."
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/jessica_j1q8sj.jpg')
-jessica = User.new(first_name: 'Jessica', last_name: 'Simpson', email: "c@c.c", password: "123456",
+jessica = User.new(first_name: 'Jessica', last_name: 'Burns', email: "c@c.c", password: "123456",
                    location: 'Notre-Dame-de-Grâce', running_exp: 'Intermediate', bio: jessica_bio,
                    birth_date: Date.new(1983, 1, 1), xp: 70)
 jessica.avatar.attach(io: file, filename: 'jessica_avatar.jpg', content_type: 'image/jpg')
@@ -36,7 +36,7 @@ connor.avatar.attach(io: file, filename: 'connor_avatar.jpg', content_type: 'ima
 connor.save!
 
 file = URI.open('https://res.cloudinary.com/davidshin0413/image/upload/v1638462036/fatima_vounaa.jpg')
-lauren = User.new(first_name: 'Lauren', last_name: 'Cohen', email: "d@d.d", password: "123456",
+lauren = User.new(first_name: 'Lauren', last_name: 'Guessabi', email: "d@d.d", password: "123456",
                   location: 'Plateau Mont-Royal', running_exp: 'Beginner', bio: lauren_bio,
                   birth_date: Date.new(1994, 1, 1), xp: 11 )
 lauren.avatar.attach(io: file, filename: 'lauren_avatar.jpg', content_type: 'image/jpg')
@@ -232,7 +232,7 @@ run25_participant2 = RunParticipant.create!(user_id: jessica.id, run_id: run25.i
 run26_participant1 = RunParticipant.create!(user_id: connor.id, run_id: run26.id, status: 1, creator: true, distance: 5)
 run26_participant2 = RunParticipant.create!(user_id: henry.id, run_id: run26.id, status: 1, creator: false)
 
-run27_participant1 = RunParticipant.create!(user_id: melissa.id, run_id: run27.id, status: 1, creator: true, distance: 7)
+run27_participant1 = RunParticipant.create!(user_id: connor.id, run_id: run27.id, status: 1, creator: true, distance: 7)
 run27_participant2 = RunParticipant.create!(user_id: don.id, run_id: run27.id, status: 1, creator: false)
 
 run28_participant1 = RunParticipant.create!(user_id: don.id, run_id: run28.id, status: 1, creator: true, distance: 7)
@@ -245,7 +245,7 @@ run30_participant1 = RunParticipant.create!(user_id: don.id, run_id: run30.id, s
 run30_participant2 = RunParticipant.create!(user_id: jessica.id, run_id: run30.id, status: 1, creator: false)
 
 run31_participant1 = RunParticipant.create!(user_id: don.id, run_id: run31.id, status: 1, creator: true, distance: 7)
-run31_participant2 = RunParticipant.create!(user_id: henry.id, run_id: run31.id, status: 1, creator: false)
+run31_participant2 = RunParticipant.create!(user_id: emily.id, run_id: run31.id, status: 1, creator: false)
 
 puts "Creating badges..."
 badge1 = Badge.create!(name: "Newbie", description: "Completed first run.", req_xp: 1, logo: "fas fa-baby") # baby
@@ -285,6 +285,14 @@ user_rating22 = UserRating.create!(rater_id: tina.id, ratee_id: jessica.id, thum
 user_rating23 = UserRating.create!(rater_id: raj.id, ratee_id: tina.id, thumbs_up: true)
 user_rating24 = UserRating.create!(rater_id: emily.id, ratee_id: tina.id, thumbs_up: true)
 user_rating25 = UserRating.create!(rater_id: henry.id, ratee_id: jessica.id, thumbs_up: true)
+user_rating26 = UserRating.create!(rater_id: henry.id, ratee_id: emily.id, thumbs_up: true)
+user_rating27 = UserRating.create!(rater_id: raj.id, ratee_id: jessica.id, thumbs_up: true)
+user_rating28 = UserRating.create!(rater_id: emily.id, ratee_id: raj.id, thumbs_up: true)
+user_rating29 = UserRating.create!(rater_id: henry.id, ratee_id: jessica.id, thumbs_up: true)
+user_rating30 = UserRating.create!(rater_id: emily.id, ratee_id: melissa.id, thumbs_up: true)
+user_rating31 = UserRating.create!(rater_id: tina.id, ratee_id: henry.id, thumbs_up: true)
+user_rating32 = UserRating.create!(rater_id: jessica.id, ratee_id: emily.id, thumbs_up: true)
+user_rating33 = UserRating.create!(rater_id: melissa.id, ratee_id: emily.id, thumbs_up: true)
 
 8.times do
   user_rating = UserRating.new(rater_id: jessica.id, ratee_id: don.id, thumbs_up: true)
