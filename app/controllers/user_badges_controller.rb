@@ -14,7 +14,8 @@ class UserBadgesController < ApplicationController
 
     RunParticipant.where(user_id: current_user.id).each do |run_p|
       date_key = run_p.run.date.strftime('%b %d').to_s
-      @final_hash[date_key] += run_p.distance
+      distance = (run_p.distance.nil? ? 0 : run_p.distance)
+      @final_hash[date_key] += distance
     end
 
   end
