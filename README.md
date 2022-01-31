@@ -1,14 +1,15 @@
-![](./app/assets/images/RunLink.png)
+git![](./app/assets/images/RunLink.png)
 # RunLink
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/alexchkliar/runlink)
 
-RunLink is a [ ].
+RunLink is a full-stack mobile web app that enables runners to connect with one another, find local trails, organize and record runs, earn experience points and badges, track and benchmark progress.
+
 Features include:
-- [A]
-- [B]
-- [C]
-- [D]
-- [E]
+- Instant messaging (AJAX)
+- Weather and map APIs
+- Authentication and authorization (Devise / Pundit)
+- Charting data
+- CI/CD pipeline for deployment
 
 Deployed live on [runlink.fun](https://runlink.fun)
 
@@ -20,11 +21,9 @@ Deployed live on [runlink.fun](https://runlink.fun)
 
 ## Installation
 
-Use the package manager [yarn](https://yarnpkg.com/) and `bundle install` to fetch dependencies.
-
 ``` bash
-yarn install # install other dependencies from yarn
 bundle install # install gem dependencies
+yarn install # install other dependencies from yarn
 rails db:create db:migrate db:seed # create and seed database
 ```
 

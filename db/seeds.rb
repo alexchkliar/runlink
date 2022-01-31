@@ -250,12 +250,12 @@ run31_participant2 = RunParticipant.create!(user_id: emily.id, run_id: run31.id,
 puts "Creating badges..."
 badge1 = Badge.create!(name: "Newbie", description: "Completed first run.", req_xp: 1, logo: "fas fa-baby") # baby
 badge2 = Badge.create!(name: "10k", description: "Ran 10km to date.", req_xp: 10, logo: "fas fa-shoe-prints") # shoe print
-badge3 = Badge.create!(name: "Cardio", description: "Made 4 runs to date", req_xp: 25, logo: "fas fa-heart") # heart
-badge4 = Badge.create!(name: "Endurance", description: "Ran 30km to date", req_xp: 30, logo: "fas fa-dumbbell") # dumbbell
-badge5 = Badge.create!(name: "Social", description: "Ran 40km to date", req_xp: 40, logo: "fas fa-handshake") # handshake
-badge6 = Badge.create!(name: "Team spirit", description: "Ran 50km to date", req_xp: 50, logo: "fas fa-thumbs-up") # thumbs-up
-badge7 = Badge.create!(name: "Lightning", description: "Ran 100km to date", req_xp: 100, logo: "fas fa-bolt") # bolt
-badge8 = Badge.create!(name: "Avid runner", description: "Ran 250km to date", req_xp: 250, logo: "fas fa-running") # runner
+badge3 = Badge.create!(name: "Cardio", description: "Ran 20km to date.", req_xp: 25, logo: "fas fa-heart") # heart
+badge4 = Badge.create!(name: "Endurance", description: "Completed 5 uphill runs of at least 1km each.", req_xp: 30, logo: "fas fa-dumbbell") # dumbbell
+badge5 = Badge.create!(name: "Social", description: "Connected with 100 fellow runners.", req_xp: 40, logo: "fas fa-handshake") # handshake
+badge6 = Badge.create!(name: "Team spirit", description: "Received 100 thumbs-up.", req_xp: 50, logo: "fas fa-thumbs-up") # thumbs-up
+badge7 = Badge.create!(name: "Lightning", description: "Ran 5km in less than 20 minutes.", req_xp: 100, logo: "fas fa-bolt") # bolt
+badge8 = Badge.create!(name: "Avid runner", description: "Participated in 50 runs.", req_xp: 250, logo: "fas fa-running") # runner
 badge9 = Badge.create!(name: "Master of persistence", description: "Ran at least 1km per day for a full year.", req_xp: 365, logo: "fas fa-calendar-week") # agenda
 badge10 = Badge.create!(name: "Legend", description: "Ran 500km to date.", req_xp: 500, logo: "fas fa-star") # star
 
