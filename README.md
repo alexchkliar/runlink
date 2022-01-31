@@ -1,4 +1,3 @@
-git![](./app/assets/images/RunLink.png)
 # RunLink
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/alexchkliar/runlink)
 
